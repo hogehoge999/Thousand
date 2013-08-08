@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		444AA60217B3609F00C568D3 /* StandardPlugin.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 444AA60117B3609F00C568D3 /* StandardPlugin.bundle */; };
+		444AA60417B3660C00C568D3 /* Thousand2ch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444AA60317B3660C00C568D3 /* Thousand2ch.framework */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
 		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
 		8D15AC2E0486D014006FF6A4 /* MyDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B4FDCFA73011CA2CEA /* MyDocument.nib */; };
@@ -14,9 +16,6 @@
 		8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
-		F4837C750DE1D2FF008C72E9 /* Thousand2ch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4837C740DE1D2FF008C72E9 /* Thousand2ch.framework */; };
-		F4837C970DE1D328008C72E9 /* StandardPlugin.bundle in プラグインをコピー */ = {isa = PBXBuildFile; fileRef = F4837C7A0DE1D311008C72E9 /* StandardPlugin.bundle */; };
-		F4837CC90DE1D334008C72E9 /* Thousand2ch.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = F4837C740DE1D2FF008C72E9 /* Thousand2ch.framework */; };
 		F4AB286E0DE14C9A00C1790D /* MyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AB286D0DE14C9A00C1790D /* MyAppDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +26,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F4837C970DE1D328008C72E9 /* StandardPlugin.bundle in プラグインをコピー */,
 			);
 			name = "プラグインをコピー";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +36,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F4837CC90DE1D334008C72E9 /* Thousand2ch.framework in フレームワークをコピー */,
 			);
 			name = "フレームワークをコピー";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,10 +55,10 @@
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32DBCF750370BD2300C91783 /* MyFirst2chBrowser_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFirst2chBrowser_Prefix.pch; sourceTree = "<group>"; };
+		444AA60117B3609F00C568D3 /* StandardPlugin.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = StandardPlugin.bundle; path = ../Thousand/build/Debug/StandardPlugin.bundle; sourceTree = "<group>"; };
+		444AA60317B3660C00C568D3 /* Thousand2ch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Thousand2ch.framework; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* MyFirst2chBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirst2chBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4837C740DE1D2FF008C72E9 /* Thousand2ch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Thousand2ch.framework; path = ../Thousand/build/Release/Thousand2ch.framework; sourceTree = SOURCE_ROOT; };
-		F4837C7A0DE1D311008C72E9 /* StandardPlugin.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = StandardPlugin.bundle; path = ../Thousand/build/Release/StandardPlugin.bundle; sourceTree = SOURCE_ROOT; };
 		F4AB286C0DE14C9A00C1790D /* MyAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAppDelegate.h; sourceTree = "<group>"; };
 		F4AB286D0DE14C9A00C1790D /* MyAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
-				F4837C750DE1D2FF008C72E9 /* Thousand2ch.framework in Frameworks */,
+				444AA60417B3660C00C568D3 /* Thousand2ch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +79,6 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4837C740DE1D2FF008C72E9 /* Thousand2ch.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -141,7 +137,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F4837C7A0DE1D311008C72E9 /* StandardPlugin.bundle */,
+				444AA60117B3609F00C568D3 /* StandardPlugin.bundle */,
 				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
 				2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */,
 				2A37F4B4FDCFA73011CA2CEA /* MyDocument.nib */,
@@ -154,6 +150,7 @@
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				444AA60317B3660C00C568D3 /* Thousand2ch.framework */,
 				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
 			);
@@ -190,7 +187,11 @@
 			isa = PBXProject;
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "MyFirst2chBrowser" */;
 			compatibilityVersion = "Xcode 3.0";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* MyFirst2chBrowser */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -209,6 +210,7 @@
 				8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */,
 				8D15AC2E0486D014006FF6A4 /* MyDocument.nib in Resources */,
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
+				444AA60217B3609F00C568D3 /* StandardPlugin.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,11 +268,14 @@
 		C05733C808A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/../Thousand/build/Release\"",
+					"\"$(SRCROOT)/../Thousand/build/Debug\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -280,6 +285,7 @@
 				GCC_PREFIX_HEADER = MyFirst2chBrowser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = MyFirst2chBrowser;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -289,17 +295,21 @@
 		C05733C908A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/../Thousand/build/Release\"",
+					"\"$(SRCROOT)/../Thousand/build/Debug\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MyFirst2chBrowser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = MyFirst2chBrowser;
 				WRAPPER_EXTENSION = app;
 			};
@@ -308,24 +318,22 @@
 		C05733CC08A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
 		C05733CD08A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
+				SDKROOT = "";
 			};
 			name = Release;
 		};

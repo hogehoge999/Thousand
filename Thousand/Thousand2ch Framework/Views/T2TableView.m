@@ -64,9 +64,10 @@
 	
 	NSEnumerator *columnEnumerator = [[self tableColumns] objectEnumerator];
 	NSTableColumn *tempColumn = nil;
-	while (tempColumn = [columnEnumerator nextObject]) {
-		[self removeTableColumn:tempColumn];
-	}
+    // ここでエクセプションでてるようなので一時的にコメントアウト
+	//while (tempColumn = [columnEnumerator nextObject]) {
+	//	[self removeTableColumn:tempColumn];
+	//}
 	
 	NSEnumerator *dictionaryEnumerator = [columnSettings objectEnumerator];
 	NSDictionary *dictionary = nil;
