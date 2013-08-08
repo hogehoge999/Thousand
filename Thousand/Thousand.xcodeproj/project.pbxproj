@@ -22,6 +22,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		444AA5F217B342D300C568D3 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444AA5F117B342D300C568D3 /* Carbon.framework */; };
+		444AA5F617B34AB900C568D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444AA5F517B34AB900C568D3 /* Security.framework */; };
+		444AA5FE17B34BA900C568D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444AA5F517B34AB900C568D3 /* Security.framework */; };
 		47457A210865B3D700D22BF9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 		47457A680865B72A00D22BF9 /* Thousand2ch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47457A130865B30700D22BF9 /* Thousand2ch.framework */; };
 		47457A710865B9C800D22BF9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47457A700865B9C800D22BF9 /* WebKit.framework */; };
@@ -64,8 +67,6 @@
 		F43EA36A0F0B0B3C00AE5D2E /* TH32_FontAndColor.png in Resources */ = {isa = PBXBuildFile; fileRef = F43EA3690F0B0B3C00AE5D2E /* TH32_FontAndColor.png */; };
 		F43EA36C0F0B0B6F00AE5D2E /* TH32_Appearance.png in Resources */ = {isa = PBXBuildFile; fileRef = F43EA36B0F0B0B6F00AE5D2E /* TH32_Appearance.png */; };
 		F4455E290EE6386F008BB943 /* THCookiesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4455E280EE6386F008BB943 /* THCookiesWindowController.m */; };
-		F44750410E9647670089E88E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F447503B0E9647670089E88E /* Info.plist */; };
-		F44750E70E969A2B0089E88E /* ThousandMDImporter.mdimporter in Resources */ = {isa = PBXBuildFile; fileRef = F44750DA0E969A2B0089E88E /* ThousandMDImporter.mdimporter */; };
 		F44750EC0E969A390089E88E /* ThousandMDImporter.mdimporter in Spotlightプラグインをコピー */ = {isa = PBXBuildFile; fileRef = F44750DA0E969A2B0089E88E /* ThousandMDImporter.mdimporter */; };
 		F44856E80E49F2EE003372F9 /* Thousand2ch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47457A130865B30700D22BF9 /* Thousand2ch.framework */; };
 		F44857260E4A81D0003372F9 /* TH16_Find2ch.png in Resources */ = {isa = PBXBuildFile; fileRef = F44857240E4A81C3003372F9 /* TH16_Find2ch.png */; };
@@ -226,7 +227,6 @@
 		F497178D0EEA6AFE00AE4AB1 /* THCookiesWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = F497178C0EEA6AFE00AE4AB1 /* THCookiesWindow.nib */; };
 		F49718DF0EECDC8100AE4AB1 /* T2KeychainManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F49718DD0EECDC8100AE4AB1 /* T2KeychainManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F49718E00EECDC8100AE4AB1 /* T2KeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F49718DE0EECDC8100AE4AB1 /* T2KeychainManager.m */; };
-		F49718EA0EECF3B900AE4AB1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F49718E90EECF3B900AE4AB1 /* Security.framework */; };
 		F499A03A0E05243200010CC0 /* THCrashLogWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F499A0390E05243200010CC0 /* THCrashLogWindowController.m */; };
 		F49A4B9711ABBA91005F46BB /* TH32_P2_Off.png in Resources */ = {isa = PBXBuildFile; fileRef = F49A4B9511ABBA91005F46BB /* TH32_P2_Off.png */; };
 		F49A4B9811ABBA91005F46BB /* TH32_P2_On.png in Resources */ = {isa = PBXBuildFile; fileRef = F49A4B9611ABBA91005F46BB /* TH32_P2_On.png */; };
@@ -322,7 +322,6 @@
 		F4ABA6020EEFC1F500F09AB9 /* T2AddMissingThreadOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = F4ABA6000EEFC1F500F09AB9 /* T2AddMissingThreadOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4ABA6030EEFC1F500F09AB9 /* T2AddMissingThreadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ABA6010EEFC1F500F09AB9 /* T2AddMissingThreadOperation.m */; };
 		F4ABA68E0EF01CDD00F09AB9 /* TH2chViewerLoginWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = F4ABA68D0EF01CDD00F09AB9 /* TH2chViewerLoginWindow.nib */; };
-		F4B8C37F131F5EE40027EEE4 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B8C37E131F5EE40027EEE4 /* Carbon.framework */; };
 		F4BAE8BD0ED109C5005023EC /* T2RecycleThreadLogFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = F4BAE8BB0ED109C5005023EC /* T2RecycleThreadLogFilesOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4BAE8BE0ED109C5005023EC /* T2RecycleThreadLogFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BAE8BC0ED109C5005023EC /* T2RecycleThreadLogFilesOperation.m */; };
 		F4BAE90A0ED165E1005023EC /* THTestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BAE9090ED165E1005023EC /* THTestOperation.m */; };
@@ -505,6 +504,8 @@
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32DBCF750370BD2300C91783 /* Thousand_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thousand_Prefix.pch; sourceTree = "<group>"; };
+		444AA5F117B342D300C568D3 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		444AA5F517B34AB900C568D3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		47457A130865B30700D22BF9 /* Thousand2ch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Thousand2ch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47457A700865B9C800D22BF9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		47457ABD0865BBAA00D22BF9 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = App.icns; sourceTree = "<group>"; };
@@ -561,7 +562,7 @@
 		F4455E280EE6386F008BB943 /* THCookiesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THCookiesWindowController.m; path = "Thousand App/Window Controllers/THCookiesWindowController.m"; sourceTree = "<group>"; };
 		F4455E310EE63BAD008BB943 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/THCookiesWindow.nib; sourceTree = "<group>"; };
 		F447503B0E9647670089E88E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F44750DA0E969A2B0089E88E /* ThousandMDImporter.mdimporter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ThousandMDImporter.mdimporter; path = ../ThousandMDImporter/build/Release/ThousandMDImporter.mdimporter; sourceTree = SOURCE_ROOT; };
+		F44750DA0E969A2B0089E88E /* ThousandMDImporter.mdimporter */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThousandMDImporter.mdimporter; path = ../../../../../../../../Documents/Project/2ch/Thousand/ThousandMDImporter/build/Release/ThousandMDImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44856B60E49F1AE003372F9 /* THFind2ch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THFind2ch.h; path = "Thousand App/Standard Plugins/THFind2ch.h"; sourceTree = "<group>"; };
 		F44856B70E49F1AE003372F9 /* THFind2ch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THFind2ch.m; path = "Thousand App/Standard Plugins/THFind2ch.m"; sourceTree = "<group>"; };
 		F44856C30E49F22A003372F9 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/THFind2chLocalizable.strings; sourceTree = "<group>"; };
@@ -796,7 +797,6 @@
 		F494AD800DD84AF7003C75FF /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = English.lproj/THVideoThumbnailPreviewerDefaults.plist; sourceTree = "<group>"; };
 		F49718DD0EECDC8100AE4AB1 /* T2KeychainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T2KeychainManager.h; path = "Thousand2ch Framework/Managers/T2KeychainManager.h"; sourceTree = "<group>"; };
 		F49718DE0EECDC8100AE4AB1 /* T2KeychainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T2KeychainManager.m; path = "Thousand2ch Framework/Managers/T2KeychainManager.m"; sourceTree = "<group>"; };
-		F49718E90EECF3B900AE4AB1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /Volumes/MacBook32/System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		F499A0380E05243200010CC0 /* THCrashLogWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THCrashLogWindowController.h; path = "Thousand App/Window Controllers/THCrashLogWindowController.h"; sourceTree = "<group>"; };
 		F499A0390E05243200010CC0 /* THCrashLogWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THCrashLogWindowController.m; path = "Thousand App/Window Controllers/THCrashLogWindowController.m"; sourceTree = "<group>"; };
 		F49A4B9511ABBA91005F46BB /* TH32_P2_Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TH32_P2_Off.png; sourceTree = "<group>"; };
@@ -885,7 +885,6 @@
 		F4ABA55F0EED13A200F09AB9 /* TH2chViewerLoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TH2chViewerLoginWindowController.m; path = "Thousand App/Standard Plugins/TH2chViewerLoginWindowController.m"; sourceTree = "<group>"; };
 		F4ABA6000EEFC1F500F09AB9 /* T2AddMissingThreadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T2AddMissingThreadOperation.h; path = "Thousand2ch Framework/Operations/T2AddMissingThreadOperation.h"; sourceTree = "<group>"; };
 		F4ABA6010EEFC1F500F09AB9 /* T2AddMissingThreadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T2AddMissingThreadOperation.m; path = "Thousand2ch Framework/Operations/T2AddMissingThreadOperation.m"; sourceTree = "<group>"; };
-		F4B8C37E131F5EE40027EEE4 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		F4BAE8BB0ED109C5005023EC /* T2RecycleThreadLogFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T2RecycleThreadLogFilesOperation.h; path = "Thousand2ch Framework/Operations/T2RecycleThreadLogFilesOperation.h"; sourceTree = "<group>"; };
 		F4BAE8BC0ED109C5005023EC /* T2RecycleThreadLogFilesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T2RecycleThreadLogFilesOperation.m; path = "Thousand2ch Framework/Operations/T2RecycleThreadLogFilesOperation.m"; sourceTree = "<group>"; };
 		F4BAE8D50ED119A3005023EC /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Thousand2chLocalizable.strings; sourceTree = "<group>"; };
@@ -914,9 +913,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444AA5FE17B34BA900C568D3 /* Security.framework in Frameworks */,
 				47457A210865B3D700D22BF9 /* Cocoa.framework in Frameworks */,
 				47457A720865B9C800D22BF9 /* WebKit.framework in Frameworks */,
-				F49718EA0EECF3B900AE4AB1 /* Security.framework in Frameworks */,
 				F4ABA5200EED00A500F09AB9 /* AppKit.framework in Frameworks */,
 				F4ABA5210EED00A600F09AB9 /* Foundation.framework in Frameworks */,
 			);
@@ -926,10 +925,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444AA5F617B34AB900C568D3 /* Security.framework in Frameworks */,
+				444AA5F217B342D300C568D3 /* Carbon.framework in Frameworks */,
 				47457A680865B72A00D22BF9 /* Thousand2ch.framework in Frameworks */,
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				47457A710865B9C800D22BF9 /* WebKit.framework in Frameworks */,
-				F4B8C37F131F5EE40027EEE4 /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,7 +1003,6 @@
 		2A37F4AAFDCFA73011CA2CEA /* Thousand */ = {
 			isa = PBXGroup;
 			children = (
-				F4B8C37E131F5EE40027EEE4 /* Carbon.framework */,
 				F44750390E9647670089E88E /* ThousandMDImporter.mdimporter */,
 				F44856BB0E49F1B3003372F9 /* THFind2ch */,
 				F41385780EC5F90800A5C4CE /* THSpotlightSearchList */,
@@ -1099,7 +1098,8 @@
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F49718E90EECF3B900AE4AB1 /* Security.framework */,
+				444AA5F517B34AB900C568D3 /* Security.framework */,
+				444AA5F117B342D300C568D3 /* Carbon.framework */,
 				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
 			);
@@ -1553,7 +1553,7 @@
 			);
 			name = ThousandMDImporter.mdimporter;
 			path = ../ThousandMDImporter/build/Release/ThousandMDImporter.mdimporter;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		F447503A0E9647670089E88E /* Contents */ = {
 			isa = PBXGroup;
@@ -1965,8 +1965,6 @@
 				F490B1C10DDD75EF0048457A /* TH32_WriteThread.png in Resources */,
 				F490B2B10DDF39E50048457A /* ThousandDefaultPref.plist in Resources */,
 				F41D5A8D0E07715F0093AB9F /* THCrashLogWindow.nib in Resources */,
-				F44750410E9647670089E88E /* Info.plist in Resources */,
-				F44750E70E969A2B0089E88E /* ThousandMDImporter.mdimporter in Resources */,
 				F4E72B2A0E99179900489A8C /* TH32_Advanced.png in Resources */,
 				F4E72B300E99AB7600489A8C /* ththread.icns in Resources */,
 				F4CC04EB0EDBE31C00AA86DF /* THOperationWindow.nib in Resources */,
@@ -2490,6 +2488,8 @@
 		4700A6AC0928C1DB00E0B36B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2502,7 +2502,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "Thousand2ch-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -2515,6 +2515,7 @@
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = Thousand2ch;
+				SDKROOT = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -2526,6 +2527,8 @@
 		4700A6AD0928C1DB00E0B36B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2536,7 +2539,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "Thousand2ch-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
 				OTHER_CFLAGS = "";
@@ -2552,6 +2555,7 @@
 				);
 				PREBINDING = YES;
 				PRODUCT_NAME = Thousand2ch;
+				SDKROOT = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -2564,6 +2568,8 @@
 		4700A6B00928C1DB00E0B36B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2579,9 +2585,10 @@
 				GCC_PREFIX_HEADER = Thousand_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Thousand;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2589,6 +2596,8 @@
 		4700A6B10928C1DB00E0B36B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2605,12 +2614,13 @@
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
 				OTHER_LDFLAGS = "-bind_at_load";
 				PREBINDING = YES;
 				PRODUCT_NAME = Thousand;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -2619,28 +2629,29 @@
 		4700A6B40928C1DB00E0B36B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = 4.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				GCC_VERSION = "";
+				LD_GENERATE_MAP_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
 		4700A6B50928C1DB00E0B36B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = 4.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				GCC_VERSION = "";
+				LD_GENERATE_MAP_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				SDKROOT = "";
 			};
 			name = Release;
 		};
@@ -2648,6 +2659,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -2665,6 +2677,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = THSpotlightSearchListImporter;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -2673,6 +2686,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2689,6 +2703,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = THSpotlightSearchListImporter;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -2698,6 +2713,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -2715,6 +2731,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = THFind2ch;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -2723,6 +2740,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2739,6 +2757,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = THFind2ch;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -2747,6 +2766,7 @@
 		F4AB25D60DE0117500C1790D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2765,6 +2785,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = StandardPlugin;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
 			};
@@ -2773,6 +2794,7 @@
 		F4AB25D70DE0117500C1790D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2789,6 +2811,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = StandardPlugin;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -2797,6 +2820,7 @@
 		F4AB26C20DE07B8F00C1790D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -2814,6 +2838,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = AdditionalPlugin;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
 			};
@@ -2822,6 +2847,7 @@
 		F4AB26C30DE07B8F00C1790D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2838,6 +2864,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = AdditionalPlugin;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -2850,6 +2877,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = "Copy to Tiger";
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -2860,6 +2888,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Copy to Tiger";
+				SDKROOT = "";
 				ZERO_LINK = NO;
 			};
 			name = Release;

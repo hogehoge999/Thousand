@@ -256,14 +256,14 @@ static BOOL __Safari2Debug = NO;
 			[self setThreadInternalPath:internalPath];
 		
 		else if ([super respondsToSelector:@selector(setMainFrameURL:)])
-			[(id)super setMainFrameURL:URLString];
+			[super setMainFrameURL:URLString];
 	}
 }
 - (NSString *)mainFrameURL {
 	if (_thread)
 		[_thread webBrowserURLString];
 	else if ([super respondsToSelector:@selector(mainFrameURL)])
-		return [(id)super mainFrameURL];
+		return [super mainFrameURL];
 	return @"";
 }
 - (IBAction)reload:(id)sender {
@@ -287,7 +287,7 @@ static BOOL __Safari2Debug = NO;
 	if (_thread)
 		return [_thread isLoading];
 	else if ([super respondsToSelector:@selector(isLoading)])
-		return [(id)super isLoading];
+		return [super isLoading];
 	return NO;
 }
 
