@@ -40,7 +40,7 @@
 	NSIndexSet	*_loadedResIndexes;
 	NSTimer		*_extendTimer;
 	
-	unsigned	_storedResIndex;
+	int	_storedResIndex;
 	float		_storedScrollOffset;
 }
 #pragma mark -

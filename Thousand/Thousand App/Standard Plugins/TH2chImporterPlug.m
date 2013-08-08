@@ -265,7 +265,7 @@ void stampList(T2List *list) {
 	if (_viewerSID) {
 		[self setStatusString:plugLocalizedString(@"Log-in.")];
 		
-		unsigned location = [_viewerSID rangeOfString:@":" options:NSLiteralSearch].location;
+		int location = [_viewerSID rangeOfString:@":" options:NSLiteralSearch].location;
 		if (location != NSNotFound) {
 			NSString *viewerSUA = [_viewerSID substringToIndex:location];
 			
@@ -880,7 +880,7 @@ void stampList(T2List *list) {
 	}
 	
 	while ([srcScanner scanUpToString:@"\n" intoString:&resString]) {
-		myPool = [[NSAutoreleasePool alloc] init];
+		//myPool = [[NSAutoreleasePool alloc] init];
 		
 		if ([resString length]>1) {
 			NSArray *partStringArray = [resString componentsSeparatedByString:@"<>"];
@@ -901,7 +901,7 @@ void stampList(T2List *list) {
 			}
 		}
 		
-		[myPool release];
+		//[myPool release];
 	}
 	[thread setResArray:resArray];
 	if (threadTitle) [thread setTitle:[threadTitle stringByReplacingCharacterReferences]];
@@ -2349,7 +2349,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 		//NSLog(@"%@", [[[NSString alloc] initWithData:[request HTTPBody] encoding:NSASCIIStringEncoding] autorelease]);
 		
 		[request setValue:_viewerSUA forHTTPHeaderField:@"User-Agent"];
-		[request setValue:[NSString stringWithFormat:@"%d",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+		[request setValue:[NSString stringWithFormat:@"%ld",(unsigned long)[bodyData length]] forHTTPHeaderField:@"Content-length"];
 		return request;
 	}
 	return urlRequest;

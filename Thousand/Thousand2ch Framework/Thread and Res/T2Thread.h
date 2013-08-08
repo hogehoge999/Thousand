@@ -183,8 +183,8 @@ extern NSString *T2ThreadResIndexes;
 -(NSString *)HTMLForResIndexes:(NSIndexSet *)resIndexes baseURL:(NSURL **)baseURL
 					  forPopUp:(BOOL)forPopUp ;
 
--(NSString *)extensibleHTMLFromResIndex:(unsigned)resIndex toResIndex:(unsigned)toResIndex baseURL:(NSURL **)baseURL ;
--(NSString *)extensionHTMLFromResIndex:(unsigned)fromResIndex toResIndex:(unsigned)toResIndex
+-(NSString *)extensibleHTMLFromResIndex:(int)resIndex toResIndex:(int)toResIndex baseURL:(NSURL **)baseURL ;
+-(NSString *)extensionHTMLFromResIndex:(int)fromResIndex toResIndex:(int)toResIndex
 						  onDownstream:(BOOL)onDownstream ;
 
 -(NSString *)excerptHTMLForResIndexes:(NSIndexSet *)resIndexes ;

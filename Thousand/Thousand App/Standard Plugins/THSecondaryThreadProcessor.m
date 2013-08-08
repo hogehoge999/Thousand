@@ -131,8 +131,9 @@ static NSString *__uniqueName = @"jp_natori_Thousand_SecondaryThreadProcessor";
 			NSIndexSet *forwardResIndexes = [res forwardResIndexes];
 			if (forwardResIndexes && [forwardResIndexes count]>0) {
 				if ([[res content] rangeOfString:@"ttp://" options:NSLiteralSearch].location != NSNotFound) {
-					unsigned forwardResIndex = [forwardResIndexes firstIndex];
-					while (forwardResIndex != NSNotFound) {
+					int forwardResIndex = [forwardResIndexes firstIndex];
+                    NSLog(@"index6 = %d", forwardResIndex);
+					while (forwardResIndex != -1/*NSNotFound*/) {
 						T2Res *forwardRes = [resArray objectAtIndex:forwardResIndex];
 						NSString *forwardResContent = [forwardRes content];
 						
@@ -154,6 +155,7 @@ static NSString *__uniqueName = @"jp_natori_Thousand_SecondaryThreadProcessor";
 						}
 						
 						forwardResIndex = [forwardResIndexes indexGreaterThanIndex:forwardResIndex];
+                        NSLog(@"index7 = %d", forwardResIndex);
 					}
 				}
 			}

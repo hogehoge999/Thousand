@@ -148,7 +148,8 @@ NSString *THStringWithBytes(long long bytes) {
 	_expectedContentLength = [response expectedContentLength];
 	if (_expectedContentLength == NSURLResponseUnknownLength) _expectedContentLength = 0;
 }
-- (void)download:(NSURLDownload *)download didReceiveDataOfLength:(unsigned)length {
+
+- (void)download:(NSURLDownload *)download didReceiveDataOfLength:(NSUInteger)length {
 	_receivedContentLength += length;
 	if (_expectedContentLength > 0) {
 		[self setProgress:(_receivedContentLength/_expectedContentLength)];

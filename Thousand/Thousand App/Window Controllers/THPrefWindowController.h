@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Thousand2ch/Thousand2ch.h>
-
+#import <AppKit/NSToolbar.h>
 
 //Pref ToolBar
 static NSString *THPrefToolBarIdentifier 			= @"THPrefToolBar";
@@ -26,7 +26,7 @@ static NSString *THPrefDebugItemIdentifier 			= @"THPrefDebugItem";
 
 @class THFontWell;
 
-@interface THPrefWindowController : NSWindowController <T2DictionaryConverting> {
+@interface THPrefWindowController : NSWindowController <T2DictionaryConverting,NSToolbarDelegate> {
 	NSArray			*_plugins;
 	//int				_pluginSelectedIndex;
 	//NSArray			*_pluginViews;

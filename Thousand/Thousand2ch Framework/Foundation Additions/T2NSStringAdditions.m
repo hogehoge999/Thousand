@@ -151,7 +151,7 @@ static NSCharacterSet *__whitespaceAndNewlineCharacterSet = nil;
 
 -(NSString *)stringFromHTML {
 	NSString* src = self;
-	unsigned tempLoc, tempLoc2;
+	int tempLoc, tempLoc2;
 	if (!src) return nil;
 	NSMutableString *tempString = [[[NSMutableString alloc] initWithString:src] autorelease];
 	//<br> to return
@@ -159,9 +159,9 @@ static NSCharacterSet *__whitespaceAndNewlineCharacterSet = nil;
 	
 	//cut other tags
 	tempLoc = [tempString rangeOfString:@"<" options:NSLiteralSearch].location;
-	while (tempLoc != NSNotFound) {
+	while (tempLoc != -1/*NSNotFound*/) {
 		tempLoc2 = [tempString rangeOfString:@">" options:NSLiteralSearch range:NSMakeRange(tempLoc, [tempString length]-tempLoc)].location;
-		if ((tempLoc2 == NSNotFound) || (tempLoc > tempLoc2)) break;
+		if ((tempLoc2 == -1/*NSNotFound*/) || (tempLoc > tempLoc2)) break;
 		[tempString deleteCharactersInRange:NSMakeRange(tempLoc, (tempLoc2-tempLoc+1))];
 		tempLoc = [tempString rangeOfString:@"<" options:NSLiteralSearch].location;
 	}

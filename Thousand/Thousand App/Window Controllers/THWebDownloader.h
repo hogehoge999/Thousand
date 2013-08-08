@@ -10,7 +10,7 @@
 #import <Thousand2ch/Thousand2ch.h>
 
 
-@interface THWebDownloader : NSObject {
+@interface THWebDownloader : NSObject<NSURLDownloadDelegate> {
 	NSString	*_urlString;
 	NSString	*_destinationFolderPath;
 	NSString	*_destinationPath;

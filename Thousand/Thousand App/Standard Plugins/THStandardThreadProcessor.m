@@ -111,7 +111,9 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 -(void)processThread:(T2Thread *)thread appendingIndex:(unsigned)index {
 	NSArray *resArray = [thread resArray];
 	//NSEnumerator *resEnumerator = [resArray objectEnumerator];
-	T2Res *res;
+    NSLog(@"processThread start");
+	
+    T2Res *res;
 	
 	NSMutableDictionary *idDictionary = [[[thread idDictionary] mutableCopy] autorelease];
 	if (!idDictionary) idDictionary = [NSMutableDictionary dictionary];
@@ -121,7 +123,9 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 	NSAutoreleasePool *pool;
 	
 	unsigned resNumber, resCount = [resArray count];
-	
+
+    NSLog(@"3 index = %d", index);
+
 	for (resNumber = index; resNumber<resCount; resNumber++) {
 		res = [resArray objectAtIndex:resNumber];
 		pool = [[NSAutoreleasePool alloc] init];
@@ -146,9 +150,10 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 					scanedString = [scanedString halfWidthString];
 					NSIndexSet *indexSet = [NSIndexSet shiftedIndexSetWithString:scanedString];
 					if (indexSet && [indexSet count] < 100) {
-						unsigned index = [indexSet firstIndex];
+						int index = [indexSet firstIndex];
+                        NSLog(@"index = %d", index);
 						unsigned j=0;
-						while (index != NSNotFound && index < resCount) {
+						while (index != -1/*NSNotFound*/ && index < resCount) {
 							[res addBackwardResIndex:index];
 							[(T2Res *)[resArray objectAtIndex:index] addForwardResIndex:resNumber];
 							index = [indexSet indexGreaterThanIndex:index];
@@ -170,8 +175,9 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 					scanedString = [scanedString halfWidthString];
 					NSIndexSet *indexSet = [NSIndexSet shiftedIndexSetWithString:scanedString];
 					if (indexSet && [indexSet count] < 100) {
-						unsigned index = [indexSet firstIndex];
-						while (index != NSNotFound && index < resCount) {
+						int index = [indexSet firstIndex];
+                        NSLog(@"index = %d", index);
+						while (index != -1/*NSNotFound*/ && index < resCount) {
 							[res addBackwardResIndex:index];
 							[(T2Res *)[resArray objectAtIndex:index] addForwardResIndex:resNumber];
 							index = [indexSet indexGreaterThanIndex:index];
@@ -208,6 +214,7 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 	}
 	[thread setIdDictionary:idDictionary];
 	[thread setTripDictionary:tripDictionary];
+    NSLog(@"processThread end");
 }
 
 -(NSString *)processedHTML:(NSString *)htmlString ofRes:(T2Res *)res inThread:(T2Thread *)thread {
@@ -290,8 +297,10 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 	NSString *contentPart;
 	
 	while (contentPart = [contentPartEnumerator nextObject]) {
-		unsigned tagIndex = [contentPart rangeOfString:@"<" options:NSLiteralSearch].location;
-		if (tagIndex == NSNotFound || tagIndex <= 3) {
+		int tagIndex = [contentPart rangeOfString:@"<" options:NSLiteralSearch].location;
+        // NSNotFound が64bitの-1になったのでうまくいかない
+        NSLog(@"tagIndex = %d", tagIndex);
+		if (tagIndex == -1/*NSNotFound*/ || tagIndex <= 3) {
 			[contentResult appendString:contentPart];
 			[contentResult appendString:@">"];
 		} else {

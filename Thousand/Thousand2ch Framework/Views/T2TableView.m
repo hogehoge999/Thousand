@@ -62,10 +62,15 @@
 		}
 	}
 	
-	NSEnumerator *columnEnumerator = [[self tableColumns] objectEnumerator];
-	NSTableColumn *tempColumn = nil;
+	//NSEnumerator *columnEnumerator = [[self tableColumns] objectEnumerator];
+	//NSTableColumn *tempColumn = nil;
     // ここでエクセプションでてるようなので一時的にコメントアウト
 	//while (tempColumn = [columnEnumerator nextObject]) {
+	//	[self removeTableColumn:tempColumn];
+	//}
+	//for (NSTableColumn *tempColumn in columnEnumerator)
+    //{
+    //    int x = 0;
 	//	[self removeTableColumn:tempColumn];
 	//}
 	
@@ -125,7 +130,7 @@
 	}
 }
 -(BOOL)visibleOfTableColumnWithIdentifier:(NSString *)tableColumnIdentifier {
-	return ([self columnWithIdentifier:tableColumnIdentifier] != nil);
+	return ([self columnWithIdentifier:tableColumnIdentifier] != -1);
 }
 
 - (unsigned int)draggingSourceOperationMaskForLocal:(BOOL)isLocal {

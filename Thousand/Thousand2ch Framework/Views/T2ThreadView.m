@@ -452,7 +452,7 @@ static BOOL __Safari2Debug = NO;
 			[resultIndexSet addIndexes:selectedResIndexes];
 			
 			[self registerDisplayResForNumber:[selectedResIndexes firstIndex]+1];
-			[self setResExtractPath:[NSString stringWithFormat:@"resNumber/%d-%d",
+			[self setResExtractPath:[NSString stringWithFormat:@"resNumber/%ld-%ld",
 											[resultIndexSet firstIndex]+1, [resultIndexSet lastIndex]+1]];
 		} else {
 			[self displayResForNumber:[selectedResIndexes firstIndex]+1];
@@ -465,7 +465,7 @@ static BOOL __Safari2Debug = NO;
 
 -(unsigned)resIndexDisplayedOnTop {
 	NSIndexSet *resIndexes = _resIndexes;
-	unsigned resIndex = 0;
+	int resIndex = 0;
 	resIndex = [resIndexes indexGreaterThanOrEqualToIndex:resIndex];
 	
 	//float docHeight = [(NSNumber *)[domDocument valueForKey:@"height"] floatValue];
@@ -474,7 +474,7 @@ static BOOL __Safari2Debug = NO;
 	float deltaY = 1;
 	//NSLog(@"docTop=%d", (int)docTop);
 	
-	unsigned overshoot = NSNotFound;
+	int overshoot = NSNotFound;
 	
 	while (deltaY >= 0) {
 		deltaY = [[self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById(\"res%d\").offsetTop;",resIndex+1]] floatValue];
@@ -482,20 +482,20 @@ static BOOL __Safari2Debug = NO;
 		//NSLog(@"resIndex=%d, deltaY=%d", resIndex, (int)deltaY);
 		
 		if (deltaY > 0 && deltaY < docTop) {
-			if (overshoot != NSNotFound) {
+			if (overshoot != -1/*NSNotFound*/) {
 				resIndex = overshoot;
 				break;
 			}
-			unsigned newResIndex = [resIndexes indexGreaterThanOrEqualToIndex:resIndex + 15];
-			if (newResIndex == NSNotFound) {
+			int newResIndex = [resIndexes indexGreaterThanOrEqualToIndex:resIndex + 15];
+			if (newResIndex == -1/*NSNotFound*/) {
 				newResIndex = [resIndexes indexGreaterThanIndex:resIndex];
-				if (newResIndex == NSNotFound) break;
+				if (newResIndex == -1/*NSNotFound*/) break;
 			}
 			resIndex = newResIndex;
 		} else {
 			overshoot = resIndex;
-			unsigned newResIndex = [resIndexes indexLessThanIndex:resIndex];
-			if (newResIndex == NSNotFound) break;
+			int newResIndex = [resIndexes indexLessThanIndex:resIndex];
+			if (newResIndex == -1/*NSNotFound*/) break;
 			resIndex = newResIndex;
 		}
 	}
@@ -600,7 +600,7 @@ static BOOL __Safari2Debug = NO;
 		NSString *extensibleFooterResIndexesString = [(DOMHTMLElement *)chileNode innerText];
 		
 		if (extensibleFooterResIndexesString) {
-			unsigned resCount = [_thread resCount];
+			int resCount = [_thread resCount];
 			int resIndex = [extensibleFooterResIndexesString intValue]-1;
 			footerExtensionHTML = [_thread extensionHTMLFromResIndex:resIndex toResIndex:resCount-1 onDownstream:YES];
 		}
@@ -645,10 +645,10 @@ static BOOL __Safari2Debug = NO;
 	if (!lastMarkerElement) return;
 	
 	[self storeTempScroll];
-	unsigned i;
+	int i;
 	
-	unsigned resIndex = [resIndexes firstIndex];
-	unsigned toResIndex = [resIndexes lastIndex];
+	int resIndex = [resIndexes firstIndex];
+	int toResIndex = [resIndexes lastIndex];
 	
 	NSIndexSet *dirtyResIndexes = nil;
 	if (resIndexes) {
@@ -665,35 +665,38 @@ static BOOL __Safari2Debug = NO;
 		NSIndexSet *oldResIndexes = [[mutableOldResIndexes copy] autorelease];
 		
 		i = [oldResIndexes firstIndex];
-		while (i < resIndex) {
-			
-			DOMHTMLElement *resElement = (DOMHTMLElement *)[(DOMHTMLDocument *)domDocument
-															getElementById:[NSString stringWithFormat:@"res%d", i+1]];
-			//[resElement removeClassName:@"new"];
-			
-			NSMutableString *className = [[resElement className] mutableCopy];
-			[className replaceOccurrencesOfString:@"new" withString:@"old"
-										  options:NSCaseInsensitiveSearch
-											range:NSMakeRange(0, [className length])];
-			
-			/*
-			NSString *tempScript = [NSString stringWithFormat:@"var tempElement = document.getElementById(\"%@\"); tempElement.setClassName(%@);",
-									[NSString stringWithFormat:@"res%d", i+1],
-									[[className copy] autorelease]];
-			[[self windowScriptObject] evaluateWebScript:tempScript];
-			*/
-			
-			//[resElement setAttribute:@"class" :[[className copy] autorelease]];
-			
-			[resElement setClassName:[[className copy] autorelease]];
-			[className release];
-			
-			i = [oldResIndexes indexGreaterThanIndex:i];
-		}
+        if (i != -1)
+        {
+            while (i < resIndex) {
+                
+                DOMHTMLElement *resElement = (DOMHTMLElement *)[(DOMHTMLDocument *)domDocument
+                                                                getElementById:[NSString stringWithFormat:@"res%d", i+1]];
+                //[resElement removeClassName:@"new"];
+                
+                NSMutableString *className = [[resElement className] mutableCopy];
+                [className replaceOccurrencesOfString:@"new" withString:@"old"
+                                              options:NSCaseInsensitiveSearch
+                                                range:NSMakeRange(0, [className length])];
+                
+                /*
+                NSString *tempScript = [NSString stringWithFormat:@"var tempElement = document.getElementById(\"%@\"); tempElement.setClassName(%@);",
+                                        [NSString stringWithFormat:@"res%d", i+1],
+                                        [[className copy] autorelease]];
+                [[self windowScriptObject] evaluateWebScript:tempScript];
+                */
+                
+                //[resElement setAttribute:@"class" :[[className copy] autorelease]];
+                
+                [resElement setClassName:[[className copy] autorelease]];
+                [className release];
+                
+                i = [oldResIndexes indexGreaterThanIndex:i];
+            }
+        }
 	}
 	
 	
-	if (resIndex != NSNotFound && toResIndex != NSNotFound) {
+	if (resIndex != -1/*NSNotFound*/ && toResIndex != -1/*NSNotFound*/) {
 		T2PluginManager *sharedManager = [T2PluginManager sharedManager];
 		id <T2ThreadPartialHTMLExporting_v100> partialViewPlug = [sharedManager partialHTMLExporterPlugin];
 	
@@ -741,7 +744,7 @@ static BOOL __Safari2Debug = NO;
 	DOMDocument *domDocument = [mainFrame DOMDocument];
 	if (![domDocument isKindOfClass:[DOMHTMLDocument class]]) return;
 	
-	unsigned resIndex = [self resIndexDisplayedOnTop];
+	int resIndex = [self resIndexDisplayedOnTop];
 	float docTop = [[self stringByEvaluatingJavaScriptFromString:@"window.scrollY;"] floatValue];
 	float resTop = [[self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById(\"res%d\").offsetTop;",resIndex+1]] floatValue];
 	float offset = docTop - resTop;
@@ -751,7 +754,7 @@ static BOOL __Safari2Debug = NO;
 	//NSLog(@"scroll stored: Res:%d delta:%d", resIndex, (int)offset);
 }
 -(void)loadTempScroll {
-	unsigned resIndex = _storedResIndex;
+	int resIndex = _storedResIndex;
 	if (resIndex < 0) return;
 	float offset = _storedScrollOffset;
 	float resTop = [[self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById(\"res%d\").offsetTop;",resIndex+1]] floatValue];
