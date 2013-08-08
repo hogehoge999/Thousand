@@ -1,0 +1,5 @@
+"jp_natori_Thousand_THFind2ch" = "２ちゃんねる検索プラグイン";
+"jp_natori_Thousand_THFind2ch_info" = "２ちゃんねるスレタイ検索を無理矢理使用可能にするプラグイン";
+"Find2ch" = "２ちゃんねる検索";
+"searchMax" = "最大件数";
+"requestURLFormat" = "http://find.2ch.net/?BBS=ALL&TYPE=TITLE&STR=%@&COUNT=%d";

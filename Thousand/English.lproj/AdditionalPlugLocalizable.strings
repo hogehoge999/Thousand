@@ -1,0 +1,48 @@
+
+/*THSecondaryThreadProcessor*/
+"jp_natori_Thousand_SecondaryThreadProcessor" = "Secondary Thread Processor";
+"jp_natori_Thousand_SecondaryThreadProcessor_info" = "Secondary Thread Processor";
+"Enable AA Detector" = "Enable AA Detector";
+"Characters in AA" = "Characters in AA";
+"Enable Guro Detector" = "Enable Guro Detector";
+"Words in Response for Guro" = "Words in Response for Guro";
+"AACharSetString" = " 　";
+"minesString" = "guro";
+"Style:" = "Style:";
+"My Postings" = "My Postings";
+"Replies To Me" = "Replies To Me";
+
+/*VideoThumbnailPreviewer*/
+"jp_natori_Thousand_VideoThumbnailPreviewer" = "Video Thumbnail Previewer";
+"jp_natori_Thousand_VideoThumbnailPreviewer_info_format" = "Preview Thumbnail for YouTube(R), niconico douga(R), Audio Files in Format: %@";
+"Nothing" = "Nothing";
+
+/*WebServicePreviewer*/
+"jp_natori_Thousand_WebServicePreviewer" = "Other Web Service Previewer";
+"jp_natori_Thousand_WebServicePreviewer_info" = "Preview \"Yahoo!(R) Finance\".";
+
+/*THRankingExporter*/
+"jp_natori_Thousand_RankingExporter" = "Ranking Viewer";
+"jp_natori_Thousand_RankingExporter_info" = "Display Ranking Chart in Threads";
+
+"<caption>Number of Messages (ID)</caption>\n" = "<caption>Number of Messages (ID)</caption>\n";
+"<td><a href=\"internal://identifier/%@\">ID: %@</a></td>\n" = "<td><a href=\"internal://identifier/%@\">ID: %@</a></td>\n";
+"<td align=right>%@ Messages</td>\n" = "<td align=right>%@ Messages</td>\n";
+
+"<caption>Number of Responses (To Message)</caption>\n" = "<caption>Number of Responses (To Message)</caption>\n";
+"<td><a href=\"internal://traceOnce/%d\">%d</a> </td> <td> <a href=\"internal://identifier/%@\">ID: %@</a></td>\n" = "<td><a href=\"internal://traceOnce/%d\">%d</a> </td> <td> <a href=\"internal://identifier/%@\">ID: %@</a></td>\n";
+"<td align=right>%d Responses</td>\n" = "<td align=right>%d Responses</td>\n";
+
+"<caption>Number of Responses (To ID)</caption>\n" = "<caption>Number of Responses (To ID)</caption>\n";
+"<td><a href=\"internal://identifier/%@\">ID: %@</a></td>\n" = "<td><a href=\"internal://identifier/%@\">ID: %@</a></td>\n";
+"<td align=right>%d Responses</td>\n" = "<td align=right>%d Responses</td>\n";
+
+/*SearchListProxyImporter*/
+"jp_natori_Thousand_SearchListProxyImporter" = "Search";
+"jp_natori_Thousand_SearchListProxyImporter_info" = "Search Threads or Lists.";
+"SearchListProxy" = "Search";
+
+/*THSearchBoardByName*/
+"jp_natori_Thousand_THSearchBoardByName" = "Search Boards";
+"jp_natori_Thousand_THSearchBoardByName_info" = "Search Boards By Name.";
+"THSearchBoardByName" = "Search Boards";

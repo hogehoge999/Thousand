@@ -1,0 +1,10 @@
+﻿/* 
+   Thousand2chLocalizable.strings
+   Thousand
+
+   Created by R. Natori on 08/11/17.
+   Copyright 2008 R. Natori. All rights reserved.
+ */
+
+"Moving Files to Trash" = "ファイルをゴミ箱に移動";
+"Moving %d Files to Trash" = "%d 個のファイルをゴミ箱に移動";

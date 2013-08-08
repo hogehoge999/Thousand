@@ -1,0 +1,5 @@
+"jp_natori_Thousand_THFind2ch" = "Find 2ch";
+"jp_natori_Thousand_THFind2ch_info" = "Find 2ch thread for title";
+"Find2ch" = "Find 2ch";
+"searchMax" = "Result Max";
+"requestURLFormat" = "http://find.2ch.net/?BBS=ALL&TYPE=TITLE&STR=%@&COUNT=%d";

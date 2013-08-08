@@ -1,0 +1,47 @@
+
+/*THSecondaryThreadProcessor*/
+"jp_natori_Thousand_SecondaryThreadProcessor" = "追加スレッドプロセッサ";
+"jp_natori_Thousand_SecondaryThreadProcessor_info" = "AA検知、グロ検知、その他のレス抽出を追加します。";
+"Enable AA Detector" = "AAレスを検知する";
+"Characters in AA" = "AA判定用文字：";
+"Enable Guro Detector" = "危険なレスを検知する";
+"Words in Response for Guro" = "危険レス判定用文字列：";
+"AACharSetString" = " 　,.:;*+<>|_'()";
+"minesString" = "グロ,ブラクラ";
+"Style:" = "スタイル：";
+"My Postings" = "自分のレス";
+"Replies To Me" = "自分への返信";
+
+/*VideoThumbnailPreviewer*/
+"jp_natori_Thousand_VideoThumbnailPreviewer" = "動画プレビュー（仮）";
+"jp_natori_Thousand_VideoThumbnailPreviewer_info_format" = "YouTube®、ニコニコ動画®へのリンクをプレビューします。また、以下の拡張子のオーディオファイルをインラインで再生できます：%@";
+"Nothing" = "無し";
+
+/*WebServicePreviewer*/
+"jp_natori_Thousand_WebServicePreviewer" = "Webサービスプレビュー（仮）";
+"jp_natori_Thousand_WebServicePreviewer_info" = "\"Yahoo!(R) Finance\"へのリンクをプレビューします。";
+
+/*THRankingExporter*/
+"jp_natori_Thousand_RankingExporter" = "ランキング表示";
+"jp_natori_Thousand_RankingExporter_info" = "ID別レス数などのランキングを表示します。";
+
+"<caption>Number of Messages (ID)</caption>\n" = "<caption>書き込みが多いID</caption>\n";
+"<td><a href=\"internal://identifier/%@\">ID: %@</a></td>\n" = "<td><a href=\"internal://identifier/%@\">ID: %@</a></td>\n";
+"<td align=right>%@ Messages</td>\n" = "<td align=right>%@ 回</td>\n";
+
+"<caption>Number of Responses (To Message)</caption>\n" = "<caption>返信が多い書き込み</caption>\n";
+"<td><a href=\"internal://traceOnce/%d\">%d</a> </td> <td> <a href=\"internal://identifier/%@\">ID: %@</a></td>\n" = "<td><a href=\"internal://traceOnce/%d\">%d</a> </td> <td> <a href=\"internal://identifier/%@\">ID: %@</a></td>\n";
+"<td align=right>%d Responses</td>\n" = "<td align=right>%d 返信</td>\n";
+
+"<caption>Number of Responses (To ID)</caption>\n" = "<caption>合計の返信が多いID</caption>\n";
+"<td><a href=\"internal://identifier/%@\">ID: %@</a></td>\n" = "<td><a href=\"internal://identifier/%@\">ID: %@</a></td>\n";
+
+/*SearchListProxyImporter*/
+"jp_natori_Thousand_SearchListProxyImporter" = "検索";
+"jp_natori_Thousand_SearchListProxyImporter_info" = "スレッドや板を検索します。";
+"SearchListProxy" = "検索";
+
+/*THSearchBoardByName*/
+"jp_natori_Thousand_THSearchBoardByName" = "板名検索";
+"jp_natori_Thousand_THSearchBoardByName_info" = "板を名前で検索します。";
+"THSearchBoardByName" = "板名検索";

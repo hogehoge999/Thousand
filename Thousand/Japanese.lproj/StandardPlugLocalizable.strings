@@ -1,0 +1,150 @@
+/*Embeded Plugin Localizations*/
+
+/*TH2chImporterPlug*/
+"jp_natori_Thousand_2chImporter" = "２ちゃんねる";
+"jp_natori_Thousand_2chImporter_info" = "２ちゃんねる掲示板、datファイルを読み込みます。";
+"2ch BBS" = "２ちゃんねる";
+"All_Boards" = "全ての板";
+"RES_POSTING_SUBMIT" = "書き込む";
+"THREAD_POSTING_SUBMIT" = "新規スレッド作成";
+"LIVE_CATEGORY_STRING" = "実況";
+"FALLEN_DAT_MARKER" = "<center><font color=red>■ このスレッドは過去ログ倉庫に格納されています</font></center>";
+
+"BBS Menu Settings" = "掲示板設定";
+"BBS Menu URL" = "掲示板リストURL";
+"location of 2ch-BBS list" = "bbsmenu.htmlのURLを入力します。";
+"Reload Master List" = "リストを更新";
+
+"Be@2ch Settings" = "Be@2ch 設定";
+"be mail" = "Be@2ch用メールアドレス";
+"be code" = "Be@2ch用認証コード";
+"Login Be" = "Be@2chにログイン";
+"Display Be Icon" = "Beアイコンを表示";
+"Replace sssp:// link with icon." = "sssp://で始まるBeアイコンを表示します。";
+"BE_SUBMIT" = "登録";
+"BE_LOGIN_SUCCEED" = "ログイン完了";
+"BE_LOGOUT_MARKER" = "ログインエラー";
+
+"2ch Viewer Settings" = "２ちゃんねるビューア（●）設定";
+"Log-in Viewer" = "●にログイン";
+"Log-Out Viewer" = "●からログアウト";
+"Activate 2ch Viewer" = "２ちゃんねるビューア（●）を有効にする";
+
+"Buy 2ch Viewer" = "２ちゃんねるビューア（●）の購入";
+
+"p2.2ch.net" = "p2.2ch.net";
+"p2.2ch.net Settings" = "p2.2ch.net 設定";
+"Log-in P2" = "P2にログイン";
+"Log-Out P2" = "P2からログアウト";
+"Activate P2" = "P2を有効にする";
+
+"About p2.2ch.net" = "p2.2ch.netについて";
+
+"Auto Log-in" = "自動ログイン（キーチェーンに保存した場合有効）";
+
+"Log-in." = "ログインしました。";
+"Log-out." = "ログアウトしました。";
+"Login Failed." = "ログインに失敗しました。";
+"Authentication..." = "認証中...";
+
+"Thread Loading Failed" = "スレッドの読み込みに失敗しました";
+
+"useOldDate" = "過去の日付を送信";
+"useOldDate_info" = "書き込み時のエラーを回避できるかもしれません。";
+"DAT modified." = "あぼーんが発生したようです。ログファイルを削除してから更新してください。";
+"DAT removed." = "dat落ちしたようです";
+"Not modified" = "変更されていません";
+"DAT fallen." = "dat落ちしたようです";
+
+"%Y/%m/%d %H:%M-" = "%Y/%m/%d %H:%M〜";
+" (%d Threads)" = "（%d スレッド）";
+"Old Logs" = "過去ログ倉庫";
+" (Old)" = "（過去ログ倉庫）";
+
+/*THLocalFileImporter*/
+"jp_natori_THLocalFileImporter" = "他のログフォルダ";
+"jp_natori_THLocalFileImporter_info" = "datファイルを含むフォルダを板として読み込みます。";
+
+/*THHistoryImporter*/
+"jp_natori_Thousand_HistoryImporter" = "履歴";
+"jp_natori_Thousand_HistoryImporter_info" = "履歴を表示します。";
+"History" = "履歴";
+"threadHistory" = "スレッド履歴";
+"resPostedThreadHistory" = "書き込みスレッド履歴";
+"threadListHistory" = "板履歴";
+"threadHistoryMax" = "スレッド履歴件数";
+"resPostedThreadHistoryMax" = "書き込みスレッド履歴件数";
+"threadListHistoryMax" = "板履歴件数";
+"Erase Thread History" = "スレッド履歴を消去";
+"Erase Posting History" = "書き込みスレッド履歴を消去";
+"Erase Board History" = "板履歴を消去";
+
+/*THStandardThreadScorer*/
+"jp_natori_Thousand_2chScorer" = "標準ソート項目";
+"jp_natori_Thousand_2chScorer_info" = "標準のソート項目を追加します。";
+"voidProperty" = "無し";
+"state" = "状態";
+"resCount" = "既読レス数";
+"resCountNew" = "レス数";
+"resCountGap" = "未読レス数";
+"order" = "順位";
+"createdDate" = "作成日";
+"modifiedDate" = "更新日";
+"lastLoadingDate" = "最終読込日";
+"lastPostingDate" = "最終書込日";
+"velocity" = "速度";
+"labelScore" = "ラベル";
+"threadListTitle" = "板";
+"combinedScore" = "複合ソート";
+
+"resCountFilter" = "既読レス数が";
+"resCountNewFilter" = "レス数が";
+"resCountGapFilter" = "未読レス数が";
+"createdDateFilter" = "作成日が";
+"labelFilter" = "ラベルが";
+"stateFilter" = "状態が";
+"is" = "-である";
+"isNot" = "-でない";
+"greaterThan" = "-以上である";
+"lessThan" = "-以下である";
+"withinDays" = "-日以内である";
+"beforeDays" = "-日以上前である";
+
+"%#.2f /d" = "%#.2f/日";
+"%#.2f /h" = "%#.2f/時";
+"%#.2f /m" = "%#.2f/分";
+"%#.2f /s" = "%#.2f/秒";
+
+/*THStandardThreadProcessor*/
+"jp_natori_Thousand_StandardThreadProcessor" = "標準スレッドプロセッサ";
+"jp_natori_Thousand_StandardThreadProcessor_info" = "レスアンカー、ID、トリップのリンクを追加します。";
+"Automatic" = "全てのレス (スクロール位置を保存)";
+"All Res" = "全てのレス";
+"Last %@ Res" = "最終 %@レス";
+"Last %@ Res and New Res" = "最終 %@レスと新着レス";
+">>%@" = ">>%@";
+"ID:%@" = "ID:%@";
+"Trip:%@" = "◆%@";
+"Responses to %@" = "%@ への返信";
+"Backtrace from %@" = "%@ から参照されたレス";
+"Word:%@" = "「%@」を含むレス";
+"Style:%@" = "スタイルが「%@」のレス";
+"Previewable Res" = "プレビュー可能なレス";
+
+"resAnchorCharactersString" = "＞";
+"tripDelimiterString" = "◆";
+"urlBreaking" = " 　<";
+"digitAndSeparatorString" = "0123456789,-０１２３４５６７８９，−";
+
+"Other Res Anchor" = "標準以外のレスアンカー文字";
+"Res Anchor Except \">, >>\"" = "「>」以外のレスアンカー文字を指定します。";
+
+/*THStandardViewPlug*/
+"jp_natori_Thousand_standardHTMLView" = "標準HTMLビューワ";
+"jp_natori_Thousand_standardHTMLView_info" = "スレッドデータをHTMLに変換し表示します。";
+
+/*ImagePreviewer*/
+"jp_natori_Thousand_ImagePreviewer" = "画像プレビュー";
+"jp_natori_Thousand_ImagePreviewer_info" = "リンクされた画像をプレビューします。";
+"Pop-Up Preview Width" = "ポップアップ画像の幅：";
+"Inline Preview Width" = "インライン画像の幅：";

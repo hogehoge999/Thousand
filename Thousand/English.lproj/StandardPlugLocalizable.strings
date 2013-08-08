@@ -1,0 +1,148 @@
+/*Embeded Plugin Localizations*/
+
+/*TH2chImporterPlug*/
+"jp_natori_Thousand_2chImporter" = "2ch BBS Importer";
+"jp_natori_Thousand_2chImporter_info" = "Standard 2ch BBS Importer";
+"2ch BBS" = "2ch BBS";
+"All_Boards" = "All Boards";
+"RES_POSTING_SUBMIT" = "書き込む" ;
+"THREAD_POSTING_SUBMIT" = "新規スレッド作成";
+"LIVE_CATEGORY_STRING" = "実況";
+"FALLEN_DAT_MARKER" = "<center><font color=red>■ このスレッドは過去ログ倉庫に格納されています</font></center>";
+
+"BBS Menu Settings" = "BBS Menu Settings";
+"BBS Menu URL" = "BBS Menu URL";
+"location of 2ch-BBS list" = "location of 2ch-BBS list";
+"Reload Master List" = "Reload Master List";
+
+"Be@2ch Settings" = "Be@2ch Settings";
+"be mail" = "be mail";
+"be code" = "be code";
+"Login Be" = "Login Be";
+"Display Be Icon" = "Display Be Icon";
+"Replace sssp:// link with icon." = "Replace sssp:// link with icon.";
+"BE_SUBMIT" = "登録";
+"BE_LOGIN_SUCCEED" = "ログイン完了";
+"BE_LOGOUT_MARKER" = "ログインエラー";
+
+"2ch Viewer Settings" = "2ch Viewer Settings";
+"Log-in Viewer" = "Log-in Viewer";
+"Log-Out Viewer" = "Log-Out Viewer";
+"Activate 2ch Viewer" = "Activate 2ch Viewer";
+
+"Buy 2ch Viewer" = "Buy 2ch Viewer";
+
+"p2.2ch.net" = "p2.2ch.net";
+"p2.2ch.net Settings" = "p2.2ch.net Settings";
+"Log-in P2" = "Log-in P2";
+"Log-Out P2" = "Log-Out P2";
+"Activate P2" = "Activate P2";
+
+"About p2.2ch.net" = "About p2.2ch.net";
+
+"Auto Log-in" = "Auto Log-in";
+"Log-in." = "Log-in.";
+"Log-out." = "Log-out.";
+"Login Failed." = "Login Failed.";
+"Authentication..." = "Authentication...";
+
+"Thread Loading Failed" = "Thread Loading Failed";
+"DAT modified." = "DAT modified. Please delete log file and Reload.";
+"DAT removed." = "DAT removed.";
+"Not modified" = "Not modified";
+"DAT fallen." = "DAT fallen.";
+
+"%Y/%m/%d %H:%M-" = "%Y/%m/%d %H:%M-";
+" (%d Threads)" = " (%d Threads)";
+"Old Logs" = "Old Logs";
+" (Old)" = " (Old)";
+
+/*THLocalFileImporter*/
+"jp_natori_THLocalFileImporter" = "Local Log Folder";
+"jp_natori_THLocalFileImporter_info" = "Local Log Folder Importer";
+
+/*THHistoryImporter*/
+"jp_natori_Thousand_HistoryImporter" = "History";
+"jp_natori_Thousand_HistoryImporter_info" = "History";
+"History" = "History";
+"threadHistory" = "Thread History";
+"resPostedThreadHistory" = "Posted Thread History";
+"threadListHistory" = "Thread List History";
+"threadHistoryMax" = "Thread History Max";
+"resPostedThreadHistoryMax" = "Posting History Max";
+"threadListHistoryMax" = "Board History Max";
+"Erase Thread History" = "Erase Thread History";
+"Erase Posting History" = "Erase Posting History";
+"Erase Board History" = "Erase Board History";
+
+/*THStandardThreadScorer*/
+"jp_natori_Thousand_2chScorer" = "Standard Scorer";
+"jp_natori_Thousand_2chScorer_info" = "Standard Thread Scorer";
+"voidProperty" = "None";
+"state" = "State";
+"resCount" = "Local Res";
+"resCountNew" = "Res";
+"resCountGap" = "Gap";
+"order" = "Order";
+"createdDate" = "Created Date";
+"modifiedDate" = "Modified Date";
+"lastLoadingDate" = "Last Loading Date";
+"lastPostingDate" = "Last Posting Date";
+"velocity" = "Velocity";
+"labelScore" = "Label";
+"threadListTitle" = "Board";
+"combinedScore" = "combinedScore";
+
+"resCountFilter" = "Local Res Count";
+"resCountNewFilter" = "Remote Res Count";
+"resCountGapFilter" = "Gap Res Count";
+"createdDateFilter" = "Created";
+"labelFilter" = "Label";
+"stateFilter" = "State";
+"is" = "is";
+"isNot" = "is Not";
+"greaterThan" = "is Greater Than";
+"lessThan" = "is Less Than";
+"withinDays" = "in Last-";
+"beforeDays" = "before Last-";
+"withinDays_appendix" = "Days";
+"beforeDays_appendix" = "Days";
+
+"%#.2f /d" = "%#.2f /d";
+"%#.2f /h" = "%#.2f /h";
+"%#.2f /m" = "%#.2f /m";
+"%#.2f /s" = "%#.2f /s";
+
+/*THStandardThreadProcessor*/
+"jp_natori_Thousand_StandardThreadProcessor" = "Standard Thread Processor";
+"jp_natori_Thousand_StandardThreadProcessor_info" = "Standard Thread Processor";
+"Automatic" = "All Res (Saves scroll)";
+"All Res" = "All Res";
+"Last %@ Res" = "Last %@ Res";
+"Last %@ Res and New Res" = "Last %@ Res and New Res";
+">>%@" = ">>%@";
+"ID:%@" = "ID:%@";
+"Trip:%@" = "Trip:%@";
+"Responses to %@" = "Responses to %@";
+"Backtrace from %@" = "Backtrace from %@";
+"Word:%@" = "Word:%@";
+"Style:%@" = "Style:%@";
+"Previewable Res" = "Previewable Res";
+
+"resAnchorCharactersString" = "＞";
+"tripDelimiterString" = "◆";
+"urlBreaking" = " <";
+"digitAndSeparatorString" = "0123456789,-０１２３４５６７８９，−";
+
+"Other Res Anchor" = "Other Res Anchor";
+"Res Anchor Except \">, >>\"" = "Res Anchor Except \">, >>\"";
+
+/*THStandardViewPlug*/
+"jp_natori_Thousand_standardHTMLView" = "Simple HTML View";
+"jp_natori_Thousand_standardHTMLView_info" = "Standard HTML-type Viewer";
+
+/*ImagePreviewer*/
+"jp_natori_Thousand_ImagePreviewer" = "Picture Previewer";
+"jp_natori_Thousand_ImagePreviewer_info" = "Preview Linked Picture Files";
+"Pop-Up Preview Width" = "Pop-Up Preview Width";
+"Inline Preview Width" = "Inline Preview Width";
