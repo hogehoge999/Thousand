@@ -108,7 +108,7 @@ NSString *T2BrowserRowPboardType = @"T2BrowserRowPboardType";
 	return _rowHeight;
 }
 
-- (void)reloadColumn:(int)column {
+- (void)reloadColumn:(NSInteger)column {
 	[super reloadColumn:column];
 	
 	NSMatrix *matrix = [self matrixInColumn:column];

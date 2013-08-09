@@ -393,7 +393,6 @@ static unsigned __maxPopUpResCount = 1000;
 	NSInteger resCount = [_resArray count];
 	NSInteger index = [indexSet firstIndex];
 	NSMutableIndexSet *resultIndexSet = [NSMutableIndexSet indexSet];
-    NSLog(@"index 4 = %ld", (long)index);
 	while (index != NSNotFound) {
 		if (index < resCount) {
 			NSIndexSet *nextResIndexSet = [(T2Res *)[_resArray objectAtIndex:index] forwardResIndexes];

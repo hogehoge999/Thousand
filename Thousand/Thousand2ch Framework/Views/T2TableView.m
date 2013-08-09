@@ -62,7 +62,7 @@
 		}
 	}
 	
-	//NSEnumerator *columnEnumerator = [[self tableColumns] objectEnumerator];
+	NSEnumerator *columnEnumerator = [[self tableColumns] reverseObjectEnumerator];
 	//NSTableColumn *tempColumn = nil;
     // ここでエクセプションでてるようなので一時的にコメントアウト
 	//while (tempColumn = [columnEnumerator nextObject]) {
@@ -70,7 +70,6 @@
 	//}
 	//for (NSTableColumn *tempColumn in columnEnumerator)
     //{
-    //    int x = 0;
 	//	[self removeTableColumn:tempColumn];
 	//}
 	
@@ -121,7 +120,7 @@
 			[self setTableColumnSettings:newTableColumnSettings];
 		}
 	} else {
-		unsigned index = [identifiers indexOfObject:tableColumnIdentifier];
+		NSInteger index = [identifiers indexOfObject:tableColumnIdentifier];
 		if (index != NSNotFound) {
 			NSMutableArray *newTableColumnSettings = [[tableColumnSettings mutableCopy] autorelease];
 			[newTableColumnSettings removeObjectAtIndex:index];
@@ -174,7 +173,7 @@
 	
 	NSPoint locationInWindow = [theEvent locationInWindow];
 	NSPoint locationInSelf = [self convertPoint:locationInWindow fromView:nil];
-	int row = [self rowAtPoint:locationInSelf];
+	NSInteger row = [self rowAtPoint:locationInSelf];
 	if (row < 0) return;
 	NSIndexSet *selectedRowIndexes = [self selectedRowIndexes];
 	if ([selectedRowIndexes containsIndex:row]) {
@@ -190,7 +189,7 @@
 	
 	NSPoint locationInWindow = [theEvent locationInWindow];
 	NSPoint locationInSelf = [self convertPoint:locationInWindow fromView:nil];
-	int row = [self rowAtPoint:locationInSelf];
+	NSInteger row = [self rowAtPoint:locationInSelf];
 	if (row < 0) return;
 	[self selectRowIndexes:[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
 	

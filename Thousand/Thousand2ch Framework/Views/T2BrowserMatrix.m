@@ -12,7 +12,7 @@
 @implementation T2BrowserMatrix
 - (void)mouseDown:(NSEvent *)event
 {
-	int row, col;
+	NSInteger row, col;
 	
 	if ([self getRow: &row column: &col
 			forPoint:[self convertPoint:[event locationInWindow] 

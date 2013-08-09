@@ -101,7 +101,7 @@
 										<object class="NSTextView" id="751344480">
 											<reference key="NSNextResponder" ref="270493768"/>
 											<int key="NSvFlags">2307</int>
-											<string key="NSFrameSize">{508, 217}</string>
+											<string key="NSFrameSize">{523, 217}</string>
 											<reference key="NSSuperview" ref="270493768"/>
 											<object class="NSTextContainer" key="NSTextContainer" id="48834568">
 												<object class="NSLayoutManager" key="NSLayoutManager">
@@ -129,7 +129,7 @@
 													<nil key="NSDelegate"/>
 												</object>
 												<reference key="NSTextView" ref="751344480"/>
-												<double key="NSWidth">508</double>
+												<double key="NSWidth">523</double>
 												<int key="NSTCFlags">1</int>
 											</object>
 											<object class="NSTextViewSharedData" key="NSSharedData">
@@ -167,11 +167,11 @@
 												<int key="NSPreferredTextFinderStyle">1</int>
 											</object>
 											<int key="NSTVFlags">6</int>
-											<string key="NSMaxSize">{508, 10000000}</string>
+											<string key="NSMaxSize">{523, 10000000}</string>
 											<nil key="NSDelegate"/>
 										</object>
 									</array>
-									<string key="NSFrame">{{1, 1}, {508, 217}}</string>
+									<string key="NSFrame">{{1, 1}, {523, 217}}</string>
 									<reference key="NSSuperview" ref="321071079"/>
 									<reference key="NSNextKeyView" ref="751344480"/>
 									<reference key="NSDocView" ref="751344480"/>
@@ -200,7 +200,7 @@
 								<object class="NSScroller" id="164415953">
 									<reference key="NSNextResponder" ref="321071079"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrame">{{509, 1}, {15, 217}}</string>
+									<string key="NSFrame">{{508, 1}, {16, 217}}</string>
 									<reference key="NSSuperview" ref="321071079"/>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<reference key="NSTarget" ref="321071079"/>
@@ -298,7 +298,7 @@
 					<string key="NSFrameSize">{565, 324}</string>
 					<reference key="NSSuperview"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1920, 1058}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1366, 746}}</string>
 				<string key="NSMinSize">{400, 222}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>

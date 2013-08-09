@@ -307,7 +307,7 @@ static id <T2ThreadImporting_v100> __localFileImporter = nil;
 	{
 		NSIndexSet *draggedRowsIndexSet = [draggingPasteboard tableRowIndexes];
 		
-		unsigned minDraggedRow = [draggedRowsIndexSet indexLessThanIndex:row];
+		NSInteger minDraggedRow = [draggedRowsIndexSet indexLessThanIndex:row];
 		while (minDraggedRow != NSNotFound) {
 			row--;
 			minDraggedRow = [draggedRowsIndexSet indexLessThanIndex:minDraggedRow];
