@@ -78,6 +78,7 @@
 							<int key="NSvFlags">274</int>
 							<string key="NSFrame">{{0, 20}, {777, 590}}</string>
 							<reference key="NSSuperview" ref="67221301"/>
+							<reference key="NSWindow"/>
 							<object class="NSMutableArray" key="NSTabViewItems">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSTabViewItem" id="370991523">
@@ -106,6 +107,7 @@
 																		<int key="NSvFlags">4352</int>
 																		<string key="NSFrameSize">{190, 572}</string>
 																		<reference key="NSSuperview" ref="709877289"/>
+																		<reference key="NSWindow"/>
 																		<bool key="NSEnabled">YES</bool>
 																		<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 																		<bool key="NSControlAllowsExpansionToolTips">YES</bool>
@@ -114,6 +116,7 @@
 																			<int key="NSvFlags">256</int>
 																			<string key="NSFrameSize">{190, 17}</string>
 																			<reference key="NSSuperview" ref="94894526"/>
+																			<reference key="NSWindow"/>
 																			<reference key="NSTableView" ref="984129903"/>
 																		</object>
 																		<object class="_NSCornerView" key="NSCornerView">
@@ -351,6 +354,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																</object>
 																<string key="NSFrame">{{1, 17}, {190, 572}}</string>
 																<reference key="NSSuperview" ref="834064860"/>
+																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="984129903"/>
 																<reference key="NSDocView" ref="984129903"/>
 																<reference key="NSBGColor" ref="383858206"/>
@@ -361,6 +365,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																<int key="NSvFlags">-2147483392</int>
 																<string key="NSFrame">{{-30, 17}, {15, 555}}</string>
 																<reference key="NSSuperview" ref="834064860"/>
+																<reference key="NSWindow"/>
 																<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 																<reference key="NSTarget" ref="834064860"/>
 																<string key="NSAction">_doScroller:</string>
@@ -371,6 +376,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																<int key="NSvFlags">-2147483392</int>
 																<string key="NSFrame">{{-100, -100}, {162, 15}}</string>
 																<reference key="NSSuperview" ref="834064860"/>
+																<reference key="NSWindow"/>
 																<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 																<int key="NSsFlags">1</int>
 																<reference key="NSTarget" ref="834064860"/>
@@ -386,6 +392,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																</object>
 																<string key="NSFrame">{{1, 0}, {190, 17}}</string>
 																<reference key="NSSuperview" ref="834064860"/>
+																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="85153377"/>
 																<reference key="NSDocView" ref="85153377"/>
 																<reference key="NSBGColor" ref="383858206"/>
@@ -394,6 +401,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 														</object>
 														<string key="NSFrameSize">{192, 590}</string>
 														<reference key="NSSuperview" ref="332618068"/>
+														<reference key="NSWindow"/>
 														<reference key="NSNextKeyView" ref="709877289"/>
 														<int key="NSsFlags">133650</int>
 														<reference key="NSVScroller" ref="272998707"/>
@@ -415,6 +423,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																<int key="NSvFlags">274</int>
 																<string key="NSFrameSize">{576, 220}</string>
 																<reference key="NSSuperview" ref="975014994"/>
+																<reference key="NSWindow"/>
 																<bool key="NSEnabled">YES</bool>
 																<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 																<bool key="NSControlAllowsExpansionToolTips">YES</bool>
@@ -455,6 +464,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																				<int key="NSvFlags">4352</int>
 																				<string key="NSFrameSize">{912, 343}</string>
 																				<reference key="NSSuperview" ref="1042730314"/>
+																				<reference key="NSWindow"/>
 																				<bool key="NSEnabled">YES</bool>
 																				<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 																				<bool key="NSControlAllowsExpansionToolTips">YES</bool>
@@ -463,6 +473,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																					<int key="NSvFlags">256</int>
 																					<string key="NSFrameSize">{912, 17}</string>
 																					<reference key="NSSuperview" ref="864819896"/>
+																					<reference key="NSWindow"/>
 																					<reference key="NSTableView" ref="472287689"/>
 																				</object>
 																				<object class="_NSCornerView" key="NSCornerView">
@@ -808,6 +819,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																		</object>
 																		<string key="NSFrame">{{1, 17}, {574, 343}}</string>
 																		<reference key="NSSuperview" ref="1005090918"/>
+																		<reference key="NSWindow"/>
 																		<reference key="NSNextKeyView" ref="472287689"/>
 																		<reference key="NSDocView" ref="472287689"/>
 																		<reference key="NSBGColor" ref="383858206"/>
@@ -818,6 +830,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																		<int key="NSvFlags">-2147483392</int>
 																		<string key="NSFrame">{{560, 17}, {15, 328}}</string>
 																		<reference key="NSSuperview" ref="1005090918"/>
+																		<reference key="NSWindow"/>
 																		<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 																		<reference key="NSTarget" ref="1005090918"/>
 																		<string key="NSAction">_doScroller:</string>
@@ -828,6 +841,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																		<int key="NSvFlags">256</int>
 																		<string key="NSFrame">{{1, 344}, {574, 16}}</string>
 																		<reference key="NSSuperview" ref="1005090918"/>
+																		<reference key="NSWindow"/>
 																		<bool key="NSEnabled">YES</bool>
 																		<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 																		<int key="NSsFlags">1</int>
@@ -844,6 +858,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																		</object>
 																		<string key="NSFrame">{{1, 0}, {574, 17}}</string>
 																		<reference key="NSSuperview" ref="1005090918"/>
+																		<reference key="NSWindow"/>
 																		<reference key="NSNextKeyView" ref="215947464"/>
 																		<reference key="NSDocView" ref="215947464"/>
 																		<reference key="NSBGColor" ref="383858206"/>
@@ -852,6 +867,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 																</object>
 																<string key="NSFrame">{{0, 229}, {576, 361}}</string>
 																<reference key="NSSuperview" ref="975014994"/>
+																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="1042730314"/>
 																<int key="NSsFlags">133810</int>
 																<reference key="NSVScroller" ref="374800809"/>
@@ -866,15 +882,18 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 														</object>
 														<string key="NSFrame">{{201, 0}, {576, 590}}</string>
 														<reference key="NSSuperview" ref="332618068"/>
+														<reference key="NSWindow"/>
 													</object>
 												</object>
 												<string key="NSFrameSize">{777, 590}</string>
 												<reference key="NSSuperview" ref="1069934537"/>
+												<reference key="NSWindow"/>
 												<bool key="NSIsVertical">YES</bool>
 											</object>
 										</object>
 										<string key="NSFrameSize">{777, 590}</string>
 										<reference key="NSSuperview" ref="377846987"/>
+										<reference key="NSWindow"/>
 									</object>
 									<string key="NSLabel">List</string>
 									<object class="NSColor" key="NSColor" id="208239401">
@@ -901,6 +920,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 							<int key="NSvFlags">1316</int>
 							<string key="NSFrame">{{10, 3}, {100, 12}}</string>
 							<reference key="NSSuperview" ref="67221301"/>
+							<reference key="NSWindow"/>
 							<int key="NSpiFlags">16652</int>
 							<double key="NSMaxValue">1</double>
 						</object>
@@ -909,6 +929,7 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrame">{{117, 3}, {660, 14}}</string>
 							<reference key="NSSuperview" ref="67221301"/>
+							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="918735417">
 								<int key="NSCellFlags">67108864</int>
@@ -926,15 +947,18 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 							<int key="NSvFlags">266</int>
 							<string key="NSFrame">{{0, 610}, {777, 22}}</string>
 							<reference key="NSSuperview" ref="67221301"/>
+							<reference key="NSWindow"/>
 							<string key="NSClassName">PSMTabBarControl</string>
 						</object>
 					</object>
 					<string key="NSFrameSize">{777, 632}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1366, 746}}</string>
 				<string key="NSMinSize">{94, 108}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<int key="NSWindowCollectionBehavior">128</int>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="834820958">
@@ -3212,6 +3236,976 @@ AAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSwgSW5jLiwgMjAwOAA</bytes>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBUserSource</string>
 						<string key="minorKey"/>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">PSMTabBarControl</string>
+					<string key="superclassName">NSControl</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>delegate</string>
+							<string>partnerView</string>
+							<string>tabView</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>NSTabView</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>delegate</string>
+							<string>partnerView</string>
+							<string>tabView</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">delegate</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">partnerView</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">tabView</string>
+								<string key="candidateClassName">NSTabView</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/PSMTabBarControl.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">T2Browser</string>
+					<string key="superclassName">NSBrowser</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/T2Browser.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">T2FilterArrayController</string>
+					<string key="superclassName">NSArrayController</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/T2FilterArrayController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">T2LabeledTextFieldCell</string>
+					<string key="superclassName">NSTextFieldCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/T2LabeledTextFieldCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">T2TableView</string>
+					<string key="superclassName">NSTableView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/T2TableView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">THBookmarkController</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>addToBookmark:</string>
+							<string>cancelLoading:</string>
+							<string>copyThreadsTitleAndURL:</string>
+							<string>copyThreadsURL:</string>
+							<string>copyTitleAndURL:</string>
+							<string>copyURL:</string>
+							<string>findNextThread:</string>
+							<string>openNextThread:</string>
+							<string>openNextUpdatedThread:</string>
+							<string>openParentThreadList:</string>
+							<string>openSelectedThread:</string>
+							<string>openSelectedThreadWithoutActivate:</string>
+							<string>openThreadsUsingWebBrowser:</string>
+							<string>openUsingOreyon:</string>
+							<string>openUsingWebBrowser:</string>
+							<string>postThread:</string>
+							<string>reloadView:</string>
+							<string>removeFallenThreads:</string>
+							<string>removeSelectedLists:</string>
+							<string>removeSelectedThreads:</string>
+							<string>removeSelectedThreadsImmediately:</string>
+							<string>repairBoardData:</string>
+							<string>revealLogFileInFinder:</string>
+							<string>selectActionInBrowser:</string>
+							<string>selectLabelAction:</string>
+							<string>selectThread:</string>
+							<string>showFallenThreadArchives:</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>addToBookmark:</string>
+							<string>cancelLoading:</string>
+							<string>copyThreadsTitleAndURL:</string>
+							<string>copyThreadsURL:</string>
+							<string>copyTitleAndURL:</string>
+							<string>copyURL:</string>
+							<string>findNextThread:</string>
+							<string>openNextThread:</string>
+							<string>openNextUpdatedThread:</string>
+							<string>openParentThreadList:</string>
+							<string>openSelectedThread:</string>
+							<string>openSelectedThreadWithoutActivate:</string>
+							<string>openThreadsUsingWebBrowser:</string>
+							<string>openUsingOreyon:</string>
+							<string>openUsingWebBrowser:</string>
+							<string>postThread:</string>
+							<string>reloadView:</string>
+							<string>removeFallenThreads:</string>
+							<string>removeSelectedLists:</string>
+							<string>removeSelectedThreads:</string>
+							<string>removeSelectedThreadsImmediately:</string>
+							<string>repairBoardData:</string>
+							<string>revealLogFileInFinder:</string>
+							<string>selectActionInBrowser:</string>
+							<string>selectLabelAction:</string>
+							<string>selectThread:</string>
+							<string>showFallenThreadArchives:</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">addToBookmark:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">cancelLoading:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">copyThreadsTitleAndURL:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">copyThreadsURL:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">copyTitleAndURL:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">copyURL:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">findNextThread:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openNextThread:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openNextUpdatedThread:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openParentThreadList:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openSelectedThread:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openSelectedThreadWithoutActivate:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openThreadsUsingWebBrowser:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openUsingOreyon:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openUsingWebBrowser:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">postThread:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">reloadView:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">removeFallenThreads:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">removeSelectedLists:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">removeSelectedThreads:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">removeSelectedThreadsImmediately:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">repairBoardData:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">revealLogFileInFinder:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">selectActionInBrowser:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">selectLabelAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">selectThread:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showFallenThreadArchives:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>_document</string>
+							<string>_h1SplitView</string>
+							<string>_listBrowser</string>
+							<string>_scoreColumn</string>
+							<string>_scorerPopUpButton</string>
+							<string>_searchField</string>
+							<string>_sourceFacesController</string>
+							<string>_sourceTable</string>
+							<string>_threadFacesController</string>
+							<string>_threadTable</string>
+							<string>_threadTableMenu</string>
+							<string>_threadTableViewPlaceHolder</string>
+							<string>_threadTableViewScrollView</string>
+							<string>_v1SplitView</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>THDocument</string>
+							<string>THSplitView</string>
+							<string>T2Browser</string>
+							<string>NSTableColumn</string>
+							<string>NSPopUpButton</string>
+							<string>NSSearchField</string>
+							<string>NSArrayController</string>
+							<string>T2TableView</string>
+							<string>T2FilterArrayController</string>
+							<string>T2TableView</string>
+							<string>NSMenu</string>
+							<string>NSView</string>
+							<string>NSScrollView</string>
+							<string>THSplitView</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>_document</string>
+							<string>_h1SplitView</string>
+							<string>_listBrowser</string>
+							<string>_scoreColumn</string>
+							<string>_scorerPopUpButton</string>
+							<string>_searchField</string>
+							<string>_sourceFacesController</string>
+							<string>_sourceTable</string>
+							<string>_threadFacesController</string>
+							<string>_threadTable</string>
+							<string>_threadTableMenu</string>
+							<string>_threadTableViewPlaceHolder</string>
+							<string>_threadTableViewScrollView</string>
+							<string>_v1SplitView</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_document</string>
+								<string key="candidateClassName">THDocument</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_h1SplitView</string>
+								<string key="candidateClassName">THSplitView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_listBrowser</string>
+								<string key="candidateClassName">T2Browser</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_scoreColumn</string>
+								<string key="candidateClassName">NSTableColumn</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_scorerPopUpButton</string>
+								<string key="candidateClassName">NSPopUpButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_searchField</string>
+								<string key="candidateClassName">NSSearchField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_sourceFacesController</string>
+								<string key="candidateClassName">NSArrayController</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_sourceTable</string>
+								<string key="candidateClassName">T2TableView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_threadFacesController</string>
+								<string key="candidateClassName">T2FilterArrayController</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_threadTable</string>
+								<string key="candidateClassName">T2TableView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_threadTableMenu</string>
+								<string key="candidateClassName">NSMenu</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_threadTableViewPlaceHolder</string>
+								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_threadTableViewScrollView</string>
+								<string key="candidateClassName">NSScrollView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_v1SplitView</string>
+								<string key="candidateClassName">THSplitView</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/THBookmarkController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">THDocument</string>
+					<string key="superclassName">NSDocument</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>activateSearchField:</string>
+							<string>clearSearch:</string>
+							<string>closeTab:</string>
+							<string>dammyAction:</string>
+							<string>loadURL:</string>
+							<string>moveTabToRightEnd:</string>
+							<string>openNextThread:</string>
+							<string>openNextUpdatedThread:</string>
+							<string>openURL:</string>
+							<string>runTestOperation:</string>
+							<string>search:</string>
+							<string>showListTab:</string>
+							<string>switchToLeftTab:</string>
+							<string>switchToRightTab:</string>
+							<string>writeScreenShot:</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>activateSearchField:</string>
+							<string>clearSearch:</string>
+							<string>closeTab:</string>
+							<string>dammyAction:</string>
+							<string>loadURL:</string>
+							<string>moveTabToRightEnd:</string>
+							<string>openNextThread:</string>
+							<string>openNextUpdatedThread:</string>
+							<string>openURL:</string>
+							<string>runTestOperation:</string>
+							<string>search:</string>
+							<string>showListTab:</string>
+							<string>switchToLeftTab:</string>
+							<string>switchToRightTab:</string>
+							<string>writeScreenShot:</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">activateSearchField:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">clearSearch:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">closeTab:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">dammyAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">loadURL:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">moveTabToRightEnd:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openNextThread:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openNextUpdatedThread:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openURL:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">runTestOperation:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">search:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showListTab:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">switchToLeftTab:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">switchToRightTab:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">writeScreenShot:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>_bookmarkController</string>
+							<string>_bookmarkSelfController</string>
+							<string>_docWindow</string>
+							<string>_h1SplitView</string>
+							<string>_listTab</string>
+							<string>_progressIndicator</string>
+							<string>_progressInfoField</string>
+							<string>_searchField</string>
+							<string>_tabBarControl</string>
+							<string>_tabView</string>
+							<string>_threadTableViewPlaceHolder</string>
+							<string>_threadTableViewScrollView</string>
+							<string>_urlField</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>THBookmarkController</string>
+							<string>NSObjectController</string>
+							<string>NSWindow</string>
+							<string>THSplitView</string>
+							<string>NSTabViewItem</string>
+							<string>THProgressIndicator</string>
+							<string>NSTextField</string>
+							<string>NSSearchField</string>
+							<string>PSMTabBarControl</string>
+							<string>NSTabView</string>
+							<string>NSView</string>
+							<string>NSScrollView</string>
+							<string>NSTextField</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>_bookmarkController</string>
+							<string>_bookmarkSelfController</string>
+							<string>_docWindow</string>
+							<string>_h1SplitView</string>
+							<string>_listTab</string>
+							<string>_progressIndicator</string>
+							<string>_progressInfoField</string>
+							<string>_searchField</string>
+							<string>_tabBarControl</string>
+							<string>_tabView</string>
+							<string>_threadTableViewPlaceHolder</string>
+							<string>_threadTableViewScrollView</string>
+							<string>_urlField</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_bookmarkController</string>
+								<string key="candidateClassName">THBookmarkController</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_bookmarkSelfController</string>
+								<string key="candidateClassName">NSObjectController</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_docWindow</string>
+								<string key="candidateClassName">NSWindow</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_h1SplitView</string>
+								<string key="candidateClassName">THSplitView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_listTab</string>
+								<string key="candidateClassName">NSTabViewItem</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_progressIndicator</string>
+								<string key="candidateClassName">THProgressIndicator</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_progressInfoField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_searchField</string>
+								<string key="candidateClassName">NSSearchField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_tabBarControl</string>
+								<string key="candidateClassName">PSMTabBarControl</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_tabView</string>
+								<string key="candidateClassName">NSTabView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_threadTableViewPlaceHolder</string>
+								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_threadTableViewScrollView</string>
+								<string key="candidateClassName">NSScrollView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_urlField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/THDocument.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">THMetalWindow</string>
+					<string key="superclassName">NSWindow</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/THMetalWindow.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">THProgressIndicator</string>
+					<string key="superclassName">NSProgressIndicator</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">_infoTextField</string>
+						<string key="NS.object.0">NSTextField</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">_infoTextField</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">_infoTextField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/THProgressIndicator.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">THSplitView</string>
+					<string key="superclassName">NSSplitView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/THSplitView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">THThreadController</string>
+					<string key="superclassName">NSObjectController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>addToBookmark:</string>
+							<string>cancelLoading:</string>
+							<string>copyLinkURL:</string>
+							<string>copyTitleAndURL:</string>
+							<string>copyURL:</string>
+							<string>downloadLink:</string>
+							<string>downloadLinkInRes:</string>
+							<string>extractAndreply:</string>
+							<string>findNextThread:</string>
+							<string>moveToNewRes:</string>
+							<string>moveToRes:</string>
+							<string>openLinkUsingWebBrowser:</string>
+							<string>openParentThreadList:</string>
+							<string>openResInNewTab:</string>
+							<string>openUsingOreyon:</string>
+							<string>openUsingWebBrowser:</string>
+							<string>postRes:</string>
+							<string>previewInlineAll:</string>
+							<string>previewInlineInRes:</string>
+							<string>printTab:</string>
+							<string>reloadView:</string>
+							<string>removeSelectedThreads:</string>
+							<string>removeSelectedThreadsImmediately:</string>
+							<string>reply:</string>
+							<string>revealLogFileInFinder:</string>
+							<string>searchSelectionInThread:</string>
+							<string>searchSelectionUsingWebBrowser:</string>
+							<string>selectHTMLExporterAction:</string>
+							<string>selectResExtractPathAction:</string>
+							<string>setSelectionToNGWord:</string>
+							<string>showAllRes:</string>
+							<string>showFirst100Res:</string>
+							<string>showLast100Res:</string>
+							<string>showNext100Res:</string>
+							<string>showPreviewableRes:</string>
+							<string>showSource:</string>
+							<string>trace:</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>addToBookmark:</string>
+							<string>cancelLoading:</string>
+							<string>copyLinkURL:</string>
+							<string>copyTitleAndURL:</string>
+							<string>copyURL:</string>
+							<string>downloadLink:</string>
+							<string>downloadLinkInRes:</string>
+							<string>extractAndreply:</string>
+							<string>findNextThread:</string>
+							<string>moveToNewRes:</string>
+							<string>moveToRes:</string>
+							<string>openLinkUsingWebBrowser:</string>
+							<string>openParentThreadList:</string>
+							<string>openResInNewTab:</string>
+							<string>openUsingOreyon:</string>
+							<string>openUsingWebBrowser:</string>
+							<string>postRes:</string>
+							<string>previewInlineAll:</string>
+							<string>previewInlineInRes:</string>
+							<string>printTab:</string>
+							<string>reloadView:</string>
+							<string>removeSelectedThreads:</string>
+							<string>removeSelectedThreadsImmediately:</string>
+							<string>reply:</string>
+							<string>revealLogFileInFinder:</string>
+							<string>searchSelectionInThread:</string>
+							<string>searchSelectionUsingWebBrowser:</string>
+							<string>selectHTMLExporterAction:</string>
+							<string>selectResExtractPathAction:</string>
+							<string>setSelectionToNGWord:</string>
+							<string>showAllRes:</string>
+							<string>showFirst100Res:</string>
+							<string>showLast100Res:</string>
+							<string>showNext100Res:</string>
+							<string>showPreviewableRes:</string>
+							<string>showSource:</string>
+							<string>trace:</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">addToBookmark:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">cancelLoading:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">copyLinkURL:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">copyTitleAndURL:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">copyURL:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">downloadLink:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">downloadLinkInRes:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">extractAndreply:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">findNextThread:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">moveToNewRes:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">moveToRes:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openLinkUsingWebBrowser:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openParentThreadList:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openResInNewTab:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openUsingOreyon:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openUsingWebBrowser:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">postRes:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">previewInlineAll:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">previewInlineInRes:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">printTab:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">reloadView:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">removeSelectedThreads:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">removeSelectedThreadsImmediately:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">reply:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">revealLogFileInFinder:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">searchSelectionInThread:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">searchSelectionUsingWebBrowser:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">selectHTMLExporterAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">selectResExtractPathAction:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">setSelectionToNGWord:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showAllRes:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showFirst100Res:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showLast100Res:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showNext100Res:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showPreviewableRes:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showSource:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">trace:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/THThreadController.h</string>
 					</object>
 				</object>
 			</object>

@@ -1059,9 +1059,9 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSString *gzipPath = [path stringByAppendingPathExtension:@"gz"];
 	if ([fileManager fileExistsAtPath:gzipPath])
-		[fileManager removeFileAtPath:gzipPath handler:NULL];
+		[fileManager removeItemAtPath:gzipPath error:nil];
 	if ([fileManager fileExistsAtPath:path])
-		[fileManager removeFileAtPath:path handler:NULL];
+		[fileManager removeItemAtPath:path error:nil];
 }
 -(void)resetThread:(T2Thread *)thread {
 	NSString *internalPath = [thread internalPath];
@@ -1070,9 +1070,9 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSString *gzipPath = [path stringByAppendingPathExtension:@"gz"];
 	if ([fileManager fileExistsAtPath:gzipPath])
-		[fileManager removeFileAtPath:gzipPath handler:NULL];
+		[fileManager removeItemAtPath:gzipPath error:nil];
 	if ([fileManager fileExistsAtPath:path])
-		[fileManager removeFileAtPath:path handler:NULL];
+		[fileManager removeItemAtPath:path error:nil];
 	
 	[thread setValue:nil forKey:@"datLength"];
 	[thread setValue:nil forKey:@"remoteLastModifiedDate"];
@@ -1862,7 +1862,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	kakoFolderPath = [[kakoFolderPath stringByAppendingPathComponent:boardKey] stringByAppendingPathComponent:__oldLogPath];
 	
 	if (![kakoFolderPath isExistentPath]) return nil;
-	NSArray *oldServerDomains = [[NSFileManager defaultManager] directoryContentsAtPath:kakoFolderPath];
+	NSArray *oldServerDomains = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:kakoFolderPath error:nil];
 	NSEnumerator *oldServerEnumerator = [oldServerDomains objectEnumerator];
 	NSString *oldServerDomain = nil;
 	NSMutableArray *results = [NSMutableArray array];
@@ -2054,7 +2054,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 		
 		[request setHTTPBody:bodyData];
 		
-		[request setValue:[NSString stringWithFormat:@"%d",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+		[request setValue:[NSString stringWithFormat:@"%ld",[bodyData length]] forHTTPHeaderField:@"Content-length"];
 		[request setValue:boardURLString forHTTPHeaderField:@"Referer"];
 		
 		return request;
@@ -2171,7 +2171,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 				[urlRequest setHTTPBody:bodyData];
 				
 				[urlRequest setValue:_viewerSUA forHTTPHeaderField:@"User-Agent"];
-				[urlRequest setValue:[NSString stringWithFormat:@"%d",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+				[urlRequest setValue:[NSString stringWithFormat:@"%ld",[bodyData length]] forHTTPHeaderField:@"Content-length"];
 			}
 			
 			[posting setAdditionalRequest:urlRequest];
@@ -2247,7 +2247,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	
 	[request setHTTPBody:bodyData];
 	
-	[request setValue:[NSString stringWithFormat:@"%d",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+	[request setValue:[NSString stringWithFormat:@"%ld",[bodyData length]] forHTTPHeaderField:@"Content-length"];
 	[request setValue:boardURLString forHTTPHeaderField:@"Referer"];
 	
 	return request;
@@ -2285,7 +2285,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 			[urlRequest setHTTPBody:bodyData];
 			
 			[urlRequest setValue:_viewerSUA forHTTPHeaderField:@"User-Agent"];
-			[urlRequest setValue:[NSString stringWithFormat:@"%d",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+			[urlRequest setValue:[NSString stringWithFormat:@"%ld",[bodyData length]] forHTTPHeaderField:@"Content-length"];
 		}
 		
 		*additionalRequest = urlRequest;
@@ -2398,7 +2398,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	[request setHTTPMethod:@"POST"];
 	[request setHTTPBody:bodyData];
 	
-	[request setValue:[NSString stringWithFormat:@"%d",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+	[request setValue:[NSString stringWithFormat:@"%ld",[bodyData length]] forHTTPHeaderField:@"Content-length"];
 	[request setValue:boardURLString forHTTPHeaderField:@"Referer"];
 	
 	return request;

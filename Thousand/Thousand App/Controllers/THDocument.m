@@ -173,6 +173,7 @@ static NSString *__oreyonPath = nil;
 	if (!([_docWindow styleMask] & NSTexturedBackgroundWindowMask)) {
 		[_tabBarControl setStyleNamed:@"Aqua"];
 	}
+    [_docWindow setCollectionBehavior:NSWindowCollectionBehaviorFullScreenPrimary];
 	NSArray *cells = [_tabBarControl cells];
 	PSMTabBarCell *cell = [cells objectAtIndex:0];
 	[cell setHasCloseButton:NO];

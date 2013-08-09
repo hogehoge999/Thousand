@@ -73,7 +73,9 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0 (Beta 180 - 110830)</string>
+	<string>1.0 (Beta 180 - 110830) - one - 130809</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.social-networking</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

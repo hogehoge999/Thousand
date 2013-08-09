@@ -69,6 +69,25 @@ static id __sharedPrefWindowController;
 	[self setKeys:dependentKeys triggerChangeNotificationsForDependentKey:@"threadTableAllowedColumnIdentifers"];
 }
 
+//+ (NSSet *) keyPathsForValuesAffectingValueForKey:(NSString *)key
+//{
+//	NSSet *keys = nil;
+//	if ([key isEqualToString:@"threadTableAllowedColumnIdentifers"]) {
+//		keys=[NSSet setWithObjects:
+//              @"visibleOfThreadTableColumn_stateImage",
+//              @"visibleOfThreadTableColumn_resCountNew",
+//              @"visibleOfThreadTableColumn_resCount",
+//              @"visibleOfThreadTableColumn_resCountGap",
+//              @"visibleOfThreadTableColumn_order",
+//              @"visibleOfThreadTableColumn_createdDate",
+//              @"visibleOfThreadTableColumn_labelScore",
+//              @"visibleOfThreadTableColumn_velocity",
+//              @"visibleOfThreadTableColumn_valiable", nil];
+//
+//	}
+//	return keys;
+//}
+
 +(id)sharedPrefWindowController {
 	if (!__sharedPrefWindowController)
 		__sharedPrefWindowController = [[self alloc] initPrefWindowController];
@@ -735,6 +754,8 @@ static id __sharedPrefWindowController;
 	switch (action) {
 		case THPreviewNone:		return 0;
 		case THPreviewInPopUp:	return 1;
+        default:
+            break;
 	}
 	return 0;
 }
@@ -743,6 +764,8 @@ static id __sharedPrefWindowController;
 	switch (index) {
 		case 0: {	action = THPreviewNone;		break;	}
 		case 1: {	action = THPreviewInPopUp;	break;	}
+        default:
+            break;
 	}
 	[THThreadController setClassPopUpOtherAnchorElementActionType:action];
 }
@@ -751,6 +774,8 @@ static id __sharedPrefWindowController;
 	switch (action) {
 		case THPreviewNone:		return 0;
 		case THPreviewInPopUp:	return 1;
+        default:
+            break;
 	}
 	return 0;
 }
@@ -786,6 +811,8 @@ static id __sharedPrefWindowController;
 		case THPreviewInline:	return 2;
 		case THPreviewMove:		return 3;
 		case THPreviewInNewTab:	return 4;
+        default:
+            break;
 	}
 	return 0;
 }
@@ -818,6 +845,8 @@ static id __sharedPrefWindowController;
 		case THPreviewInPopUp:			return 1;
 		case THPreviewInline:			return 2;
 		case THPreviewWebBrowser:		return 3;
+        default:
+            break;
 	}
 	return 0;
 }
@@ -998,6 +1027,17 @@ static id __sharedPrefWindowController;
 	if ([sender isKindOfClass:[NSView class]]) {
 		window = [(NSView *)sender window];
 	}
+    // beginSheetForDirectoryがdepricateなのでそのうち下に差し替え
+//    [openPanel setNameFieldStringValue:filePath];
+//    [openPanel beginSheetModalForWindow:window completionHandler:^(NSInteger result) {
+//        if (result == NSFileHandlingPanelOKButton) {
+//            NSURL* theDoc = [[openPanel URLs] objectAtIndex:0];
+//            if ([[theDoc filePath] isExistentPath])
+//            {
+//                [self setLogFolderPath:[theDoc filePath]];
+//            }
+//        }
+//    }];
 	[openPanel beginSheetForDirectory:filePath
 								 file:filePath
 								types:nil
@@ -1009,7 +1049,7 @@ static id __sharedPrefWindowController;
 - (void)openLogFolderPanelDidEnd:(NSOpenPanel *)panel
 									  returnCode:(int)returnCode  contextInfo:(void  *)contextInfo {
 	if (returnCode != NSOKButton) return;
-	NSString *filePath = [panel filename];
+	NSString *filePath = [[panel URL] filePath];
 	if ([filePath isExistentPath])
 		[self setLogFolderPath:filePath];
 	

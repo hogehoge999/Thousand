@@ -17,7 +17,7 @@ static NSString *THPostingWindowToolBarBoardTitleItemIdentifier = @"THPostingWin
 static NSString *THPostingWindowToolBarNameItemIdentifier 		= @"THPostingWindowToolBarNameItemIdentifier";
 static NSString *THPostingWindowToolBarMailItemIdentifier 		= @"THPostingWindowToolBarMailItemIdentifier";
 
-@interface THPostingWindowController : NSWindowController
+@interface THPostingWindowController : NSWindowController<NSToolbarDelegate>
 {
 	T2Thread *_thread;
 	T2ThreadList *_threadList;
