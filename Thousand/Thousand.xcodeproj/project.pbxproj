@@ -22,7 +22,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		444AA5F217B342D300C568D3 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444AA5F117B342D300C568D3 /* Carbon.framework */; };
 		444AA5F617B34AB900C568D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444AA5F517B34AB900C568D3 /* Security.framework */; };
 		444AA5FE17B34BA900C568D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444AA5F517B34AB900C568D3 /* Security.framework */; };
 		47457A210865B3D700D22BF9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
@@ -504,7 +503,6 @@
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32DBCF750370BD2300C91783 /* Thousand_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thousand_Prefix.pch; sourceTree = "<group>"; };
-		444AA5F117B342D300C568D3 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		444AA5F517B34AB900C568D3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		47457A130865B30700D22BF9 /* Thousand2ch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Thousand2ch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47457A700865B9C800D22BF9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
@@ -926,7 +924,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				444AA5F617B34AB900C568D3 /* Security.framework in Frameworks */,
-				444AA5F217B342D300C568D3 /* Carbon.framework in Frameworks */,
 				47457A680865B72A00D22BF9 /* Thousand2ch.framework in Frameworks */,
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				47457A710865B9C800D22BF9 /* WebKit.framework in Frameworks */,
@@ -1099,7 +1096,6 @@
 			isa = PBXGroup;
 			children = (
 				444AA5F517B34AB900C568D3 /* Security.framework */,
-				444AA5F117B342D300C568D3 /* Carbon.framework */,
 				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
 			);

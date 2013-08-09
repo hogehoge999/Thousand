@@ -465,7 +465,7 @@ static BOOL __Safari2Debug = NO;
 
 -(unsigned)resIndexDisplayedOnTop {
 	NSIndexSet *resIndexes = _resIndexes;
-	int resIndex = 0;
+	NSInteger resIndex = 0;
 	resIndex = [resIndexes indexGreaterThanOrEqualToIndex:resIndex];
 	
 	//float docHeight = [(NSNumber *)[domDocument valueForKey:@"height"] floatValue];
@@ -474,15 +474,15 @@ static BOOL __Safari2Debug = NO;
 	float deltaY = 1;
 	//NSLog(@"docTop=%d", (int)docTop);
 	
-	int overshoot = NSNotFound;
+	NSInteger overshoot = NSNotFound;
 	
 	while (deltaY >= 0) {
-		deltaY = [[self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById(\"res%d\").offsetTop;",resIndex+1]] floatValue];
+		deltaY = [[self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById(\"res%ld\").offsetTop;",resIndex+1]] floatValue];
 		
 		//NSLog(@"resIndex=%d, deltaY=%d", resIndex, (int)deltaY);
 		
 		if (deltaY > 0 && deltaY < docTop) {
-			if (overshoot != -1/*NSNotFound*/) {
+			if (overshoot != NSNotFound) {
 				resIndex = overshoot;
 				break;
 			}
@@ -516,7 +516,7 @@ static BOOL __Safari2Debug = NO;
 	NSString *extensibleResIndexesString = [(DOMHTMLElement *)chileNode innerText];
 	
 	if (!extensibleResIndexesString) return;
-	int resIndex = [extensibleResIndexesString intValue]-1;
+	NSInteger resIndex = [extensibleResIndexesString intValue]-1;
 	unsigned toResIndex = resIndex;
 	if (resIndex > 100) {
 		resIndex = toResIndex-100;
@@ -544,9 +544,9 @@ static BOOL __Safari2Debug = NO;
 	NSString *extensibleResIndexesString = [(DOMHTMLElement *)chileNode innerText];
 	
 	if (!extensibleResIndexesString) return;
-	int resIndex = [extensibleResIndexesString intValue];
-	unsigned toResIndex = resIndex+100;
-	unsigned resCount = [_thread resCount];
+	NSInteger resIndex = [extensibleResIndexesString intValue];
+	NSInteger toResIndex = resIndex+100;
+	NSInteger resCount = [_thread resCount];
 	if (toResIndex+1 > resCount) {
 		toResIndex = resCount-1;
 	}
@@ -645,10 +645,10 @@ static BOOL __Safari2Debug = NO;
 	if (!lastMarkerElement) return;
 	
 	[self storeTempScroll];
-	int i;
+	NSInteger i;
 	
-	int resIndex = [resIndexes firstIndex];
-	int toResIndex = [resIndexes lastIndex];
+	NSInteger resIndex = [resIndexes firstIndex];
+	NSInteger toResIndex = [resIndexes lastIndex];
 	
 	NSIndexSet *dirtyResIndexes = nil;
 	if (resIndexes) {
@@ -670,7 +670,7 @@ static BOOL __Safari2Debug = NO;
             while (i < resIndex) {
                 
                 DOMHTMLElement *resElement = (DOMHTMLElement *)[(DOMHTMLDocument *)domDocument
-                                                                getElementById:[NSString stringWithFormat:@"res%d", i+1]];
+                                                                getElementById:[NSString stringWithFormat:@"res%ld", i+1]];
                 //[resElement removeClassName:@"new"];
                 
                 NSMutableString *className = [[resElement className] mutableCopy];
@@ -696,7 +696,7 @@ static BOOL __Safari2Debug = NO;
 	}
 	
 	
-	if (resIndex != -1/*NSNotFound*/ && toResIndex != -1/*NSNotFound*/) {
+	if (resIndex != NSNotFound && toResIndex != NSNotFound) {
 		T2PluginManager *sharedManager = [T2PluginManager sharedManager];
 		id <T2ThreadPartialHTMLExporting_v100> partialViewPlug = [sharedManager partialHTMLExporterPlugin];
 	
@@ -716,13 +716,13 @@ static BOOL __Safari2Debug = NO;
 																	ofRes:res
 																 inThread:_thread];
 				processedResHTML = [NSString stringWithFormat:
-									@"<div class=\"%@\" id=\"res%d\">%@</div>",
+									@"<div class=\"%@\" id=\"res%ld\">%@</div>",
 									[res HTMLClassesString],
 									i+1,
 									processedResHTML];
 				
 				DOMHTMLElement *resElement = (DOMHTMLElement *)[(DOMHTMLDocument *)domDocument
-																getElementById:[NSString stringWithFormat:@"res%d", i+1]];
+																getElementById:[NSString stringWithFormat:@"res%ld", i+1]];
 				[resElement setOuterHTML:processedResHTML];
 				
 				i = [dirtyResIndexes indexGreaterThanIndex:i];
@@ -829,7 +829,7 @@ static BOOL __Safari2Debug = NO;
 
 -(BOOL)replaceResAnchorElement:(DOMHTMLAnchorElement *)anchorElement WithResExtractPath:(NSString *)extractPath {
 	if (!_thread) return NO;
-	unsigned resNumber = [anchorElement parentResNumber];
+	NSInteger resNumber = [anchorElement parentResNumber];
 	NSIndexSet *resIndexes = [_thread resIndexesWithExtractPath:extractPath];
 	if (!resIndexes || [resIndexes count] == 0) return NO;
 	if (resNumber != NSNotFound && [resIndexes containsIndex:resNumber-1]) {
@@ -886,15 +886,15 @@ static BOOL __Safari2Debug = NO;
 	
 	T2PluginManager *pluginManager = [T2PluginManager sharedManager];
 	
-	unsigned resIndex = [resIndexes firstIndex];
-	unsigned displayResIndex = [_resIndexes firstIndex];
+	NSInteger resIndex = [resIndexes firstIndex];
+	NSInteger displayResIndex = [_resIndexes firstIndex];
 	if (displayResIndex > resIndex) {
 		resIndex = [_resIndexes indexGreaterThanOrEqualToIndex:displayResIndex];
 	}
 	if (resIndex == NSNotFound) return;
 	
 	DOMElement *resElement;
-	while (resElement = [domDocument getElementById:[NSString stringWithFormat:@"res%d", resIndex+1]]) {
+	while ((resElement = [domDocument getElementById:[NSString stringWithFormat:@"res%ld", resIndex+1]])) {
 		BOOL continueLoop = YES;
 		while (continueLoop) {
 			DOMNodeList *anchorElementList = [resElement getElementsByTagName:@"A"];
@@ -945,8 +945,8 @@ static BOOL __Safari2Debug = NO;
 		DOMNodeList *anchorElementList = [domDocument getElementsByTagName:@"A"];
 		DOMHTMLAnchorElement *anchorElement = nil;
 		NSMutableSet *urlStringSet = [NSMutableSet set];
-		unsigned urlCount = 0, lastResNumber = 0;
-		unsigned long i, maxCount = [anchorElementList length];
+		NSInteger urlCount = 0, lastResNumber = 0;
+		NSInteger i, maxCount = [anchorElementList length];
 		for (i=0; i<maxCount; i++) {
 			anchorElement = (DOMHTMLAnchorElement *)[anchorElementList item:i];
 			if (![anchorElement hasClassName:T2HTMLClassNameNoPreview] &&
@@ -988,8 +988,8 @@ static BOOL __Safari2Debug = NO;
 	
 	//T2PluginManager *pluginManager = [T2PluginManager sharedManager];
 	
-	unsigned resIndex = [resIndexes firstIndex];
-	unsigned displayResIndex = [_resIndexes firstIndex];
+	NSInteger resIndex = [resIndexes firstIndex];
+	NSInteger displayResIndex = [_resIndexes firstIndex];
 	if (displayResIndex > resIndex) {
 		resIndex = [_resIndexes indexGreaterThanOrEqualToIndex:displayResIndex];
 	}
@@ -997,7 +997,7 @@ static BOOL __Safari2Debug = NO;
 	NSMutableSet *urlStringSet = [NSMutableSet set];
 	
 	DOMElement *resElement;
-	while (resElement = [domDocument getElementById:[NSString stringWithFormat:@"res%d", resIndex+1]]) {
+	while ((resElement = [domDocument getElementById:[NSString stringWithFormat:@"res%ld", resIndex+1]])) {
 		BOOL continueLoop = YES;
 		while (continueLoop) {
 			DOMNodeList *anchorElementList = [resElement getElementsByTagName:@"A"];
@@ -1008,7 +1008,7 @@ static BOOL __Safari2Debug = NO;
 				anchorElement = (DOMHTMLAnchorElement *)[anchorElementList item:i];
 				
 				NSString *urlString = [anchorElement href];
-				unsigned resNumber = [anchorElement parentResNumber];
+				NSInteger resNumber = [anchorElement parentResNumber];
 				if (![urlString hasPrefix:@"internal://"] && resNumber != NSNotFound) {
 					[urlStringSet addObject:urlString];
 					urlCount++;
@@ -1100,7 +1100,7 @@ static BOOL __Safari2Debug = NO;
 			[self extendLoadedResIndexs:resIndexes];
 		}
 		
-		unsigned resCount = [_thread resCount];
+		NSInteger resCount = [_thread resCount];
 		setObjectWithRetain(_resIndexes, [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, resCount)]);
 	} else {
 		[self displayThread];
@@ -1115,9 +1115,9 @@ static BOOL __Safari2Debug = NO;
 	DOMDocument *document = [[self mainFrame] DOMDocument];
 	if (resIndexes && document) {
 		[self setSelectedDOMRange:nil affinity:0];
-		unsigned resIndex = [resIndexes firstIndex];
+		NSInteger resIndex = [resIndexes firstIndex];
 		while (resIndex != NSNotFound) {
-			NSString *elementID = [NSString stringWithFormat:@"res%d",resIndex+1];
+			NSString *elementID = [NSString stringWithFormat:@"res%ld",resIndex+1];
 			DOMElement *element = [document getElementById:elementID];
 			if (element) {
 				T2Res *res = [resArray objectAtIndex:resIndex];
@@ -1438,7 +1438,7 @@ static BOOL __Safari2Debug = NO;
 	DOMHTMLHtmlElement *domElement = (DOMHTMLHtmlElement *)[(DOMHTMLDocument *)domDocument documentElement];
 	DOMHTMLBodyElement *body = nil;
 	DOMNodeList *nodeList = [domElement childNodes];
-	unsigned i, length = [nodeList length];
+	NSInteger i, length = [nodeList length];
 	for (i=0; i<length; i++) {
 		DOMNode *node = [nodeList item:i];
 		if ([node isKindOfClass:[DOMHTMLBodyElement class]]) {
@@ -1623,7 +1623,7 @@ decisionListener:(id<WebPolicyDecisionListener>)listener {
 	id delegate = [(T2ThreadView *)sender delegate];
 	NSNumber *hasSelection = [element objectForKey:WebElementIsSelectedKey];
 	DOMNode *node = [element objectForKey:WebElementDOMNodeKey];
-	unsigned resNumber = [node parentResNumber];
+	NSInteger resNumber = [node parentResNumber];
 	
 	NSURL *linkedURL = [element objectForKey:WebElementLinkURLKey];
 	
@@ -1664,7 +1664,7 @@ decisionListener:(id<WebPolicyDecisionListener>)listener {
 				
 				if (resNumber != NSNotFound && resNumber > 0) {
 					
-					NSString *extractPath = [NSString stringWithFormat:@"resNumber/%d",resNumber];
+					NSString *extractPath = [NSString stringWithFormat:@"resNumber/%ld",resNumber];
 					[threadView setSelectedResExtractPath:extractPath];
 					if (delegate && [delegate respondsToSelector:@selector(threadView:contextMenuItemsForResPath:defaultMenuItems:)]) {
 						NSArray *newMenuItems2 = [delegate threadView:threadView contextMenuItemsForResPath:extractPath defaultMenuItems:defaultMenuItems];
@@ -1682,7 +1682,7 @@ decisionListener:(id<WebPolicyDecisionListener>)listener {
 	} else {
 		if (resNumber != NSNotFound && resNumber > 0) {
 			
-			NSString *extractPath = [NSString stringWithFormat:@"resNumber/%d",resNumber];
+			NSString *extractPath = [NSString stringWithFormat:@"resNumber/%ld",resNumber];
 			[threadView setSelectedResExtractPath:extractPath];
 			if (delegate && [delegate respondsToSelector:@selector(threadView:contextMenuItemsForResPath:defaultMenuItems:)]) {
 				NSArray *newMenuItems = [delegate threadView:threadView contextMenuItemsForResPath:extractPath defaultMenuItems:defaultMenuItems];

@@ -221,13 +221,13 @@ static unsigned __maxPopUpResCount = 1000;
 	return NO;
 }
 
--(void)setNewResIndex:(unsigned)index { _newResIndex = index; }
--(unsigned)newResIndex { return _newResIndex; }
+-(void)setNewResIndex:(NSInteger)index { _newResIndex = index; }
+-(NSInteger)newResIndex { return _newResIndex; }
 
--(void)setSavedResIndex:(int)index { 
+-(void)setSavedResIndex:(NSInteger)index { 
 	_savedResIndex = index;
 }
--(int)savedResIndex { return _savedResIndex; }
+-(NSInteger)savedResIndex { return _savedResIndex; }
 -(void)setSavedScrollOffset:(float)offset { _savedScrollOffset = offset; }
 -(float)savedScrollOffset { return _savedScrollOffset; }
 
@@ -271,9 +271,9 @@ static unsigned __maxPopUpResCount = 1000;
 		}
 	}
 	
-	unsigned i, maxCount = [_resArray count];
-	unsigned maxScore = 1;
-	unsigned maxScoreI = NSNotFound;
+	NSInteger i, maxCount = [_resArray count];
+	NSInteger maxScore = 1;
+	NSInteger maxScoreI = NSNotFound;
 	
 	//NSLog(@"Max %d", maxCount);
 	
@@ -293,8 +293,8 @@ static unsigned __maxPopUpResCount = 1000;
 		}
 		
 		if ([trimmedPostedLines count] == [trimmedMyResLines count]) {
-			unsigned score = 0;
-			unsigned j,maxLineCount = [trimmedPostedLines count];
+			NSInteger score = 0;
+			NSInteger j,maxLineCount = [trimmedPostedLines count];
 			for (j=0; j<maxLineCount; j++) {
 				NSString *line1 = [trimmedMyResLines objectAtIndex:j];
 				NSString *line2 = [trimmedPostedLines objectAtIndex:j];
@@ -357,7 +357,7 @@ static unsigned __maxPopUpResCount = 1000;
 #pragma mark Delegate
 //-(void)setDelegate:(id)object { _delegate = object; }
 //-(id)delegate { return _delegate; }
--(void)notifyLoadedResIndexes:(NSIndexSet *)resIndexes location:(unsigned)location {
+-(void)notifyLoadedResIndexes:(NSIndexSet *)resIndexes location:(NSInteger)location {
 	[self setLoadedResIndexes:resIndexes];
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:T2ThreadDidLoadResIndexesNotification
@@ -390,10 +390,10 @@ static unsigned __maxPopUpResCount = 1000;
 #pragma mark Trace reply
 
 -(NSIndexSet *)forwardResIndexesFromResIndexes:(NSIndexSet *)indexSet {
-	unsigned resCount = [_resArray count];
-	int index = [indexSet firstIndex];
+	NSInteger resCount = [_resArray count];
+	NSInteger index = [indexSet firstIndex];
 	NSMutableIndexSet *resultIndexSet = [NSMutableIndexSet indexSet];
-    NSLog(@"index 4 = %d", index);
+    NSLog(@"index 4 = %ld", (long)index);
 	while (index != NSNotFound) {
 		if (index < resCount) {
 			NSIndexSet *nextResIndexSet = [(T2Res *)[_resArray objectAtIndex:index] forwardResIndexes];
@@ -409,10 +409,10 @@ static unsigned __maxPopUpResCount = 1000;
 	return nil;
 }
 -(NSIndexSet *)backwardResIndexesFromResIndexes:(NSIndexSet *)indexSet {
-	unsigned resCount = [_resArray count];
-	int index = [indexSet firstIndex];
+	NSInteger resCount = [_resArray count];
+	NSInteger index = [indexSet firstIndex];
 	NSMutableIndexSet *resultIndexSet = [NSMutableIndexSet indexSet];
-    NSLog(@"index 4 = %d", index);
+    NSLog(@"index 4 = %ld", index);
 	while (index != NSNotFound) {
 		if (index < resCount) {
 			NSIndexSet *nextResIndexSet = [(T2Res *)[_resArray objectAtIndex:index] backwardResIndexes];
@@ -427,10 +427,10 @@ static unsigned __maxPopUpResCount = 1000;
 	}
 	return nil;
 }
--(NSIndexSet *)traceResIndexes:(NSIndexSet *)indexSet depth:(unsigned)depth {
+-(NSIndexSet *)traceResIndexes:(NSIndexSet *)indexSet depth:(NSInteger)depth {
 	NSMutableIndexSet *resulttIndexSet = [[indexSet mutableCopy] autorelease];
 	NSIndexSet *nextIndexSet = indexSet;
-	unsigned i;
+	NSInteger i;
 	for (i=0; i<depth; i++) {
 		nextIndexSet = [self forwardResIndexesFromResIndexes:nextIndexSet];
 		if ([nextIndexSet count] > 0) {
@@ -441,10 +441,10 @@ static unsigned __maxPopUpResCount = 1000;
 	}
 	return resulttIndexSet;
 }
--(NSIndexSet *)backtraceResIndexes:(NSIndexSet *)indexSet depth:(unsigned)depth {
+-(NSIndexSet *)backtraceResIndexes:(NSIndexSet *)indexSet depth:(NSInteger)depth {
 	NSMutableIndexSet *resulttIndexSet = [[indexSet mutableCopy] autorelease];
 	NSIndexSet *nextIndexSet = indexSet;
-	unsigned i;
+	NSInteger i;
 	for (i=0; i<depth; i++) {
 		nextIndexSet = [self backwardResIndexesFromResIndexes:nextIndexSet];
 		if ([nextIndexSet count] > 0) {
@@ -457,11 +457,11 @@ static unsigned __maxPopUpResCount = 1000;
 }
 
 -(NSIndexSet *)backwardAndSeriesResIndexesFromResIndexes:(NSIndexSet *)indexSet {
-	unsigned resCount = [_resArray count];
-	int index = [indexSet firstIndex];
+	NSInteger resCount = [_resArray count];
+	NSInteger index = [indexSet firstIndex];
 	NSMutableIndexSet *resultIndexSet = [NSMutableIndexSet indexSet];
-    NSLog(@"index 4 = %d", index);
-	while (index != -1/*NSNotFound*/) {
+    NSLog(@"index 4 = %ld", index);
+	while (index != NSNotFound) {
 		if (index < resCount) {
 			T2Res *res = (T2Res *)[_resArray objectAtIndex:index];
 			NSIndexSet *nextResIndexSet = [res backwardResIndexes];
@@ -500,7 +500,7 @@ static unsigned __maxPopUpResCount = 1000;
 }
 -(NSIndexSet *)resIndexesWithExtractPath:(NSString *)extractPath {
 	NSArray *pathComponents = [extractPath pathComponents];
-	unsigned pathComponentsCount = [pathComponents count];
+	NSInteger pathComponentsCount = [pathComponents count];
 	if (pathComponentsCount < 1) return nil;
 	NSString *extractKey = [pathComponents objectAtIndex:0];
 	NSString *subExtractPath;
@@ -556,7 +556,7 @@ static unsigned __maxPopUpResCount = 1000;
 	if (!_pathStyleDictionary) _pathStyleDictionary = [[NSMutableDictionary alloc] init];
 	
 	NSArray *pathComponents = [extractPath pathComponents];
-	unsigned pathComponentsCount = [pathComponents count];
+	NSInteger pathComponentsCount = [pathComponents count];
 	NSString *key = [pathComponents objectAtIndex:0];
 	if ([key isEqualToString:@"internal:"] && pathComponentsCount>1) {
 		key = [pathComponents objectAtIndex:1];
@@ -595,8 +595,8 @@ static unsigned __maxPopUpResCount = 1000;
 
 -(void)addInternalStyle:(NSString *)style ofResWithIndexes:(NSIndexSet *)indexes {
 	if (!indexes) return;
-	unsigned resIndex = [indexes firstIndex];
-    NSLog(@"index 5 = %d", resIndex);
+	NSInteger resIndex = [indexes firstIndex];
+    NSLog(@"index 5 = %ld", resIndex);
 	while (resIndex != NSNotFound) {
 		[(T2Res *)[_resArray objectAtIndex:resIndex] addHTMLClass:style];
 		resIndex = [indexes indexGreaterThanIndex:resIndex];
@@ -608,7 +608,7 @@ static unsigned __maxPopUpResCount = 1000;
 	if (!_pathStyleDictionary) _pathStyleDictionary = [[NSMutableDictionary alloc] init];
 	
 	NSArray *pathComponents = [extractPath pathComponents];
-	unsigned pathComponentsCount = [pathComponents count];
+	NSInteger pathComponentsCount = [pathComponents count];
 	NSString *key = [pathComponents objectAtIndex:0];
 	if ([key isEqualToString:@"internal:"] && pathComponentsCount>1) {
 		key = [pathComponents objectAtIndex:1];
@@ -647,8 +647,8 @@ static unsigned __maxPopUpResCount = 1000;
 }
 -(void)removeInternalStylesOfResWithIndexes:(NSIndexSet *)indexes {
 	if (!indexes) return;
-	unsigned resIndex = [indexes firstIndex];
-    NSLog(@"index 5 = %d", resIndex);
+	NSInteger resIndex = [indexes firstIndex];
+    NSLog(@"index 5 = %ld", resIndex);
 
 	while (resIndex != NSNotFound) {
 		[(T2Res *)[_resArray objectAtIndex:resIndex] setHTMLClasses:nil];
@@ -733,8 +733,8 @@ static unsigned __maxPopUpResCount = 1000;
 -(NSString *)HTMLForResIndexes:(NSIndexSet *)resIndexes baseURL:(NSURL **)baseURL forPopUp:(BOOL)forPopUp {
 	NSArray *resArray = [self resArray];
 	if (!resArray || !resIndexes) return nil;
-	unsigned i = [resIndexes firstIndex];
-	unsigned maxResNumber = [resArray count];
+	NSInteger i = [resIndexes firstIndex];
+	NSInteger maxResNumber = [resArray count];
 	
 	NSMutableString *resultHTML = [[[NSMutableString alloc] init] autorelease];
 	NSURL *tempBaseURL = nil;
@@ -791,10 +791,10 @@ static unsigned __maxPopUpResCount = 1000;
 }
  */
 
--(NSString *)extensibleHTMLFromResIndex:(int)resIndex toResIndex:(int)toResIndex baseURL:(NSURL **)baseURL {
+-(NSString *)extensibleHTMLFromResIndex:(NSInteger)resIndex toResIndex:(NSInteger)toResIndex baseURL:(NSURL **)baseURL {
 	NSArray *resArray = [self resArray];
 	if (!resArray) return nil;
-	int resCount = [resArray count];
+	NSInteger resCount = [resArray count];
 	
 	
 	NSMutableString *resultHTML = [[[NSMutableString alloc] init] autorelease];
@@ -808,17 +808,17 @@ static unsigned __maxPopUpResCount = 1000;
 	[resultHTML appendString:[partialViewPlug headerHTMLWithThread:self baseURL:&tempBaseURL]];
 	
 	if (resIndex > 0) {
-		[resultHTML appendFormat:@"<div id=\"extensibleHeader\"><p>%d - 1</p></div>", resIndex];
+		[resultHTML appendFormat:@"<div id=\"extensibleHeader\"><p>%ld - 1</p></div>", resIndex];
 	}
 	
-	int i;
+	NSInteger i;
 	for (i = resIndex; i<=toResIndex; i++) {
 		
 		if ((resStringFormat != newResStringFormat) && i>=_newResIndex) {
 			resStringFormat = newResStringFormat;
 			[resultHTML appendString:@"<div id=\"new\"></div>"];
 		}
-        NSLog(@"iiiiiiiiiiiiii = %d", i);
+        NSLog(@"iiiiiiiiiiiiii = %ld", i);
 		T2Res *res = [resArray objectAtIndex:i];
 		NSString *processedResHTML = [sharedManager processedHTML:[partialViewPlug resHTMLWithRes:res]
 															ofRes:res
@@ -831,7 +831,7 @@ static unsigned __maxPopUpResCount = 1000;
 	}
 	
 	if ((toResIndex+1) < resCount) {
-		[resultHTML appendFormat:@"<div id=\"extensibleFooter\"><p>%d - %d</p></div>", toResIndex+2, resCount];
+		[resultHTML appendFormat:@"<div id=\"extensibleFooter\"><p>%ld - %ld</p></div>", toResIndex+2, resCount];
 	} else {
 		[resultHTML appendString:@"<div id=\"last\"></div>"];
 	}
@@ -842,11 +842,11 @@ static unsigned __maxPopUpResCount = 1000;
 	return resultHTML;
 }
 
--(NSString *)extensionHTMLFromResIndex:(int)fromResIndex toResIndex:(int)toResIndex
+-(NSString *)extensionHTMLFromResIndex:(NSInteger)fromResIndex toResIndex:(NSInteger)toResIndex
 						  onDownstream:(BOOL)onDownstream {
 	NSArray *resArray = [self resArray];
 	if (!resArray) return nil;
-	int resCount = [resArray count];
+	NSInteger resCount = [resArray count];
 	
 	
 	NSMutableString *resultHTML = [[[NSMutableString alloc] init] autorelease];
@@ -856,10 +856,10 @@ static unsigned __maxPopUpResCount = 1000;
 	NSString *newResStringFormat = @"<div class=\"new %@\" id=\"res%d\">%@</div>";
 	
 	if (!onDownstream && (fromResIndex > 0)) {
-		[resultHTML appendFormat:@"<div id=\"extensibleHeader\"><p>%d - 1</p></div>", fromResIndex-1];
+		[resultHTML appendFormat:@"<div id=\"extensibleHeader\"><p>%ld - 1</p></div>", fromResIndex-1];
 	}
 	
-	int i;
+	NSInteger i;
 	for (i = fromResIndex; i<= toResIndex; i++) {
 		if (resStringFormat != newResStringFormat) {
 			if (i>=_newResIndex) {
@@ -869,7 +869,7 @@ static unsigned __maxPopUpResCount = 1000;
 				}
 			}
 		}
-		NSLog(@"extension index = %d", i);
+		NSLog(@"extension index = %ld", i);
 		T2Res *res = [resArray objectAtIndex:i];
 		NSString *processedResHTML = [sharedManager processedHTML:[partialViewPlug resHTMLWithRes:res]
 															ofRes:res
@@ -883,7 +883,7 @@ static unsigned __maxPopUpResCount = 1000;
 	
 	if (onDownstream) {
 		if ((toResIndex+1) < resCount) {
-			[resultHTML appendFormat:@"<div id=\"extensibleFooter\"><p>%d - %d</p></div>", toResIndex+2, resCount];
+			[resultHTML appendFormat:@"<div id=\"extensibleFooter\"><p>%ld - %ld</p></div>", toResIndex+2, resCount];
 		} else {
 			[resultHTML appendString:@"<div id=\"last\"></div>"];
 		}
@@ -896,14 +896,14 @@ static unsigned __maxPopUpResCount = 1000;
 -(NSString *)excerptHTMLForResIndexes:(NSIndexSet *)resIndexes {
 	NSArray *resArray = [self resArray];
 	if (!resArray || !resIndexes) return nil;
-	int i = [resIndexes firstIndex];
+	NSInteger i = [resIndexes firstIndex];
 	
 	NSMutableString *resultHTML = [[[NSMutableString alloc] init] autorelease];
 	T2PluginManager *sharedManager = [T2PluginManager sharedManager];
 	id <T2ThreadPartialHTMLExporting_v100> partialViewPlug = [sharedManager partialHTMLExporterPlugin];
 	
 	NSString *resStringFormat;
-	unsigned j=0 ,maxResCount;
+	NSInteger j=0 ,maxResCount;
 	
 	resStringFormat = @"<div class=\"inline %@\">%@</div>";
 	maxResCount = __maxDisplayResCount;
@@ -967,8 +967,8 @@ static unsigned __maxPopUpResCount = 1000;
 -(NSString *)escapedTitle { return [[_threadFace title] stringByAddingHTMLEscapes]; }
 //-(NSString *)replacedTitle { return [_threadFace replacedTitle]; }
 
--(int)resCount { return [_resArray count]; }
--(int)resCountNew { return [_threadFace resCountNew]; }
+-(NSInteger)resCount { return [_resArray count]; }
+-(NSInteger)resCountNew { return [_threadFace resCountNew]; }
 
 -(T2ListFace *)threadListFace {
 	NSString *listFaceInternalPath = [_internalPath stringByDeletingLastPathComponent];
@@ -991,7 +991,7 @@ static unsigned __maxPopUpResCount = 1000;
 }
 
 -(NSString *)resCountString {
-	return [NSString stringWithFormat:@"%d", [_resArray count]];
+	return [NSString stringWithFormat:@"%ld", (NSInteger)[_resArray count]];
 }
 -(NSString *)labelColorString {
 	int label = [_threadFace label];

@@ -25,7 +25,7 @@ extern NSString *T2ThreadResIndexes;
 // informal protocol
 @interface NSObject ( T2ThreadDelegate )
 -(void)thread:(T2Thread *)thread didLoadResIndexes:(NSIndexSet *)indexSet
-	 location:(unsigned)location;
+	 location:(NSInteger)location;
 -(void)thread:(T2Thread *)thread didUpdateStyleOfResIndexes:(NSIndexSet *)indexSet ;
 @end
 
@@ -58,10 +58,10 @@ extern NSString *T2ThreadResIndexes;
 	
 	NSTimeInterval	_loadingInterval;
 	NSDate			*_lastLoadingDate;
-	unsigned		_retryCount;
+	NSInteger		_retryCount;
 	
-	unsigned		_newResIndex;
-	int				_savedResIndex;
+	NSInteger		_newResIndex;
+	NSInteger		_savedResIndex;
 	float			_savedScrollOffset;
 	
 	NSString *_webBrowserURLString;
@@ -111,11 +111,11 @@ extern NSString *T2ThreadResIndexes;
 -(NSDate *)lastLoadingDate ;
 -(BOOL)loadableInterval ;
 
--(void)setNewResIndex:(unsigned)index ;
--(unsigned)newResIndex ;
+-(void)setNewResIndex:(NSInteger)index ;
+-(NSInteger)newResIndex ;
 
--(void)setSavedResIndex:(int)index ;
--(int)savedResIndex ;
+-(void)setSavedResIndex:(NSInteger)index ;
+-(NSInteger)savedResIndex ;
 -(void)setSavedScrollOffset:(float)offset ;
 -(float)savedScrollOffset ;
 
@@ -135,15 +135,15 @@ extern NSString *T2ThreadResIndexes;
 #pragma mark Delegate
 //-(void)setDelegate:(id)object ;
 //-(id)delegate ;
--(void)notifyLoadedResIndexes:(NSIndexSet *)resIndexes location:(unsigned)location ;
+-(void)notifyLoadedResIndexes:(NSIndexSet *)resIndexes location:(NSInteger)location ;
 -(void)notifyUpdatedStyleOfResIndexes:(NSIndexSet *)resIndexes ;
 
 #pragma mark -
 #pragma mark Trace reply
 -(NSIndexSet *)forwardResIndexesFromResIndexes:(NSIndexSet *)indexSet ;
 -(NSIndexSet *)backwardResIndexesFromResIndexes:(NSIndexSet *)indexSet ;
--(NSIndexSet *)traceResIndexes:(NSIndexSet *)indexSet depth:(unsigned)depth ;
--(NSIndexSet *)backtraceResIndexes:(NSIndexSet *)indexSet depth:(unsigned)depth ;
+-(NSIndexSet *)traceResIndexes:(NSIndexSet *)indexSet depth:(NSInteger)depth ;
+-(NSIndexSet *)backtraceResIndexes:(NSIndexSet *)indexSet depth:(NSInteger)depth ;
 -(NSIndexSet *)backwardAndSeriesResIndexesFromResIndexes:(NSIndexSet *)indexSet ;
 	
 #pragma mark -
@@ -183,8 +183,8 @@ extern NSString *T2ThreadResIndexes;
 -(NSString *)HTMLForResIndexes:(NSIndexSet *)resIndexes baseURL:(NSURL **)baseURL
 					  forPopUp:(BOOL)forPopUp ;
 
--(NSString *)extensibleHTMLFromResIndex:(int)resIndex toResIndex:(int)toResIndex baseURL:(NSURL **)baseURL ;
--(NSString *)extensionHTMLFromResIndex:(int)fromResIndex toResIndex:(int)toResIndex
+-(NSString *)extensibleHTMLFromResIndex:(NSInteger)resIndex toResIndex:(NSInteger)toResIndex baseURL:(NSURL **)baseURL ;
+-(NSString *)extensionHTMLFromResIndex:(NSInteger)fromResIndex toResIndex:(NSInteger)toResIndex
 						  onDownstream:(BOOL)onDownstream ;
 
 -(NSString *)excerptHTMLForResIndexes:(NSIndexSet *)resIndexes ;
@@ -199,8 +199,8 @@ extern NSString *T2ThreadResIndexes;
 -(NSString *)title ;
 //-(NSString *)replacedTitle ;
 
--(int)resCount ;
--(int)resCountNew ;
+-(NSInteger)resCount ;
+-(NSInteger)resCountNew ;
 
 -(T2ListFace *)threadListFace ;
 -(NSString *)threadListTitle ;

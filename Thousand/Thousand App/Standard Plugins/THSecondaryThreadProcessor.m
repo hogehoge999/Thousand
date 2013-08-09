@@ -102,21 +102,21 @@ static NSString *__uniqueName = @"jp_natori_Thousand_SecondaryThreadProcessor";
 }
 
 	//protocol T2ThreadProcessing_v100
--(void)processThread:(T2Thread *)thread appendingIndex:(unsigned)index {
+-(void)processThread:(T2Thread *)thread appendingIndex:(NSInteger)index {
 	NSArray *resArray = [thread resArray];
-	unsigned i, maxCount = [resArray count];
+	NSInteger i, maxCount = [resArray count];
 	for (i=0; i<maxCount; i++) {
 		T2Res *res = [resArray objectAtIndex:i];
 		NSString *content = [res content];
 		
 		if (_aaDetectorEnabled) { //AA detection
-			int score = 0;
+			NSInteger score = 0;
 			NSString *tempString = nil;
 			NSScanner *scanner = [NSScanner scannerWithString:content];
 			[scanner setCharactersToBeSkipped:_skipCharSet];
 			while (![scanner isAtEnd] && [scanner scanLocation] < 256) {
 				if ([scanner scanCharactersFromSet:_AACharSet intoString:&tempString]) {
-					score += (int)[tempString length]-1;
+					score += (NSInteger)[tempString length]-1;
 				} else if ([scanner scanUpToCharactersFromSet:_AACharSet intoString:NULL]) {
 					if (score > 2) score -= 2;
 				}
@@ -131,14 +131,14 @@ static NSString *__uniqueName = @"jp_natori_Thousand_SecondaryThreadProcessor";
 			NSIndexSet *forwardResIndexes = [res forwardResIndexes];
 			if (forwardResIndexes && [forwardResIndexes count]>0) {
 				if ([[res content] rangeOfString:@"ttp://" options:NSLiteralSearch].location != NSNotFound) {
-					int forwardResIndex = [forwardResIndexes firstIndex];
-                    NSLog(@"index6 = %d", forwardResIndex);
-					while (forwardResIndex != -1/*NSNotFound*/) {
+					NSInteger forwardResIndex = [forwardResIndexes firstIndex];
+                    NSLog(@"index6 = %ld", forwardResIndex);
+					while (forwardResIndex != NSNotFound) {
 						T2Res *forwardRes = [resArray objectAtIndex:forwardResIndex];
 						NSString *forwardResContent = [forwardRes content];
 						
 						NSRange range;
-						unsigned length = [forwardResContent length];
+						NSInteger length = [forwardResContent length];
 						if (length<64)
 							range = NSMakeRange(0,length);
 						else
@@ -155,7 +155,7 @@ static NSString *__uniqueName = @"jp_natori_Thousand_SecondaryThreadProcessor";
 						}
 						
 						forwardResIndex = [forwardResIndexes indexGreaterThanIndex:forwardResIndex];
-                        NSLog(@"index7 = %d", forwardResIndex);
+                        NSLog(@"index7 = %ld", forwardResIndex);
 					}
 				}
 			}
@@ -174,7 +174,7 @@ static NSString *__uniqueName = @"jp_natori_Thousand_SecondaryThreadProcessor";
 		{
 			NSMutableIndexSet *indexes = [NSMutableIndexSet indexSet];
 			NSArray *resArray = [thread resArray];
-			unsigned i, maxCount = [resArray count];
+			NSInteger i, maxCount = [resArray count];
 			for (i=0; i<maxCount; i++) {
 				T2Res *res = [resArray objectAtIndex:i];
 				if ([[res HTMLClasses] containsObject:path]) {
