@@ -489,7 +489,9 @@ void stampList(T2List *list) {
 		[thread setValue:datLengthNumber forKey:@"datLength"];
 		
 		NSString *srcString = [NSString stringUsingIconvWithData:localDatData encoding:NSShiftJISStringEncoding];
+        //NSString *srcString = [[NSString alloc] initWithData:localDatData encoding:NSShiftJISStringEncoding];
 		if (srcString) {
+            NSLog(@"size = %ld", [srcString length]);
 			[self buildThread:thread withSrcString:srcString appending:NO];
 			NSArray *resArray = [thread resArray];
 			[thread setNewResIndex:[resArray count]];
@@ -871,7 +873,7 @@ void stampList(T2List *list) {
 	NSString *threadTitle = nil;
 	T2Res *tempRes;
 	NSAutoreleasePool *myPool;
-	unsigned i=0;
+	NSInteger i=0;
 	
 	NSArray *oldResArray = [thread resArray];
 	if (appending && oldResArray && [oldResArray count]>0) {
@@ -884,7 +886,7 @@ void stampList(T2List *list) {
 		
 		if ([resString length]>1) {
 			NSArray *partStringArray = [resString componentsSeparatedByString:@"<>"];
-			unsigned partStringCount = [partStringArray count];
+			NSInteger partStringCount = [partStringArray count];
 			
 			if (partStringCount > 3) {
 				if (partStringCount > 4 && i==0) {

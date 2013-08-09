@@ -65,27 +65,39 @@ static NSCharacterSet *__whitespaceAndNewlineCharacterSet = nil;
 	return content;
 }
 +(NSString *)stringWithData:(NSData *)data iconvEncoding:(NSString *)encodingString {
+    int err = 0;
 	iconv_t descriptor = iconv_open("UTF-16//IGNORE", [encodingString UTF8String]);
 	size_t inbytesleft = [data length];
-	const char* inbuf = (char*)[data bytes];
-	
-	size_t outbytesleft;
+	char* inbuf = (char*)[data bytes];
+
+	size_t outbytesleft = __iconvBufferLength;
+
 	char* outbuf = malloc(__iconvBufferLength);
-	char* outbyteslength = NULL;
+	char* outbytes = NULL;
 	NSMutableString *resultString = [NSMutableString string];
-	errno = E2BIG;
+	err = E2BIG;
 	
-	while (errno == E2BIG) {
-		outbytesleft = __iconvBufferLength;
-		outbyteslength = outbuf;
+	while (err == E2BIG) {
+		outbytes = outbuf;
 		errno = 0;
-		iconv(descriptor, &inbuf, &inbytesleft, &outbyteslength, &outbytesleft);
-		if (errno == EILSEQ || errno == EINVAL) break;
+		iconv(descriptor, &inbuf, &inbytesleft, &outbytes, &outbytesleft);
+        err = errno;
+		if (err == EILSEQ || err == EINVAL)
+            break;
 		NSString *part = [[[NSString alloc] initWithBytes:outbuf
 												   length:__iconvBufferLength-outbytesleft
 												 encoding:NSUnicodeStringEncoding] autorelease];
 		[resultString appendString:part];
+		outbytesleft = __iconvBufferLength;
 	}
+    if (err != 0)
+    {
+        NSLog(@"errno = %d" ,err);
+    }
+    if (inbytesleft > 0)
+    {
+        NSLog(@"end! inbytesleft = %ld", inbytesleft);
+    }
 	iconv_close(descriptor);
 	free(outbuf);
 	

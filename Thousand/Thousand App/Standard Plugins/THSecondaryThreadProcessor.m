@@ -115,6 +115,7 @@ static NSString *__uniqueName = @"jp_natori_Thousand_SecondaryThreadProcessor";
 			NSScanner *scanner = [NSScanner scannerWithString:content];
 			[scanner setCharactersToBeSkipped:_skipCharSet];
 			while (![scanner isAtEnd] && [scanner scanLocation] < 256) {
+                //NSLog(@"scan location %ld", [scanner scanLocation]);
 				if ([scanner scanCharactersFromSet:_AACharSet intoString:&tempString]) {
 					score += (NSInteger)[tempString length]-1;
 				} else if ([scanner scanUpToCharactersFromSet:_AACharSet intoString:NULL]) {
@@ -157,7 +158,7 @@ static NSString *__uniqueName = @"jp_natori_Thousand_SecondaryThreadProcessor";
                         NSLog(@"index7 = %ld", forwardResIndex);
                         if (forwardResIndex == NSNotFound)
                         {
-                            NSLog(@"index7 = %ld NotFound", forwardResIndex);
+                            NSLog(@"THScondaryThreadProcesser index NotFound %ld, %ld", i, maxCount);
                         }
 					}
 				}
