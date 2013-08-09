@@ -363,7 +363,7 @@ static BOOL __Safari2Debug = NO;
 		[self setResIndexes:[_thread resIndexesWithExtractPath:_resExtractPath]];
 		
 		if ([_resExtractPath isEqualToString:@"automatic"]) {
-			unsigned resCount = [_thread resCount];
+			NSInteger resCount = [_thread resCount];
 			int resIndex = [_thread savedResIndex];
 			if (resIndex < 0) resIndex = 0;
 			int toResIndex;
@@ -494,8 +494,8 @@ static BOOL __Safari2Debug = NO;
 			resIndex = newResIndex;
 		} else {
 			overshoot = resIndex;
-			int newResIndex = [resIndexes indexLessThanIndex:resIndex];
-			if (newResIndex == -1/*NSNotFound*/) break;
+			NSInteger newResIndex = [resIndexes indexLessThanIndex:resIndex];
+			if (newResIndex == NSNotFound) break;
 			resIndex = newResIndex;
 		}
 	}

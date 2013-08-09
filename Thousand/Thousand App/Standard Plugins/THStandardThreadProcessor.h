@@ -44,7 +44,7 @@
 -(BOOL)enabled ;
 
 	//protocol T2ThreadProcessing_v100
--(void)processThread:(T2Thread *)thread appendingIndex:(unsigned)index ;
+-(void)processThread:(T2Thread *)thread appendingIndex:(NSInteger)index ;
 
 	//protocol T2ThreadHTMLProcessing_v100
 -(NSString *)processedHTML:(NSString *)htmlString ofRes:(T2Res *)res inThread:(T2Thread *)thread ;

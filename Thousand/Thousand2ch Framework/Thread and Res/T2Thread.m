@@ -412,7 +412,6 @@ static unsigned __maxPopUpResCount = 1000;
 	NSInteger resCount = [_resArray count];
 	NSInteger index = [indexSet firstIndex];
 	NSMutableIndexSet *resultIndexSet = [NSMutableIndexSet indexSet];
-    NSLog(@"index 4 = %ld", index);
 	while (index != NSNotFound) {
 		if (index < resCount) {
 			NSIndexSet *nextResIndexSet = [(T2Res *)[_resArray objectAtIndex:index] backwardResIndexes];
@@ -460,7 +459,6 @@ static unsigned __maxPopUpResCount = 1000;
 	NSInteger resCount = [_resArray count];
 	NSInteger index = [indexSet firstIndex];
 	NSMutableIndexSet *resultIndexSet = [NSMutableIndexSet indexSet];
-    NSLog(@"index 4 = %ld", index);
 	while (index != NSNotFound) {
 		if (index < resCount) {
 			T2Res *res = (T2Res *)[_resArray objectAtIndex:index];
@@ -596,7 +594,6 @@ static unsigned __maxPopUpResCount = 1000;
 -(void)addInternalStyle:(NSString *)style ofResWithIndexes:(NSIndexSet *)indexes {
 	if (!indexes) return;
 	NSInteger resIndex = [indexes firstIndex];
-    NSLog(@"index 5 = %ld", resIndex);
 	while (resIndex != NSNotFound) {
 		[(T2Res *)[_resArray objectAtIndex:resIndex] addHTMLClass:style];
 		resIndex = [indexes indexGreaterThanIndex:resIndex];
@@ -648,7 +645,6 @@ static unsigned __maxPopUpResCount = 1000;
 -(void)removeInternalStylesOfResWithIndexes:(NSIndexSet *)indexes {
 	if (!indexes) return;
 	NSInteger resIndex = [indexes firstIndex];
-    NSLog(@"index 5 = %ld", resIndex);
 
 	while (resIndex != NSNotFound) {
 		[(T2Res *)[_resArray objectAtIndex:resIndex] setHTMLClasses:nil];
@@ -818,7 +814,6 @@ static unsigned __maxPopUpResCount = 1000;
 			resStringFormat = newResStringFormat;
 			[resultHTML appendString:@"<div id=\"new\"></div>"];
 		}
-        NSLog(@"iiiiiiiiiiiiii = %ld", i);
 		T2Res *res = [resArray objectAtIndex:i];
 		NSString *processedResHTML = [sharedManager processedHTML:[partialViewPlug resHTMLWithRes:res]
 															ofRes:res
@@ -869,7 +864,6 @@ static unsigned __maxPopUpResCount = 1000;
 				}
 			}
 		}
-		NSLog(@"extension index = %ld", i);
 		T2Res *res = [resArray objectAtIndex:i];
 		NSString *processedResHTML = [sharedManager processedHTML:[partialViewPlug resHTMLWithRes:res]
 															ofRes:res

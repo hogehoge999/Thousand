@@ -108,11 +108,10 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 
 #pragma mark -
 #pragma mark Protocol T2ThreadProcessing_v100
--(void)processThread:(T2Thread *)thread appendingIndex:(unsigned)index {
+-(void)processThread:(T2Thread *)thread appendingIndex:(NSInteger)index {
 	NSArray *resArray = [thread resArray];
 	//NSEnumerator *resEnumerator = [resArray objectEnumerator];
-    NSLog(@"processThread start");
-	
+
     T2Res *res;
 	
 	NSMutableDictionary *idDictionary = [[[thread idDictionary] mutableCopy] autorelease];
@@ -122,9 +121,7 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 	
 	NSAutoreleasePool *pool;
 	
-	unsigned resNumber, resCount = [resArray count];
-
-    NSLog(@"3 index = %d", index);
+	NSInteger resNumber, resCount = [resArray count];
 
 	for (resNumber = index; resNumber<resCount; resNumber++) {
 		res = [resArray objectAtIndex:resNumber];
@@ -134,14 +131,14 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 		NSScanner *contentScanner = [NSScanner scannerWithString:content];
 		[contentScanner setCharactersToBeSkipped:_controlCharacterSet];
 		NSString *scanedString;
-		unsigned scanedLocation;
+		NSInteger scanedLocation;
 		NSRange scanedRange;
 		
 		//NSMutableIndexSet *anchoredResIndexSet = [NSMutableIndexSet indexSet];
 		//scan ">, >>"
 		while (![contentScanner isAtEnd]) {
 			if ([contentScanner scanString:__defaultResAnchorString intoString:NULL]) {
-				unsigned i;
+				NSInteger i;
 				for (i=0; i<2; i++) {
 					if (![contentScanner scanString:__defaultResAnchorString intoString:NULL]) break;
 				}
@@ -150,10 +147,9 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 					scanedString = [scanedString halfWidthString];
 					NSIndexSet *indexSet = [NSIndexSet shiftedIndexSetWithString:scanedString];
 					if (indexSet && [indexSet count] < 100) {
-						int index = [indexSet firstIndex];
-                        NSLog(@"index = %d", index);
-						unsigned j=0;
-						while (index != -1/*NSNotFound*/ && index < resCount) {
+						NSInteger index = [indexSet firstIndex];
+						NSInteger j=0;
+						while (index != NSNotFound && index < resCount) {
 							[res addBackwardResIndex:index];
 							[(T2Res *)[resArray objectAtIndex:index] addForwardResIndex:resNumber];
 							index = [indexSet indexGreaterThanIndex:index];
@@ -175,9 +171,8 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 					scanedString = [scanedString halfWidthString];
 					NSIndexSet *indexSet = [NSIndexSet shiftedIndexSetWithString:scanedString];
 					if (indexSet && [indexSet count] < 100) {
-						int index = [indexSet firstIndex];
-                        NSLog(@"index = %d", index);
-						while (index != -1/*NSNotFound*/ && index < resCount) {
+						NSInteger index = [indexSet firstIndex];
+						while (index != NSNotFound && index < resCount) {
 							[res addBackwardResIndex:index];
 							[(T2Res *)[resArray objectAtIndex:index] addForwardResIndex:resNumber];
 							index = [indexSet indexGreaterThanIndex:index];
@@ -214,7 +209,6 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 	}
 	[thread setIdDictionary:idDictionary];
 	[thread setTripDictionary:tripDictionary];
-    NSLog(@"processThread end");
 }
 
 -(NSString *)processedHTML:(NSString *)htmlString ofRes:(T2Res *)res inThread:(T2Thread *)thread {
@@ -224,7 +218,7 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 	NSScanner *contentScanner = [NSScanner scannerWithString:content];
 	[contentScanner setCharactersToBeSkipped:_controlCharacterSet];
 	NSString *scanedString;
-	unsigned scanedLocation;
+	NSInteger scanedLocation;
 	NSRange scanedRange;
 	BOOL scanned = YES;
 	
@@ -233,7 +227,7 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 		scanedLocation = [contentScanner scanLocation];
 		if ([contentScanner scanString:__defaultResAnchorString intoString:&scanedString]) {
 			
-			unsigned i;
+			NSInteger i;
 			for (i=0; i<2; i++) {
 				if (![contentScanner scanString:__defaultResAnchorString intoString:NULL]) break;
 			}
@@ -297,10 +291,8 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 	NSString *contentPart;
 	
 	while (contentPart = [contentPartEnumerator nextObject]) {
-		int tagIndex = [contentPart rangeOfString:@"<" options:NSLiteralSearch].location;
-        // NSNotFound が64bitの-1になったのでうまくいかない
-        NSLog(@"tagIndex = %d", tagIndex);
-		if (tagIndex == -1/*NSNotFound*/ || tagIndex <= 3) {
+		NSInteger tagIndex = [contentPart rangeOfString:@"<" options:NSLiteralSearch].location;
+		if (tagIndex == NSNotFound || tagIndex <= 3) {
 			[contentResult appendString:contentPart];
 			[contentResult appendString:@">"];
 		} else {
@@ -317,7 +309,7 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 				
 				[anteriorScanner scanUpToString:@"://" intoString:&scanedString];
 				if (scanedString) {
-					unsigned scanedLocation2 = [anteriorScanner scanLocation];
+					NSInteger scanedLocation2 = [anteriorScanner scanLocation];
 					if ( [anteriorScanner scanString:@"://" intoString:NULL]) {
 						if ([scanedString hasSuffix:@"http"] && (scanedLocation2-scanedLocation >= 4)) {
 							scanedRange = NSMakeRange(scanedLocation,scanedLocation2-scanedLocation-4);
@@ -487,7 +479,7 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 																								 forPath:[NSString pathWithComponents:subPathComponents]];
 					
 					if (resIndexSet) {
-						unsigned depth = [[pathComponents objectAtIndex:0] intValue];
+						NSInteger depth = [[pathComponents objectAtIndex:0] intValue];
 						return [thread traceResIndexes:resIndexSet depth:depth];
 					}
 				} else return nil;
@@ -508,7 +500,7 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 																								 forPath:[NSString pathWithComponents:subPathComponents]];
 					
 					if (resIndexSet) {
-						unsigned depth = [[pathComponents objectAtIndex:0] intValue];
+						NSInteger depth = [[pathComponents objectAtIndex:0] intValue];
 						return [thread backtraceResIndexes:resIndexSet depth:depth];
 					}
 				} else return nil;
@@ -533,7 +525,7 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 				NSMutableIndexSet *mutableIndexSet = [NSMutableIndexSet indexSet];
 				NSEnumerator *enumerator = [[thread resArray] objectEnumerator];
 				T2Res *res;
-				unsigned i=0;
+				NSInteger i=0;
 				while (res = [enumerator nextObject]) {
 					if ([[res name] rangeOfString:word options:NSCaseInsensitiveSearch].location != NSNotFound ||
 						[[res mail] rangeOfString:word options:NSCaseInsensitiveSearch].location != NSNotFound ||
@@ -550,7 +542,7 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 				NSMutableIndexSet *mutableIndexSet = [NSMutableIndexSet indexSet];
 				NSEnumerator *enumerator = [[thread resArray] objectEnumerator];
 				T2Res *res;
-				unsigned i=0;
+				NSInteger i=0;
 				while (res = [enumerator nextObject]) {
 					NSArray *resHTMLClasses = [res HTMLClasses];
 					if ([resHTMLClasses containsObject:style]) {
@@ -567,7 +559,7 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 				NSMutableIndexSet *mutableIndexSet = [NSMutableIndexSet indexSet];
 				NSEnumerator *enumerator = [[thread resArray] objectEnumerator];
 				T2Res *res;
-				unsigned i=0;
+				NSInteger i=0;
 				while (res = [enumerator nextObject]) {
 					NSString *content = [res content];
 					NSString *urlString = nil;
