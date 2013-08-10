@@ -155,11 +155,11 @@ static NSString *__uniqueName = @"jp_natori_Thousand_SecondaryThreadProcessor";
 						}
 						
 						forwardResIndex = [forwardResIndexes indexGreaterThanIndex:forwardResIndex];
-                        NSLog(@"index7 = %ld", forwardResIndex);
-                        if (forwardResIndex == NSNotFound)
-                        {
-                            NSLog(@"THScondaryThreadProcesser index NotFound %ld, %ld", i, maxCount);
-                        }
+                        //NSLog(@"index7 = %ld", (long)forwardResIndex);
+                       /// if (forwardResIndex == NSNotFound)
+                        //{
+                        //    NSLog(@"THScondaryThreadProcesser index NotFound %ld, %ld", (long)i, (long)maxCount);
+                        //}
 					}
 				}
 			}
@@ -211,9 +211,9 @@ static NSString *__uniqueName = @"jp_natori_Thousand_SecondaryThreadProcessor";
 		case 0:
 			return [NSString stringWithFormat:plugLocalizedString(@"Style:%@"), path];
 		case 1:
-			return [NSString stringWithFormat:plugLocalizedString(@"My Postings")];
+			return plugLocalizedString(@"My Postings");
 		case 2:
-			return [NSString stringWithFormat:plugLocalizedString(@"Replies To Me")];
+			return plugLocalizedString(@"Replies To Me");
 		default:
 			return nil;
 	}

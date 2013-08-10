@@ -54,7 +54,7 @@ static NSCharacterSet *__controlCharSet = nil;
 	}
 	
 	while (skinFolderPath = [skinFolderEnumerator nextObject]) {
-		NSArray *skinFilePathsInFolder = [fileManager directoryContentsAtPath:skinFolderPath];
+		NSArray *skinFilePathsInFolder = [fileManager contentsOfDirectoryAtPath:skinFolderPath error:nil];
 		skinfilePathsEnumerator = [skinFilePathsInFolder objectEnumerator];
 		while (skinFilePath = [skinfilePathsEnumerator nextObject]) {
 			NSString *pathExtension = [skinFilePath pathExtension];
@@ -136,7 +136,9 @@ static NSCharacterSet *__controlCharSet = nil;
 		[self setTemplateName:[[_skinFilesDictionary allKeys] objectAtIndex:0]];
 		return;
 	}
-	NSString *templateHTML = [NSString stringWithContentsOfFile:_templatePath];
+    NSError *error;
+	NSString *templateHTML = [NSString stringWithContentsOfFile:_templatePath encoding:NSUTF16StringEncoding error:&error];
+    //NSString *templateHTML = [NSString stringWithContentsOfFile:_templatePath];
 	if (!templateHTML) return;
 	
 	// for Compatible

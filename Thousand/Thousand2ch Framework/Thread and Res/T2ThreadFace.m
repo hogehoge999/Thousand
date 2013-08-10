@@ -256,9 +256,11 @@ triggerChangeNotificationsForDependentKey:@"stateImage"];
 		image = __stateFallenNoLogImage;
 	if (image && (_boolsMask & T2ThreadFaceAnimatingMask) && __animationImages) {
 		NSImage *destinationImage = [[image copy] autorelease];
-		NSImage *sourceImage = [__animationImages objectAtIndex:__animationImagesCount];
+		NSImage *sourceImage = [__animationImages
+                                objectAtIndex:__animationImagesCount];
 		[destinationImage lockFocus];
 		[sourceImage compositeToPoint:NSMakePoint(0,0) operation:NSCompositeSourceOver];
+        //[sourceImage drawAtPoint:NSMakePoint(0,0) fromRect:nil operation:NSCompositeSourceOver fraction:0.0]
 		[destinationImage unlockFocus];
 		image = destinationImage;
 	}

@@ -803,7 +803,7 @@ static unsigned __maxPopUpResCount = 1000;
 	[resultHTML appendString:[partialViewPlug headerHTMLWithThread:self baseURL:&tempBaseURL]];
 	
 	if (resIndex > 0) {
-		[resultHTML appendFormat:@"<div id=\"extensibleHeader\"><p>%ld - 1</p></div>", resIndex];
+		[resultHTML appendFormat:@"<div id=\"extensibleHeader\"><p>%ld - 1</p></div>", (long)resIndex];
 	}
 	
 	NSInteger i;
@@ -825,7 +825,7 @@ static unsigned __maxPopUpResCount = 1000;
 	}
 	
 	if ((toResIndex+1) < resCount) {
-		[resultHTML appendFormat:@"<div id=\"extensibleFooter\"><p>%ld - %ld</p></div>", toResIndex+2, resCount];
+		[resultHTML appendFormat:@"<div id=\"extensibleFooter\"><p>%ld - %ld</p></div>", toResIndex+2L, (long)resCount];
 	} else {
 		[resultHTML appendString:@"<div id=\"last\"></div>"];
 	}
@@ -850,7 +850,7 @@ static unsigned __maxPopUpResCount = 1000;
 	NSString *newResStringFormat = @"<div class=\"new %@\" id=\"res%d\">%@</div>";
 	
 	if (!onDownstream && (fromResIndex > 0)) {
-		[resultHTML appendFormat:@"<div id=\"extensibleHeader\"><p>%ld - 1</p></div>", fromResIndex-1];
+		[resultHTML appendFormat:@"<div id=\"extensibleHeader\"><p>%ld - 1</p></div>", fromResIndex-1L];
 	}
 	
 	NSInteger i;
@@ -876,7 +876,7 @@ static unsigned __maxPopUpResCount = 1000;
 	
 	if (onDownstream) {
 		if ((toResIndex+1) < resCount) {
-			[resultHTML appendFormat:@"<div id=\"extensibleFooter\"><p>%ld - %ld</p></div>", toResIndex+2, resCount];
+			[resultHTML appendFormat:@"<div id=\"extensibleFooter\"><p>%ld - %ld</p></div>", toResIndex+2L, (long)resCount];
 		} else {
 			[resultHTML appendString:@"<div id=\"last\"></div>"];
 		}
@@ -984,7 +984,7 @@ static unsigned __maxPopUpResCount = 1000;
 }
 
 -(NSString *)resCountString {
-	return [NSString stringWithFormat:@"%ld", (NSInteger)[_resArray count]];
+	return [NSString stringWithFormat:@"%ld", (unsigned long)[_resArray count]];
 }
 -(NSString *)labelColorString {
 	int label = [_threadFace label];
@@ -1143,7 +1143,7 @@ static unsigned __maxPopUpResCount = 1000;
 -(NSString *)progressInfo { return _progressInfo; }
 
 #pragma mark -
--(void)processAfterResIndex:(unsigned)resIndex {
+-(void)processAfterResIndex:(NSInteger)resIndex {
 	[[T2PluginManager sharedManager] processThread:self appendingIndex:resIndex];
 }
 

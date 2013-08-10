@@ -268,7 +268,7 @@ static NSString *__pluginPrefFolderName 	= @"Plugin Prefs";
 	NSDocumentController *documentController = [NSDocumentController sharedDocumentController];
 	THDocument *document = [[documentController documents] lastObject];
 	if (!document) {
-		document = [documentController openUntitledDocumentOfType:@"Thousand Thread" display:YES];
+		document = [documentController openUntitledDocumentAndDisplay:YES error:nil];
 	}
 	
 	if (document) {
@@ -343,7 +343,7 @@ static NSString *__pluginPrefFolderName 	= @"Plugin Prefs";
 		if (documentNumbers >= documentNumbersToCreate) {
 			unsigned i;
 			for (i=0; i<documentNumbersToCreate; i++) {
-				THDocument *document = [documentController openUntitledDocumentOfType:@"Thousand Thread" display:YES];
+				THDocument *document = [documentController openUntitledDocumentAndDisplay:YES error:nil];
 				[documents addObject:document];
 			}
 			
@@ -511,7 +511,7 @@ static NSString *__pluginPrefFolderName 	= @"Plugin Prefs";
 	THDocument *document = nil;
 	NSArray *documents = [sharedDocumentController documents];
 	if ([documents count] == 0) {
-		document = [sharedDocumentController openUntitledDocumentOfType:@"2ch BBS dat file" display:YES];
+		document = [sharedDocumentController openUntitledDocumentAndDisplay:YES error:nil];
 	} else {
 		document = [documents lastObject];
 		[document showWindows];

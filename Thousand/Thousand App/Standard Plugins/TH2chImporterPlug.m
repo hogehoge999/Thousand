@@ -491,7 +491,7 @@ void stampList(T2List *list) {
 		NSString *srcString = [NSString stringUsingIconvWithData:localDatData encoding:NSShiftJISStringEncoding];
         //NSString *srcString = [[NSString alloc] initWithData:localDatData encoding:NSShiftJISStringEncoding];
 		if (srcString) {
-            NSLog(@"size = %ld", [srcString length]);
+            NSLog(@"size = %ld", (unsigned long)[srcString length]);
 			[self buildThread:thread withSrcString:srcString appending:NO];
 			NSArray *resArray = [thread resArray];
 			[thread setNewResIndex:[resArray count]];
@@ -2054,7 +2054,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 		
 		[request setHTTPBody:bodyData];
 		
-		[request setValue:[NSString stringWithFormat:@"%ld",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+		[request setValue:[NSString stringWithFormat:@"%ld",(unsigned long)[bodyData length]] forHTTPHeaderField:@"Content-length"];
 		[request setValue:boardURLString forHTTPHeaderField:@"Referer"];
 		
 		return request;
@@ -2171,7 +2171,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 				[urlRequest setHTTPBody:bodyData];
 				
 				[urlRequest setValue:_viewerSUA forHTTPHeaderField:@"User-Agent"];
-				[urlRequest setValue:[NSString stringWithFormat:@"%ld",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+				[urlRequest setValue:[NSString stringWithFormat:@"%ld",(unsigned long)[bodyData length]] forHTTPHeaderField:@"Content-length"];
 			}
 			
 			[posting setAdditionalRequest:urlRequest];
@@ -2247,7 +2247,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	
 	[request setHTTPBody:bodyData];
 	
-	[request setValue:[NSString stringWithFormat:@"%ld",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+	[request setValue:[NSString stringWithFormat:@"%ld",(unsigned long)[bodyData length]] forHTTPHeaderField:@"Content-length"];
 	[request setValue:boardURLString forHTTPHeaderField:@"Referer"];
 	
 	return request;
@@ -2285,7 +2285,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 			[urlRequest setHTTPBody:bodyData];
 			
 			[urlRequest setValue:_viewerSUA forHTTPHeaderField:@"User-Agent"];
-			[urlRequest setValue:[NSString stringWithFormat:@"%ld",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+			[urlRequest setValue:[NSString stringWithFormat:@"%ld",(unsigned long)[bodyData length]] forHTTPHeaderField:@"Content-length"];
 		}
 		
 		*additionalRequest = urlRequest;
@@ -2398,7 +2398,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	[request setHTTPMethod:@"POST"];
 	[request setHTTPBody:bodyData];
 	
-	[request setValue:[NSString stringWithFormat:@"%ld",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+	[request setValue:[NSString stringWithFormat:@"%ld",(unsigned long)[bodyData length]] forHTTPHeaderField:@"Content-length"];
 	[request setValue:boardURLString forHTTPHeaderField:@"Referer"];
 	
 	return request;

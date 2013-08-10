@@ -30,7 +30,7 @@
 	
 	T2Browser *browser = nil;
 	NSView *view = self;
-	while (view = [view superview]) {
+	while ((view = [view superview])) {
 		if ([view isKindOfClass:[T2Browser class]]) {
 			browser = (T2Browser *)view;
 			break;

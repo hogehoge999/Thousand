@@ -202,8 +202,10 @@ static BOOL __doingNotification = NO;
 	
 	NSString *folderPath = [[NSString appLogFolderPath] stringByAppendingPathComponent:internalPath];
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-	
-	NSArray *files = [fileManager directoryContentsAtPath:folderPath];
+
+	NSError *error;
+	NSArray *files = [fileManager contentsOfDirectoryAtPath:folderPath error:&error];
+
 	NSArray *extensions = [T2Thread extensions];
 	NSMutableArray *infoFiles = [[[files pathsMatchingExtensions:extensions] mutableCopy] autorelease];
 	NSMutableArray *notInfoFiles = [[files mutableCopy] autorelease];

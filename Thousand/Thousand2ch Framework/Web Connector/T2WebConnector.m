@@ -198,7 +198,7 @@ static NSMutableDictionary *__connectors = nil;
 	if (connection != _myConnection) return;
 	int statusCode;
 	if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-		_receivedResponse = [response retain];
+		_receivedResponse = (NSHTTPURLResponse *)[response retain];
 		
 		if (!_shouldUseSharedCookies) {
 			[[T2HTTPCookieStorage sharedHTTPCookieStorage] setCookiesInURLResponse:(NSHTTPURLResponse *)response];

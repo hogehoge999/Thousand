@@ -21,7 +21,7 @@
 #import "THLabelButton.h"
 #import "THImagePopUpButton.h"
 #import "THImagePopUpToolbarItem.h"
-//#import "PSMTabBarCell.h"
+#import "PSMTabBarCell.h"
 
 #import "THTestOperation.h"
 
@@ -1382,7 +1382,7 @@ static NSString *__oreyonPath = nil;
 
 -(IBAction)writeScreenShot:(id)sender {
 	
-	NSString *fileName = [NSString stringWithFormat:@"Thousand%d.jpg", NSTimeIntervalSince1970];
+	NSString *fileName = [NSString stringWithFormat:@"Thousand%d.jpg", (int)NSTimeIntervalSince1970];
 	NSString *filePath = [[THDownloadWindowController classDownloadDestinationFolderPath] stringByAppendingPathComponent:fileName];
 	[_docWindow writeWindowImageToJPEGFile:filePath
 						 compressionFactor:0.5];

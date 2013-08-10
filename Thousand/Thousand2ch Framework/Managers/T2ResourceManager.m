@@ -130,7 +130,7 @@ static T2ResourceManager 	*__sharedManager 	= nil;
 }
 -(void)loadStylesFromCSS:(NSString *)path {
 	if (![path isExistentPath]) return;
-	NSString *srcString = [NSString stringWithContentsOfFile:path];
+	NSString *srcString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 	NSString *srcString2;
 	//NSCharacterSet *whitespaceAndNewlineCharacterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 	NSScanner *srcScanner = [NSScanner scannerWithString:srcString];
@@ -197,7 +197,7 @@ static T2ResourceManager 	*__sharedManager 	= nil;
 -(NSString *)skinFileContent {
 	if (!_skinFilePath) [self loadSkinNamed:@"Standard"];
 	if (_skinFilePath)
-		return [[[NSString alloc] initWithContentsOfFile:_skinFilePath] autorelease];
+		return [[[NSString alloc] initWithContentsOfFile:_skinFilePath encoding:NSUTF8StringEncoding error:nil] autorelease];
 	return nil;
 }
 

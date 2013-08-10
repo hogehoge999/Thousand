@@ -17,7 +17,7 @@ static NSString *THThreadFacesPboardType =		@"THThreadFacesPboardType";
 
 @class THSplitView, T2Browser, T2TableView, THThreadController, T2FilterArrayController, THDocument;
 
-@interface THBookmarkController : NSObject {
+@interface THBookmarkController : NSObject<NSTableViewDelegate,NSTableViewDataSource,NSSplitViewDelegate> {
 	T2List *_sourceList;
 	//NSIndexSet *_sourceSelectedIndexes;
 	

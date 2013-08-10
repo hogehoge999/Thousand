@@ -68,7 +68,7 @@ static float __classThreadTableRowHeight = 17.0;
 		THThreadFacesPboardType,
 		NSFilenamesPboardType, nil] retain];
 	
-	__localFileImporter = [[[T2PluginManager sharedManager] pluginForUniqueName:@"jp_natori_THLocalFileImporter"] retain];
+	__localFileImporter = (THLocalFileImporter *)[[[T2PluginManager sharedManager] pluginForUniqueName:@"jp_natori_THLocalFileImporter"] retain];
 	
 	__sourceList = [[T2SourceList sharedSourceList] retain];
 	

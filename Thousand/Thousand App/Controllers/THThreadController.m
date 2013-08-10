@@ -498,6 +498,8 @@ THPreviewActionType previewActionTypeWithPriorityAndModifierFlags(
 				}
 				break;
 			}
+            default:
+                break;
 		}
 		return YES;
 		
@@ -538,6 +540,8 @@ THPreviewActionType previewActionTypeWithPriorityAndModifierFlags(
 																						 inThread:[_threadView thread]];
 					return NO;
 				}
+                default:
+                    break;
 			}
 		} else {
 			NSString *internalPath = [[T2PluginManager sharedManager] threadInternalPathForProposedURLString:href];
@@ -922,7 +926,7 @@ THPreviewActionType previewActionTypeWithPriorityAndModifierFlags(
 										   defaultButton:THBookmarkLocalize(@"OK")
 										 alternateButton:THBookmarkLocalize(@"Cancel")
 											 otherButton:nil
-							   informativeTextWithFormat:THBookmarkLocalize(@"Are you sure to move log files to Trash?")] retain];
+							   informativeTextWithFormat:THBookmarkLocalize(@"Are you sure to move log files to Trash?%d"), 1] retain];
 	
 	[alertPanel beginSheetModalForWindow:[_threadView window]
 						   modalDelegate:self

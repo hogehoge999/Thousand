@@ -41,7 +41,7 @@ static NSString *THDocRangePopUpItemIdentifier 		= @"THDocRangePopUpItemIdentifi
 static NSString *THDocSearchFieldItemIdentifier		= @"THDocSearchFieldItemIdentifier";
 static NSString *THDocURLFieldItemIdentifier		= @"THDocURLFieldItemIdentifier";
 
-@interface THDocument : NSDocument
+@interface THDocument : NSDocument<NSToolbarDelegate>
 {
 	// instances
 	id <T2AsynchronousLoading> _progressProvider;

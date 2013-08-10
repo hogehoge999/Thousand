@@ -202,22 +202,22 @@ static NSTimer *__delayedReleaseTimer = nil;
 	[filePath prepareFoldersInPath];
 	NSString *gzFilePath = [filePath stringByAppendingPathExtension:@"gz"];
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-	
+	NSError *error;
 	if (!data) {
 		if ([fileManager fileExistsAtPath:filePath])
-			[fileManager removeFileAtPath:filePath handler:NULL];
+			[fileManager removeItemAtPath:filePath error:&error];
 		if ([fileManager fileExistsAtPath:gzFilePath])
-			[fileManager removeFileAtPath:gzFilePath handler:NULL];
+			[fileManager removeItemAtPath:gzFilePath error:&error];
 		return NO;
 	}
 	if (__gzipPList) {
 		[data writeToGZipFile:gzFilePath];
 		if ([fileManager fileExistsAtPath:filePath])
-			[fileManager removeFileAtPath:filePath handler:NULL];
+			[fileManager removeItemAtPath:filePath error:&error];
 	} else {
 		[data writeToFile:filePath atomically:YES];
 		if ([fileManager fileExistsAtPath:gzFilePath])
-			[fileManager removeFileAtPath:gzFilePath handler:NULL];
+			[fileManager removeItemAtPath:gzFilePath error:&error];
 	}
 	return YES;
 }

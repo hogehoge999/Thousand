@@ -453,7 +453,7 @@ static BOOL __Safari2Debug = NO;
 			
 			[self registerDisplayResForNumber:[selectedResIndexes firstIndex]+1];
 			[self setResExtractPath:[NSString stringWithFormat:@"resNumber/%ld-%ld",
-											[resultIndexSet firstIndex]+1, [resultIndexSet lastIndex]+1]];
+											[resultIndexSet firstIndex]+1L, [resultIndexSet lastIndex]+1L]];
 		} else {
 			[self displayResForNumber:[selectedResIndexes firstIndex]+1];
 		}
@@ -477,7 +477,7 @@ static BOOL __Safari2Debug = NO;
 	NSInteger overshoot = NSNotFound;
 	
 	while (deltaY >= 0) {
-		deltaY = [[self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById(\"res%ld\").offsetTop;",resIndex+1]] floatValue];
+		deltaY = [[self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById(\"res%ld\").offsetTop;",resIndex+1L]] floatValue];
 		
 		//NSLog(@"resIndex=%d, deltaY=%d", resIndex, (int)deltaY);
 		
@@ -486,10 +486,10 @@ static BOOL __Safari2Debug = NO;
 				resIndex = overshoot;
 				break;
 			}
-			int newResIndex = [resIndexes indexGreaterThanOrEqualToIndex:resIndex + 15];
-			if (newResIndex == -1/*NSNotFound*/) {
+			NSInteger newResIndex = [resIndexes indexGreaterThanOrEqualToIndex:resIndex + 15];
+			if (newResIndex == NSNotFound) {
 				newResIndex = [resIndexes indexGreaterThanIndex:resIndex];
-				if (newResIndex == -1/*NSNotFound*/) break;
+				if (newResIndex == NSNotFound) break;
 			}
 			resIndex = newResIndex;
 		} else {
@@ -670,7 +670,7 @@ static BOOL __Safari2Debug = NO;
             while (i < resIndex) {
                 
                 DOMHTMLElement *resElement = (DOMHTMLElement *)[(DOMHTMLDocument *)domDocument
-                                                                getElementById:[NSString stringWithFormat:@"res%ld", i+1]];
+                                                                getElementById:[NSString stringWithFormat:@"res%ld", i+1L]];
                 //[resElement removeClassName:@"new"];
                 
                 NSMutableString *className = [[resElement className] mutableCopy];
@@ -718,11 +718,11 @@ static BOOL __Safari2Debug = NO;
 				processedResHTML = [NSString stringWithFormat:
 									@"<div class=\"%@\" id=\"res%ld\">%@</div>",
 									[res HTMLClassesString],
-									i+1,
+									i+1L,
 									processedResHTML];
 				
 				DOMHTMLElement *resElement = (DOMHTMLElement *)[(DOMHTMLDocument *)domDocument
-																getElementById:[NSString stringWithFormat:@"res%ld", i+1]];
+																getElementById:[NSString stringWithFormat:@"res%ld", i+1L]];
 				[resElement setOuterHTML:processedResHTML];
 				
 				i = [dirtyResIndexes indexGreaterThanIndex:i];
@@ -779,12 +779,12 @@ static BOOL __Safari2Debug = NO;
 	//NSLog(@"scroll saved: Res:%d delta:%d", resIndex, (int)offset);
 }
 -(void)loadScrollFromThread {
-	int resIndex = [_thread savedResIndex];
+	NSInteger resIndex = [_thread savedResIndex];
 	if (resIndex < 0) return;
 	float offset = [_thread savedScrollOffset];
-	float resTop = [[self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById(\"res%d\").offsetTop;",resIndex+1]] floatValue];
+	float resTop = [[self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById(\"res%ld\").offsetTop;",resIndex+1L]] floatValue];
 	float docTop = resTop + offset;
-	[self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"scrollTo(0,%d);",(int)docTop]];
+	[self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"scrollTo(0,%ld);",(long)docTop]];
 	
 	//NSLog(@"scroll loaded: Res:%d delta:%d", resIndex, (int)offset);
 }
@@ -894,7 +894,7 @@ static BOOL __Safari2Debug = NO;
 	if (resIndex == NSNotFound) return;
 	
 	DOMElement *resElement;
-	while ((resElement = [domDocument getElementById:[NSString stringWithFormat:@"res%ld", resIndex+1]])) {
+	while ((resElement = [domDocument getElementById:[NSString stringWithFormat:@"res%ld", resIndex+1L]])) {
 		BOOL continueLoop = YES;
 		while (continueLoop) {
 			DOMNodeList *anchorElementList = [resElement getElementsByTagName:@"A"];
@@ -997,7 +997,7 @@ static BOOL __Safari2Debug = NO;
 	NSMutableSet *urlStringSet = [NSMutableSet set];
 	
 	DOMElement *resElement;
-	while ((resElement = [domDocument getElementById:[NSString stringWithFormat:@"res%ld", resIndex+1]])) {
+	while ((resElement = [domDocument getElementById:[NSString stringWithFormat:@"res%ld", resIndex+1L]])) {
 		BOOL continueLoop = YES;
 		while (continueLoop) {
 			DOMNodeList *anchorElementList = [resElement getElementsByTagName:@"A"];
@@ -1117,7 +1117,7 @@ static BOOL __Safari2Debug = NO;
 		[self setSelectedDOMRange:nil affinity:0];
 		NSInteger resIndex = [resIndexes firstIndex];
 		while (resIndex != NSNotFound) {
-			NSString *elementID = [NSString stringWithFormat:@"res%ld",resIndex+1];
+			NSString *elementID = [NSString stringWithFormat:@"res%ld",resIndex+1L];
 			DOMElement *element = [document getElementById:elementID];
 			if (element) {
 				T2Res *res = [resArray objectAtIndex:resIndex];
@@ -1593,7 +1593,7 @@ decisionListener:(id<WebPolicyDecisionListener>)listener {
 #pragma mark WebUIDelegate
 
 - (void)webView:(WebView *)sender mouseDidMoveOverElement:(NSDictionary *)elementInformation
-  modifierFlags:(unsigned int)modifierFlags {
+  modifierFlags:(NSUInteger)modifierFlags {
 	if (__DOMEventEnabled && !__Safari2Debug) return;
 	DOMNode *domNode = [elementInformation objectForKey:WebElementDOMNodeKey];
 	if (!domNode) return;
@@ -1664,7 +1664,7 @@ decisionListener:(id<WebPolicyDecisionListener>)listener {
 				
 				if (resNumber != NSNotFound && resNumber > 0) {
 					
-					NSString *extractPath = [NSString stringWithFormat:@"resNumber/%ld",resNumber];
+					NSString *extractPath = [NSString stringWithFormat:@"resNumber/%ld",(long)resNumber];
 					[threadView setSelectedResExtractPath:extractPath];
 					if (delegate && [delegate respondsToSelector:@selector(threadView:contextMenuItemsForResPath:defaultMenuItems:)]) {
 						NSArray *newMenuItems2 = [delegate threadView:threadView contextMenuItemsForResPath:extractPath defaultMenuItems:defaultMenuItems];
@@ -1682,7 +1682,7 @@ decisionListener:(id<WebPolicyDecisionListener>)listener {
 	} else {
 		if (resNumber != NSNotFound && resNumber > 0) {
 			
-			NSString *extractPath = [NSString stringWithFormat:@"resNumber/%ld",resNumber];
+			NSString *extractPath = [NSString stringWithFormat:@"resNumber/%ld",(long)resNumber];
 			[threadView setSelectedResExtractPath:extractPath];
 			if (delegate && [delegate respondsToSelector:@selector(threadView:contextMenuItemsForResPath:defaultMenuItems:)]) {
 				NSArray *newMenuItems = [delegate threadView:threadView contextMenuItemsForResPath:extractPath defaultMenuItems:defaultMenuItems];
@@ -1743,7 +1743,7 @@ decisionListener:(id<WebPolicyDecisionListener>)listener {
 		}
 	}
 }
--(BOOL)mouseoverAnchorElement:(DOMHTMLAnchorElement *)anchorElement modifierFlags:(unsigned)modifierFlags {
+-(BOOL)mouseoverAnchorElement:(DOMHTMLAnchorElement *)anchorElement modifierFlags:(NSUInteger)modifierFlags {
 	if (!(modifierFlags & NSCommandKeyMask)) {
 		NSString *urlString = [anchorElement urlStringForPreviewInPopUp];
 		if (urlString) {
@@ -1755,7 +1755,7 @@ decisionListener:(id<WebPolicyDecisionListener>)listener {
 	return NO;
 }
 
--(BOOL)clickAnchorElement:(DOMHTMLAnchorElement *)anchorElement modifierFlags:(unsigned)modifierFlags {
+-(BOOL)clickAnchorElement:(DOMHTMLAnchorElement *)anchorElement modifierFlags:(NSUInteger)modifierFlags {
 	
 	NSObject *delegate = [_threadView delegate];
 	NSString *urlString = [anchorElement href];

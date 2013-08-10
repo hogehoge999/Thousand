@@ -163,7 +163,7 @@ static NSCharacterSet *__whitespaceAndNewlineCharacterSet = nil;
 
 -(NSString *)stringFromHTML {
 	NSString* src = self;
-	int tempLoc, tempLoc2;
+	NSInteger tempLoc, tempLoc2;
 	if (!src) return nil;
 	NSMutableString *tempString = [[[NSMutableString alloc] initWithString:src] autorelease];
 	//<br> to return
@@ -171,9 +171,9 @@ static NSCharacterSet *__whitespaceAndNewlineCharacterSet = nil;
 	
 	//cut other tags
 	tempLoc = [tempString rangeOfString:@"<" options:NSLiteralSearch].location;
-	while (tempLoc != -1/*NSNotFound*/) {
+	while (tempLoc != NSNotFound) {
 		tempLoc2 = [tempString rangeOfString:@">" options:NSLiteralSearch range:NSMakeRange(tempLoc, [tempString length]-tempLoc)].location;
-		if ((tempLoc2 == -1/*NSNotFound*/) || (tempLoc > tempLoc2)) break;
+		if ((tempLoc2 == NSNotFound) || (tempLoc > tempLoc2)) break;
 		[tempString deleteCharactersInRange:NSMakeRange(tempLoc, (tempLoc2-tempLoc+1))];
 		tempLoc = [tempString rangeOfString:@"<" options:NSLiteralSearch].location;
 	}
@@ -314,7 +314,7 @@ static NSCharacterSet *__whitespaceAndNewlineCharacterSet = nil;
 				unichar low = [part characterAtIndex:1];
 				if (high >= 0xD800 && high <= 0xDBFF && low >= 0xDC00 && low <= 0xDFFF) {
 					UInt32 character = (((high & 0x3FF) << 10) | (low & 0x3FF)) + 0x10000;
-					[resultString appendFormat:@"&#%d;", character];
+					[resultString appendFormat:@"&#%d;", (unsigned int)character];
 					i++;
 				} else {
 					NSString *string1 = [part substringToIndex:1];
@@ -360,7 +360,7 @@ static NSCharacterSet *__whitespaceAndNewlineCharacterSet = nil;
 				unichar low = [part characterAtIndex:1];
 				if (high >= 0xD800 && high <= 0xDBFF && low >= 0xDC00 && low <= 0xDFFF) {
 					UInt32 character = (((high & 0x3FF) << 10) | (low & 0x3FF)) + 0x10000;
-					NSString *numericCharacterReference = [NSString stringWithFormat:@"&#%d;", character];
+					NSString *numericCharacterReference = [NSString stringWithFormat:@"&#%d;", (unsigned int)character];
 					[resultString appendString:numericCharacterReference];
 					i++;
 				} else {

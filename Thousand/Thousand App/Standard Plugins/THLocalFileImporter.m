@@ -56,7 +56,7 @@ static NSImage *__boardImage = nil;
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	if ([fileManager fileExistsAtPath:folderPath isDirectory:&isFolder] && isFolder) {
 		T2List *resultList = nil;
-		NSArray *folderContents = [fileManager directoryContentsAtPath:folderPath];
+		NSArray *folderContents = [fileManager contentsOfDirectoryAtPath:folderPath error:nil];
 		NSEnumerator *folderContentEnumerator = [folderContents objectEnumerator];
 		NSString *contentPath;
 		NSMutableArray *contentListHolders = [NSMutableArray array];
@@ -134,7 +134,7 @@ static NSImage *__boardImage = nil;
 			firstLine = [src substringToIndex:firstReturnCode.location];
 		}
 		
-	} while (readLocation >= fileSize && readSize < 5000 || !(firstLine));
+	} while ((readLocation >= fileSize && readSize < 5000) || !(firstLine));
 	
 	NSRange lastDelimiter = [firstLine rangeOfLastString:@"<>" options:NSLiteralSearch];
 	if (lastDelimiter.location == NSNotFound) return nil;
@@ -154,7 +154,7 @@ static NSImage *__boardImage = nil;
 
 -(BOOL)readableFileIsInFolder:(NSString *)folderPath {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-	NSArray *folderContents = [fileManager directoryContentsAtPath:folderPath];
+	NSArray *folderContents = [fileManager contentsOfDirectoryAtPath:folderPath error:nil];
 	NSEnumerator *folderContentEnumerator = [folderContents objectEnumerator];
 	NSString *contentPath;
 	while (contentPath = [folderContentEnumerator nextObject]) {
@@ -184,7 +184,7 @@ static NSImage *__boardImage = nil;
 		[tempThread load];
 		if (tempThread) {
 			NSFileManager *fileManager = [NSFileManager defaultManager];
-			NSDate *date = [[fileManager fileAttributesAtPath:fileName traverseLink:YES] fileModificationDate];
+			NSDate *date = [[fileManager attributesOfItemAtPath:fileName error:nil] fileModificationDate];
 			
 			[threadItem setModifiedDate:date];
 			
@@ -209,7 +209,7 @@ static NSImage *__boardImage = nil;
 		if (!datString) return nil;
 		
 		if (!_2chImporterPlug)
-			_2chImporterPlug = [[[T2PluginManager sharedManager] pluginForUniqueName:@"jp_natori_Thousand_2chImporter"] retain];
+			_2chImporterPlug = (TH2chImporterPlug*)[[[T2PluginManager sharedManager] pluginForUniqueName:@"jp_natori_Thousand_2chImporter"] retain];
 		
 		T2Thread *thread = [T2Thread threadWithThreadFace:threadFace resArray:nil];
 		[thread setShouldSaveFile:NO];

@@ -178,7 +178,7 @@ NSString *T2HTMLClassNameDanger = @"danger";
 	
 	DOMHTMLElement *ancestor = nil;
 	DOMNode *node = self;
-	while (node = [node parentNode]) {
+	while ((node = [node parentNode])) {
 		if ([node isKindOfClass:[DOMHTMLDivElement class]] ||
 			[node isKindOfClass:[DOMHTMLBodyElement class]]) {
 			ancestor = (DOMHTMLElement *)node;

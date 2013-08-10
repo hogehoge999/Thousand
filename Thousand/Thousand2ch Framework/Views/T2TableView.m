@@ -61,13 +61,15 @@
 			[self setColumnAutoresizingStyle:0];
 		}
 	}
-	
+	//[self tableColumns]
 	NSEnumerator *columnEnumerator = [[self tableColumns] reverseObjectEnumerator];
-	//NSTableColumn *tempColumn = nil;
+	NSTableColumn *tempColumn = nil;
     // ここでエクセプションでてるようなので一時的にコメントアウト
-	//while (tempColumn = [columnEnumerator nextObject]) {
-	//	[self removeTableColumn:tempColumn];
-	//}
+    // 逆順で消せたよう？これの存在意義がよくわからない
+    // 消さないとスレッド一覧のタブが増え続ける
+	while (tempColumn = [columnEnumerator nextObject]) {
+		[self removeTableColumn:tempColumn];
+	}
 	//for (NSTableColumn *tempColumn in columnEnumerator)
     //{
 	//	[self removeTableColumn:tempColumn];

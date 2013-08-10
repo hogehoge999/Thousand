@@ -92,7 +92,7 @@
 		free(outBytes);
 		return nil;
 	}
-	while (currentOut = gzread(file, outBytes, UNZIP_OUT_SIZE))
+	while ((currentOut = gzread(file, outBytes, UNZIP_OUT_SIZE)))
 		[outData appendBytes:outBytes length:currentOut];
 	if (gzclose(file) != Z_OK) NSLog(@"gzclose failed");
 	
