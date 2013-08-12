@@ -1184,7 +1184,7 @@ didReceiveWebData:(T2WebData *)webData
 	if (webData && internalPath) {
 		[self setProgressInfo:[connector status]];
 		
-		unsigned oldResCount = [_resArray count] ,appendingIndex = 0, newResCount ;
+		NSInteger oldResCount = [_resArray count] ,appendingIndex = 0, newResCount ;
 		NSObject <T2ThreadImporting_v100> *threadImporter = [[T2PluginManager sharedManager] threadImporterForInternalPath:internalPath];
 		if (![threadImporter respondsToSelector:@selector(buildThread:withWebData:)]) return;
 		

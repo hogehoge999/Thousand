@@ -882,7 +882,7 @@ void stampList(T2List *list) {
 	}
 	
 	while ([srcScanner scanUpToString:@"\n" intoString:&resString]) {
-		//myPool = [[NSAutoreleasePool alloc] init];
+		myPool = [[NSAutoreleasePool alloc] init];
 		
 		if ([resString length]>1) {
 			NSArray *partStringArray = [resString componentsSeparatedByString:@"<>"];
@@ -903,7 +903,7 @@ void stampList(T2List *list) {
 			}
 		}
 		
-		//[myPool release];
+		[myPool release];
 	}
 	[thread setResArray:resArray];
 	if (threadTitle) [thread setTitle:[threadTitle stringByReplacingCharacterReferences]];

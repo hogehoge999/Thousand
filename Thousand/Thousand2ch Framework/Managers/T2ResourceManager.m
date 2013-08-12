@@ -130,7 +130,7 @@ static T2ResourceManager 	*__sharedManager 	= nil;
 }
 -(void)loadStylesFromCSS:(NSString *)path {
 	if (![path isExistentPath]) return;
-	NSString *srcString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+	NSString *srcString = [NSString stringWithContentsOfFile:path encoding:NSUnicodeStringEncoding error:nil];
 	NSString *srcString2;
 	//NSCharacterSet *whitespaceAndNewlineCharacterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 	NSScanner *srcScanner = [NSScanner scannerWithString:srcString];

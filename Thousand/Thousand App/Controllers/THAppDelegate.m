@@ -641,8 +641,10 @@ static NSString *__pluginPrefFolderName 	= @"Plugin Prefs";
 }
 -(void)didEndInputSheetWithString:(NSString *)URLString {
 	if (!URLString || [URLString length]==0) return;
+    NSError *error;
 	NSDocumentController *sharedDocumentController = [NSDocumentController sharedDocumentController];
-	THDocument *newDocument = [sharedDocumentController openUntitledDocumentOfType:@"2ch BBS dat file" display:YES];
+	//THDocument *newDocument = [sharedDocumentController openUntitledDocumentOfType:@"2ch BBS dat file" display:YES];
+	THDocument *newDocument = [sharedDocumentController openUntitledDocumentAndDisplay:YES error:&error];
 	if (newDocument) {
 		[newDocument loadThreadForURLString:URLString];
 

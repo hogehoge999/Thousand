@@ -364,9 +364,9 @@ static BOOL __Safari2Debug = NO;
 		
 		if ([_resExtractPath isEqualToString:@"automatic"]) {
 			NSInteger resCount = [_thread resCount];
-			int resIndex = [_thread savedResIndex];
+			NSInteger resIndex = [_thread savedResIndex];
 			if (resIndex < 0) resIndex = 0;
-			int toResIndex;
+			NSInteger toResIndex;
 			
 			if (resCount <= 100) {
 				resIndex = 0;
