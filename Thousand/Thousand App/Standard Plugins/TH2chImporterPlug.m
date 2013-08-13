@@ -868,29 +868,32 @@ void stampList(T2List *list) {
 -(void)buildThread:(T2Thread *)thread withSrcString:(NSString *)srcString appending:(BOOL)appending {
 	NSScanner *srcScanner = [NSScanner scannerWithString:srcString];
 	[srcScanner setCharactersToBeSkipped:[NSCharacterSet controlCharacterSet]];
-	NSMutableArray *resArray = [NSMutableArray array];
-	NSString *resString;
+	__block NSMutableArray *resArray = [NSMutableArray array];
+	//NSString *resString;
 	NSString *threadTitle = nil;
-	T2Res *tempRes;
+	//T2Res *tempRes;
 	NSAutoreleasePool *myPool;
-	NSInteger i=0;
+	__block NSInteger i=0;
 	
 	NSArray *oldResArray = [thread resArray];
 	if (appending && oldResArray && [oldResArray count]>0) {
 		[resArray addObjectsFromArray:oldResArray];
 		i = [oldResArray count];
 	}
-	
-	while ([srcScanner scanUpToString:@"\n" intoString:&resString]) {
-		myPool = [[NSAutoreleasePool alloc] init];
-		
+
+    [srcString enumerateLinesUsingBlock:^(NSString *resString, BOOL *stop) {
+	//while ([srcScanner scanUpToString:@"\n" intoString:&resString]) {
+		//myPool = [[NSAutoreleasePool alloc] init];
+        T2Res *tempRes;
+
 		if ([resString length]>1) {
 			NSArray *partStringArray = [resString componentsSeparatedByString:@"<>"];
 			NSInteger partStringCount = [partStringArray count];
 			
+            NSLog(@"(%d)[[%@]]", partStringCount, resString);
 			if (partStringCount > 3) {
 				if (partStringCount > 4 && i==0) {
-					threadTitle = [[partStringArray objectAtIndex:4] retain];
+					//threadTitle = [[partStringArray objectAtIndex:4] retain];
 				}
 				tempRes = resWith_ResNum_Name_Mail_DateAndOther_content_thread(i+1,
 																			   [partStringArray objectAtIndex:0],
@@ -903,8 +906,8 @@ void stampList(T2List *list) {
 			}
 		}
 		
-		[myPool release];
-	}
+		//[myPool release];
+	}];
 	[thread setResArray:resArray];
 	if (threadTitle) [thread setTitle:[threadTitle stringByReplacingCharacterReferences]];
 	[threadTitle release];
@@ -914,7 +917,6 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	
 	NSString *trip = nil, *identifier = nil, *dateString = nil, *beString = nil;
 	NSCalendarDate *date = nil;
-	
 	//scan trip
 	if (__tripPrefix) {
 		NSRange tripRange = [namePart rangeOfString:__tripPrefix];
@@ -933,7 +935,6 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 										options:NSLiteralSearch
 										  range:NSMakeRange(0,[mutableNamePart length])];
 	namePart = [[mutableNamePart copy] autorelease];
-	
 	
 	//scan date
 	NSString *datePrefix;
