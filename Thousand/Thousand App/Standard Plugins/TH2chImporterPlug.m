@@ -882,13 +882,33 @@ void stampList(T2List *list) {
 	}
 
     [srcString enumerateLinesUsingBlock:^(NSString *resString, BOOL *stop) {
-	//while ([srcScanner scanUpToString:@"\n" intoString:&resString]) {
-		//myPool = [[NSAutoreleasePool alloc] init];
         T2Res *tempRes;
 
 		if ([resString length]>1) {
 			NSArray *partStringArray = [resString componentsSeparatedByString:@"<>"];
 			NSInteger partStringCount = [partStringArray count];
+            if (partStringCount < 5)
+            {
+                NSMutableArray *array = [NSMutableArray arrayWithCapacity:5];
+                NSLog(@"(%d)%@", partStringCount, resString);
+                for (NSString *part in partStringArray)
+                {
+                    NSRange range = [part rangeOfString:@"<>" options:NSLiteralSearch];
+                    if (range.location == NSNotFound)
+                    {
+                        [array addObject:part];
+                    }
+                    else
+                    {
+                        // 1partに複数<>が混ざってる可能性もあるが、、、
+                        [array addObject:[part substringToIndex:range.location]];
+                        // 結局他とくっつく気がするけど、問題出るまで保留
+                        [array addObject:[part substringToIndex:NSMaxRange(range)]];
+                    }
+                }
+                partStringArray = array;
+                partStringCount = [partStringArray count];
+            }
 			
 			if (partStringCount > 3) {
 				if (partStringCount > 4 && i==0) {
