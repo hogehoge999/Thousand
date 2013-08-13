@@ -870,7 +870,7 @@ void stampList(T2List *list) {
 	[srcScanner setCharactersToBeSkipped:[NSCharacterSet controlCharacterSet]];
 	__block NSMutableArray *resArray = [NSMutableArray array];
 	//NSString *resString;
-	NSString *threadTitle = nil;
+	__block NSString *threadTitle = nil;
 	//T2Res *tempRes;
 	NSAutoreleasePool *myPool;
 	__block NSInteger i=0;
@@ -890,10 +890,9 @@ void stampList(T2List *list) {
 			NSArray *partStringArray = [resString componentsSeparatedByString:@"<>"];
 			NSInteger partStringCount = [partStringArray count];
 			
-            NSLog(@"(%d)[[%@]]", partStringCount, resString);
 			if (partStringCount > 3) {
 				if (partStringCount > 4 && i==0) {
-					//threadTitle = [[partStringArray objectAtIndex:4] retain];
+					threadTitle = [[partStringArray objectAtIndex:4] retain];
 				}
 				tempRes = resWith_ResNum_Name_Mail_DateAndOther_content_thread(i+1,
 																			   [partStringArray objectAtIndex:0],
