@@ -538,8 +538,15 @@ void stampList(T2List *list) {
 				// Current Servers
 				path = [[path pathComponents] objectAtIndex:1];
 			}
+            // server名だけ取り出す
+            NSArray * url = [path componentsSeparatedByString:@"."];
+            NSString *server = [url objectAtIndex:0];
+            NSString *site = [NSString stringWithFormat:@"%@.%@", [url objectAtIndex:1], [url objectAtIndex:2]];
 			
-			NSString *URLString = [NSString stringWithFormat:@"http://%@/test/offlaw.cgi/%@/%@/?raw=0.0&sid=%@", path, boardKey, threadKey, [_viewerSID stringByAddingSJISPercentEscapesForce]];
+			NSString *URLString = [NSString stringWithFormat:@"http://rokka.%@/%@/%@/%@/?raw=0.0&sid=%@", site, server, boardKey, threadKey, [_viewerSID stringByAddingSJISPercentEscapesForce]];
+            
+			//NSString *URLString = [NSString stringWithFormat:@"http://%@/test/offlaw.cgi/%@/%@/?raw=0.0&sid=%@", path, boardKey, threadKey, [_viewerSID stringByAddingSJISPercentEscapesForce]];
+
 			NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]];
 			[request setValue:_viewerSUA forHTTPHeaderField:@"User-Agent"];
 			[request setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
