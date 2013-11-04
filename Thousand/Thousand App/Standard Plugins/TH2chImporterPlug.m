@@ -543,9 +543,9 @@ void stampList(T2List *list) {
             NSString *server = [url objectAtIndex:0];
             NSString *site = [NSString stringWithFormat:@"%@.%@", [url objectAtIndex:1], [url objectAtIndex:2]];
 			
-			NSString *URLString = [NSString stringWithFormat:@"http://rokka.%@/%@/%@/%@/?raw=0.0&sid=%@", site, server, boardKey, threadKey, [_viewerSID stringByAddingSJISPercentEscapesForce]];
+			//NSString *URLString = [NSString stringWithFormat:@"http://rokka.%@/%@/%@/%@/?raw=0.0&sid=%@", site, server, boardKey, threadKey, [_viewerSID stringByAddingSJISPercentEscapesForce]];
             
-			//NSString *URLString = [NSString stringWithFormat:@"http://%@/test/offlaw.cgi/%@/%@/?raw=0.0&sid=%@", path, boardKey, threadKey, [_viewerSID stringByAddingSJISPercentEscapesForce]];
+			NSString *URLString = [NSString stringWithFormat:@"http://%@/test/offlaw2.so?shiro=kuma&sid=ERROR&bbs=%@&key=%@", path, boardKey, threadKey];
 
 			NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]];
 			[request setValue:_viewerSUA forHTTPHeaderField:@"User-Agent"];
