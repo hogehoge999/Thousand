@@ -687,15 +687,14 @@ else return [resolvedPath autorelease];
 	if (__appLogFolderPath) {
 		[path prepareFoldersInPath];
 		NSFileManager *fileManager = [NSFileManager defaultManager];
-		NSArray *oldContents = [fileManager directoryContentsAtPath:__appLogFolderPath];
-		
+		NSArray *oldContents = [fileManager contentsOfDirectoryAtPath:__appLogFolderPath error:NULL];
 		NSEnumerator *enumerator = [oldContents objectEnumerator];
 		NSString *fileName;
 		while (fileName = [enumerator nextObject]) {
 			NSString *oldFilePath = [__appLogFolderPath stringByAppendingPathComponent:fileName];
 			NSString *newFilePath = [path stringByAppendingPathComponent:fileName];
 			if (![fileManager fileExistsAtPath:newFilePath]) {
-				[fileManager movePath:oldFilePath toPath:newFilePath handler:NULL];
+				[fileManager moveItemAtPath:oldFilePath toPath:newFilePath error:NULL];
 			}
 		}
 	}
@@ -733,7 +732,7 @@ else return [resolvedPath autorelease];
 	} else {
 		NSString *andLastFolderPath = [lastFolderPath stringByDeletingLastPathComponent];
 		if ([fileManager fileExistsAtPath:andLastFolderPath isDirectory:&isDirectory] && isDirectory) {
-			if ([fileManager createDirectoryAtPath:lastFolderPath attributes:nil]) {
+			if ([fileManager createDirectoryAtPath:lastFolderPath withIntermediateDirectories:YES attributes:nil error:NULL]) {
 				return YES;
 			} else return NO;
 		} else return [lastFolderPath prepareFoldersInPath];

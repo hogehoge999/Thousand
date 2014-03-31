@@ -275,7 +275,7 @@
 						[self saveObjectToFile:path2];
 						fileSaved = YES;
 					} else if ([fileManager fileExistsAtPath:path2]) {
-						[fileManager removeFileAtPath:path2 handler:NULL];
+						[fileManager removeItemAtPath:path2 error:NULL];
 					}
 				}
 			}

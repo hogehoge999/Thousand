@@ -41,7 +41,7 @@
 
 - (void)removeObjectsAtIndexes_panther:(NSIndexSet *)indexes {
 	if ([indexes count]==0) return;
-	unsigned i = [indexes lastIndex];
+	NSUInteger i = [indexes lastIndex];
 	while (i != NSNotFound) {
 		[self removeObjectAtIndex:i];
 		i = [indexes indexLessThanIndex:i];
@@ -52,7 +52,7 @@
 	if ([indexes count]==0) return;
 	NSEnumerator *objectEnumerator = [objects objectEnumerator];
 	id object;
-	unsigned i = [indexes firstIndex];
+	NSUInteger i = [indexes firstIndex];
 	while (i != NSNotFound) {
 		if (!(object = [objectEnumerator nextObject])) return;
 		if (i>=[self count]) {

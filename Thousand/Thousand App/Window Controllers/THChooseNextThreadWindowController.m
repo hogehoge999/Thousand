@@ -156,7 +156,7 @@ static NSMutableSet *__instances = nil;
 	while (newThreadFace = [tempThreadFacesEnumerator nextObject]) {
 		if (_oldThreadFace != newThreadFace) {
 			NSString *newTitle = [newThreadFace title];
-			unsigned distance = [newTitle distanceFromString:oldTitle];
+			NSUInteger distance = [newTitle distanceFromString:oldTitle];
 			//NSLog(@"%d", distance);
 			if (distance != NSNotFound) {
 				NSNumber *distanceNumber = [NSNumber numberWithInt:distance];

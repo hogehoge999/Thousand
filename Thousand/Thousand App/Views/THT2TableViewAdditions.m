@@ -27,7 +27,7 @@
 			newTableColumnSettings = [tableColumnSettings arrayByAddingObject:dictionary];
 		}
 	} else {
-		unsigned index = [identifiers indexOfObject:tableColumnIdentifier];
+		NSUInteger index = [identifiers indexOfObject:tableColumnIdentifier];
 		if (index != NSNotFound) {
 			NSMutableArray *tempTableColumnSettings = [[tableColumnSettings mutableCopy] autorelease];
 			[tempTableColumnSettings removeObjectAtIndex:index];

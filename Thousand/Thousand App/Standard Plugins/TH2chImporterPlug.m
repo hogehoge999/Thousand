@@ -265,7 +265,7 @@ void stampList(T2List *list) {
 	if (_viewerSID) {
 		[self setStatusString:plugLocalizedString(@"Log-in.")];
 		
-		int location = [_viewerSID rangeOfString:@":" options:NSLiteralSearch].location;
+		NSInteger location = [_viewerSID rangeOfString:@":" options:NSLiteralSearch].location;
 		if (location != NSNotFound) {
 			NSString *viewerSUA = [_viewerSID substringToIndex:location];
 			
@@ -774,7 +774,7 @@ void stampList(T2List *list) {
 -(NSString *)threadInternalPathForProposedURLString:(NSString *)URLString {
 	if ([[URLString pathExtension] isEqualToString:@"dat"]) return URLString;
 	
-	unsigned quoteLocation = [URLString rangeOfString:@"?" options:NSLiteralSearch].location;
+	NSUInteger quoteLocation = [URLString rangeOfString:@"?" options:NSLiteralSearch].location;
 	if (quoteLocation != NSNotFound) {
 		URLString = [URLString substringToIndex:quoteLocation];
 	}
@@ -816,7 +816,7 @@ void stampList(T2List *list) {
 	return nil;
 }
 -(NSString *)resExtractPatnForProposedURLString:(NSString *)URLString {
-	unsigned quoteLocation = [URLString rangeOfString:@"?" options:NSLiteralSearch].location;
+	NSUInteger quoteLocation = [URLString rangeOfString:@"?" options:NSLiteralSearch].location;
 	if (quoteLocation != NSNotFound) {
 		URLString = [URLString substringToIndex:quoteLocation];
 	}
@@ -897,7 +897,7 @@ void stampList(T2List *list) {
             if (partStringCount < 5)
             {
                 NSMutableArray *array = [NSMutableArray arrayWithCapacity:5];
-                NSLog(@"(%d)%@", partStringCount, resString);
+                NSLog(@"(%ld)%@", (long)partStringCount, resString);
                 for (NSString *part in partStringArray)
                 {
                     NSRange range = [part rangeOfString:@"<>" options:NSLiteralSearch];
@@ -1411,7 +1411,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	while (categoryString = [categoryStringEnumerator nextObject]) {
 		myPool = [[NSAutoreleasePool alloc] init];
 		
-		unsigned categoryNameLocation = [categoryString rangeOfString:@"</B>"].location;
+		NSUInteger categoryNameLocation = [categoryString rangeOfString:@"</B>"].location;
 		if (categoryNameLocation != NSNotFound && categoryNameLocation < 32) {
 			NSString *categoryName = [categoryString substringToIndex:categoryNameLocation];
 			NSString *categoryNameWithPrefix = [__categoryPrefix stringByAppendingString:categoryName];
@@ -1708,7 +1708,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	NSString *threadName = nil;
 	NSString *tempThreadFileName = nil;
 	NSString *threadKey;
-	unsigned resCountDelimiterLocation;
+	NSUInteger resCountDelimiterLocation;
 	NSString *tempResCountString = nil;
 	int tempThreadResCount = 0;
 	int tempThreadOrder = 1;

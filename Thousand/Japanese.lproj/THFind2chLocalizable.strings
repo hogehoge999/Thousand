@@ -3,3 +3,4 @@
 "Find2ch" = "２ちゃんねる検索";
 "searchMax" = "最大件数";
 "requestURLFormat" = "http://find.2ch.net/?BBS=ALL&TYPE=TITLE&STR=%@&COUNT=%d";
+"requestURLFormat2" = "http://ttsearch.net/s2.cgi?k=%@";

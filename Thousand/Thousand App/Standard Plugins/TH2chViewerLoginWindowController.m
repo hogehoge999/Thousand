@@ -183,7 +183,7 @@ static NSString *__BeServiceName = @"be.2ch.net";
 	if (_viewerSID) {
 		[_statusField setStringValue:plugLocalizedString(@"Log-in.")];
 		
-		unsigned location = [_viewerSID rangeOfString:@":" options:NSLiteralSearch].location;
+		NSUInteger location = [_viewerSID rangeOfString:@":" options:NSLiteralSearch].location;
 		if (location != NSNotFound) {
 			NSString *viewerSUA = [_viewerSID substringToIndex:location];
 			
@@ -308,7 +308,7 @@ static NSString *__BeServiceName = @"be.2ch.net";
 			[request setHTTPMethod:@"POST"];
 			[request setHTTPBody:bodyData];
 			
-			[request setValue:[NSString stringWithFormat:@"%d",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+			[request setValue:[NSString stringWithFormat:@"%lu",(unsigned long)[bodyData length]] forHTTPHeaderField:@"Content-length"];
 			[request setValue:@"DOLIB/1.00" forHTTPHeaderField:@"User-Agent"];
 			[request setValue:x2chUA forHTTPHeaderField:@"X-2ch-UA"];
 			

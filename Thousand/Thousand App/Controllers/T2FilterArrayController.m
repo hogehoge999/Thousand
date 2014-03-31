@@ -18,15 +18,12 @@
 	_searchString = searchString;
 	
 	if (_compareOptionFlags == 0) {
-		SInt32 MacVersion;
-		if (Gestalt(gestaltSystemVersion, &MacVersion) == noErr){
-			if (MacVersion >= 0x1050){
-				_compareOptionFlags = kCFCompareCaseInsensitive | kCFCompareNonliteral | 128 | 256;
-			} else {
-				_compareOptionFlags = kCFCompareCaseInsensitive | kCFCompareNonliteral;
-			}
-		}
-	}	
+        if (floor(NSAppKitVersionNumber) >= NSAppKitVersionNumber10_5) {
+            _compareOptionFlags = kCFCompareCaseInsensitive | kCFCompareNonliteral | 128 | 256;
+        } else {
+            _compareOptionFlags = kCFCompareCaseInsensitive | kCFCompareNonliteral;
+        }
+	}
 }
 -(NSString *)searchString { return _searchString; }
 /*

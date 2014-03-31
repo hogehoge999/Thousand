@@ -907,7 +907,7 @@ static BOOL __Safari2Debug = NO;
 				if (![anchorElement hasClassName:T2HTMLClassNameNoPreview] &&
 					![[anchorElement parentResDivElement] hasClassName:T2HTMLClassNameDanger]) {
 					NSString *urlString = [anchorElement href];
-					unsigned resNumber = [anchorElement parentResNumber];
+					NSUInteger resNumber = [anchorElement parentResNumber];
 					if (![urlString hasPrefix:@"internal://"] &&
 						resNumber != NSNotFound &&
 						[pluginManager isPreviewableURLString:urlString
@@ -952,7 +952,7 @@ static BOOL __Safari2Debug = NO;
 			if (![anchorElement hasClassName:T2HTMLClassNameNoPreview] &&
 				![[anchorElement parentResDivElement] hasClassName:T2HTMLClassNameDanger]) {
 				NSString *urlString = [anchorElement href];
-				unsigned resNumber = [anchorElement parentResNumber];
+				NSUInteger resNumber = [anchorElement parentResNumber];
 				if (![urlString hasPrefix:@"internal://"] &&
 					resNumber != NSNotFound &&
 					[pluginManager isPreviewableURLString:urlString

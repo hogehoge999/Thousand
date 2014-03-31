@@ -689,8 +689,8 @@ static NSString *__oreyonPath = nil;
 -(NSTabViewItem *)addTabForThreadController:(THThreadController *)threadController {
 	//[self addTabsForThreadControllers:[NSArray arrayWithObject:threadController]];
 	NSArray *tabViewItems = [[[_tabBarControl representedTabViewItems] copy] autorelease];
-	unsigned tabCount = [tabViewItems count];
-	unsigned listTabIndex = [tabViewItems indexOfObjectIdenticalTo:_listTab];
+	NSUInteger tabCount = [tabViewItems count];
+	NSUInteger listTabIndex = [tabViewItems indexOfObjectIdenticalTo:_listTab];
 	if (listTabIndex == NSNotFound) return nil;
 	NSTabViewItem *newTabViewItem = [[[NSTabViewItem alloc] initWithIdentifier:threadController] autorelease];
 	NSString *title = [[threadController thread] title];
@@ -757,8 +757,8 @@ static NSString *__oreyonPath = nil;
 }
 -(void)removeTabAtEnd {
 	NSArray *tabViewItems = [[[_tabBarControl representedTabViewItems] copy] autorelease];
-	unsigned tabCount = [tabViewItems count];
-	unsigned listTabIndex = [tabViewItems indexOfObjectIdenticalTo:_listTab];
+	NSUInteger tabCount = [tabViewItems count];
+	NSUInteger listTabIndex = [tabViewItems indexOfObjectIdenticalTo:_listTab];
 	if (listTabIndex == NSNotFound) return;
 	
 	if (__newTabAppearsInRightEnd) {
@@ -821,7 +821,7 @@ static NSString *__oreyonPath = nil;
 	if ([_tabView selectedTabViewItem] != tabViewItem) return;
 	
 	NSArray *tabViewItems = [[[_tabBarControl representedTabViewItems] copy] autorelease];
-	unsigned index = [tabViewItems indexOfObjectIdenticalTo:tabViewItem];
+	NSUInteger index = [tabViewItems indexOfObjectIdenticalTo:tabViewItem];
 	if (index == NSNotFound || index+1 >= [tabViewItems count]) return;
 	
 	[_tabView selectTabViewItem:[tabViewItems objectAtIndex:index+1]];
@@ -1133,7 +1133,7 @@ static NSString *__oreyonPath = nil;
 #pragma mark -
 #pragma mark UI Validation and Action Forwarding
 
-- (BOOL)validateMenuItem:(id <NSMenuItem>)menuItem {
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
 	return [self validateUIOfAction:[(NSMenuItem *)menuItem action]];
 }
 
@@ -1278,7 +1278,7 @@ static NSString *__oreyonPath = nil;
 	if (tabViewItem != _listTab) {
 		
 		NSArray *tabViewItems = [[[_tabBarControl representedTabViewItems] copy] autorelease];
-		unsigned index = [tabViewItems indexOfObjectIdenticalTo:tabViewItem];
+		NSUInteger index = [tabViewItems indexOfObjectIdenticalTo:tabViewItem];
 		if (!(index == NSNotFound || index+1 >= [tabViewItems count]))
 			[_tabView selectTabViewItem:[tabViewItems objectAtIndex:index+1]];
 		[_tabView removeTabViewItem:tabViewItem];
@@ -1292,7 +1292,7 @@ static NSString *__oreyonPath = nil;
 	NSTabViewItem *tabViewItem = [_tabView selectedTabViewItem];
 	if (tabViewItem != _listTab) {
 		NSArray *tabViewItems = [[[_tabBarControl representedTabViewItems] copy] autorelease];
-		unsigned listTabIndex = [tabViewItems indexOfObjectIdenticalTo:_listTab];
+		NSUInteger listTabIndex = [tabViewItems indexOfObjectIdenticalTo:_listTab];
 		if (listTabIndex == NSNotFound) return;
 		
 		[tabViewItem retain];

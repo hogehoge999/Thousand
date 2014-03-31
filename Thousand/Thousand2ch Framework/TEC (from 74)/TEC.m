@@ -119,7 +119,7 @@
 {    
     OSStatus status;
     
-    ItemCount* encodings;
+    TextEncoding * encodings;
     ItemCount* errors;
     ItemCount* features;
     ItemCount numErrors, numFeatures;

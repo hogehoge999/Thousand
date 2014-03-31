@@ -722,7 +722,7 @@ THPreviewActionType previewActionTypeWithPriorityAndModifierFlags(
 
 #pragma mark -
 #pragma mark Menu And Toolbar item Validation
-- (BOOL)validateMenuItem:(id <NSMenuItem>)menuItem {
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
 	return [self validateUIOfAction:[(NSMenuItem *)menuItem action]];
 }
 

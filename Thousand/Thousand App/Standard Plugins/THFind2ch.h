@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Thousand2ch/Thousand2ch.h>
+#import <Foundation/NSXMLParser.h>
 
-@interface THFind2ch : NSObject <T2SearchListImporting_v100, T2DictionaryConverting> {
+@interface THFind2ch : NSObject <T2SearchListImporting_v100, T2DictionaryConverting, NSXMLParserDelegate> {
 	NSBundle *_selfBundle;
 	NSImage *_rootImage;
 	NSString *_requestURLFormat;

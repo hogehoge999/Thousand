@@ -74,7 +74,7 @@ static T2PluginManager 	*__sharedManager 	= nil;
 		NSEnumerator *pluginFoldersEnumerator = [__pluginFolderPaths objectEnumerator];
 		NSString *pluginFolderPath;
 		while (pluginFolderPath = [pluginFoldersEnumerator nextObject]) {
-			NSArray *bundlePaths = [fileManager directoryContentsAtPath:pluginFolderPath];
+			NSArray *bundlePaths = [fileManager contentsOfDirectoryAtPath:pluginFolderPath error:nil];
 			if (bundlePaths && [bundlePaths count] > 0) {
 				NSEnumerator *bundlePathsEnumerator = [bundlePaths objectEnumerator];
 				NSString *bundlePath;

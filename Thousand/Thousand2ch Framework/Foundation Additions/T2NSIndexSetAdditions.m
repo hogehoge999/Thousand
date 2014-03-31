@@ -20,12 +20,12 @@ static NSCharacterSet *__decimalDigitCharacterSet = nil;
 	NSScanner *scanner = [NSScanner scannerWithString:[[string copy] autorelease]];
 	
 	NSMutableIndexSet *resultIndexSet = [NSMutableIndexSet indexSet];
-	NSInteger index = -1, prevIndex = 0;
+	int index = -1, prevIndex = 0;
 	NSString *separator = nil, *prevSeparator = nil;
 	
 	
 	while (![scanner isAtEnd]) {
-		if ([scanner scanInt:&index] && index > -1 && index < NSNotFound) {
+		if ([scanner scanInt:&index] && index > -1 && index < INT_MAX) {
 			if ([prevSeparator isEqual: @"-"] && index > prevIndex) {
 				[resultIndexSet addIndexesInRange:NSMakeRange(prevIndex, index-prevIndex+1)];
 			} else {

@@ -125,7 +125,7 @@ static NSString *THThreadFacesPboardType =		@"THThreadFacesPboardType";
 
 #pragma mark -
 #pragma mark Menu And Toolbar item Validation
-- (BOOL)validateMenuItem:(id <NSMenuItem>)menuItem ;
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem ;
 - (BOOL)validateToolbarItem:(NSToolbarItem *)theItem ;
 -(BOOL)validateUIOfAction:(SEL)action ;
 

@@ -20,7 +20,7 @@
 	for(i=0; i<= maxCount; i++) {
 		if ([self isCancelled]) return;
 		NSDate *date = [NSDate date];
-		date = [date addTimeInterval:1.0];
+		date = [date dateByAddingTimeInterval:1.0];
 		[NSThread sleepUntilDate:date];
 		[self setProgress:(float)i/(float)maxCount];
 		[self setStatusString:[NSString stringWithFormat:@"Progress: %d / %d", i, maxCount]];

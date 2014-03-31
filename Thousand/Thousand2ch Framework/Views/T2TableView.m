@@ -63,17 +63,21 @@
 	}
 	//[self tableColumns]
 	NSEnumerator *columnEnumerator = [[self tableColumns] reverseObjectEnumerator];
-	NSTableColumn *tempColumn = nil;
+	//NSTableColumn *tempColumn = nil;
     // ここでエクセプションでてるようなので一時的にコメントアウト
     // 逆順で消せたよう？これの存在意義がよくわからない
     // 消さないとスレッド一覧のタブが増え続ける
-	while (tempColumn = [columnEnumerator nextObject]) {
+
+    //	while (tempColumn = [columnEnumerator nextObject]) {
+//
+//        NSLog(@"id = %@", [tempColumn valueForKey:@"identifier"]);
+//        
+//		[self removeTableColumn:tempColumn];
+//	}
+	for (NSTableColumn *tempColumn in columnEnumerator)
+    {
 		[self removeTableColumn:tempColumn];
 	}
-	//for (NSTableColumn *tempColumn in columnEnumerator)
-    //{
-	//	[self removeTableColumn:tempColumn];
-	//}
 	
 	NSEnumerator *dictionaryEnumerator = [columnSettings objectEnumerator];
 	NSDictionary *dictionary = nil;

@@ -234,8 +234,8 @@
 #pragma mark -
 #pragma mark DOMEvent
 - (void)handleEvent:(DOMEvent *)event ;
--(BOOL)mouseoverAnchorElement:(DOMHTMLAnchorElement *)anchorElement modifierFlags:(unsigned)modifierFlags ;
--(BOOL)clickAnchorElement:(DOMHTMLAnchorElement *)anchorElement modifierFlags:(unsigned)modifierFlags ;
+-(BOOL)mouseoverAnchorElement:(DOMHTMLAnchorElement *)anchorElement modifierFlags:(NSUInteger)modifierFlags ;
+-(BOOL)clickAnchorElement:(DOMHTMLAnchorElement *)anchorElement modifierFlags:(NSUInteger)modifierFlags ;
 @end
 
 #pragma mark -

@@ -321,14 +321,14 @@ static float __classThreadTableRowHeight = 17.0;
 			  byExtendingSelection:NO];
 }
 -(NSString *)selectedListInternalPath {
-	unsigned selectionIndex = [_sourceFacesController selectionIndex];
+	NSUInteger selectionIndex = [_sourceFacesController selectionIndex];
 	if (selectionIndex == NSNotFound) {
 		return @"unidentified/0";
 	}
 	T2ListFace *listFace = [[_sourceList objects] objectAtIndex:selectionIndex];
 	NSString *internalPath = [listFace internalPath];
 	if (!internalPath) {
-		internalPath = [NSString stringWithFormat:@"unidentified/%d", selectionIndex];
+		internalPath = [NSString stringWithFormat:@"unidentified/%ld", (unsigned long)selectionIndex];
 	}
 	return internalPath;
 }
@@ -503,7 +503,7 @@ static float __classThreadTableRowHeight = 17.0;
 }
 -(void)setScorerKey:(NSString *)scorerKey {
 	NSArray *scorerKeys = [[T2PluginManager sharedManager] threadFaceScoreKeys];
-	unsigned index = [scorerKeys indexOfObject:scorerKey];
+	NSUInteger index = [scorerKeys indexOfObject:scorerKey];
 	if (index == NSNotFound) index = 0;
 	[self setSelectedScorerIndex:index];
 }
@@ -638,7 +638,7 @@ static float __classThreadTableRowHeight = 17.0;
 
 -(void)openListWithListFace:(T2ListFace *)listFace {
 	NSArray *sourceListFaces = [__sourceList objects];
-	unsigned index = [sourceListFaces indexOfObjectIdenticalTo:listFace];
+	NSUInteger index = [sourceListFaces indexOfObjectIdenticalTo:listFace];
 	if (index != NSNotFound) {
 		[_sourceTable selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:NO];
 	} else {
@@ -652,7 +652,7 @@ static float __classThreadTableRowHeight = 17.0;
 #pragma mark -
 #pragma mark NSSplitView delegate methods
 - (NSRect)splitView:(NSSplitView *)splitView effectiveRect:(NSRect)proposedEffectiveRect
-	   forDrawnRect:(NSRect)drawnRect ofDividerAtIndex:(int)dividerIndex {
+	   forDrawnRect:(NSRect)drawnRect ofDividerAtIndex:(NSInteger)dividerIndex {
 	NSRect resultRect = proposedEffectiveRect;
 	if (proposedEffectiveRect.size.width <=1) {
 		resultRect.size.width = 9;
@@ -731,7 +731,7 @@ static float __classThreadTableRowHeight = 17.0;
 }
 
 - (NSDragOperation)tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info 
-				 proposedRow:(int)row proposedDropOperation:(NSTableViewDropOperation)operation {
+				 proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)operation {
 	
 	NSPasteboard *draggingPasteboard = [info draggingPasteboard];
 	
@@ -780,7 +780,7 @@ static float __classThreadTableRowHeight = 17.0;
 }
 
 - (BOOL)tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info
-			  row:(int)row dropOperation:(NSTableViewDropOperation)operation {
+			  row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation {
 	NSPasteboard *draggingPasteboard = [info draggingPasteboard];
 	
 	if (tableView == _sourceTable) {
@@ -894,7 +894,7 @@ static float __classThreadTableRowHeight = 17.0;
 		{
 			NSIndexSet *draggedRowsIndexSet = [NSUnarchiver unarchiveObjectWithData:[draggingPasteboard dataForType:THThreadListTableRowPboardType]];
 			
-			unsigned minDraggedRow = [draggedRowsIndexSet indexLessThanIndex:row];
+			NSInteger minDraggedRow = [draggedRowsIndexSet indexLessThanIndex:row];
 			while (minDraggedRow != NSNotFound) {
 				row--;
 				minDraggedRow = [draggedRowsIndexSet indexLessThanIndex:minDraggedRow];
@@ -943,7 +943,7 @@ static float __classThreadTableRowHeight = 17.0;
 #pragma mark NSTableView delegate methods
 
 - (void)tableView:(NSTableView *)aTableView willDisplayCell:(id)aCell 
-   forTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex {
+   forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
 	if (_threadTable == aTableView) {
 		if ([aCell conformsToProtocol:@protocol(T2Labeling)]) {
 			NSArray *threadFaces = [_threadFacesController arrangedObjects];
@@ -1104,7 +1104,7 @@ static float __classThreadTableRowHeight = 17.0;
 	if ([keyPath isEqualToString:@"selectedObjects"]) {
 		[self updateLabelButton];
 	} else if ([keyPath isEqualToString:@"objects"]) {
-		unsigned i = [_browsingListArray indexOfObjectIdenticalTo:object];
+		NSUInteger i = [_browsingListArray indexOfObjectIdenticalTo:object];
 		if (i != NSNotFound) {
 			[_listBrowser reloadColumn:i];
 		}
@@ -1113,7 +1113,7 @@ static float __classThreadTableRowHeight = 17.0;
 
 #pragma mark -
 #pragma mark Menu And Toolbar item Validation
-- (BOOL)validateMenuItem:(id <NSMenuItem>)menuItem {
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
 	return [self validateUIOfAction:[(NSMenuItem *)menuItem action]];
 }
 - (BOOL)validateToolbarItem:(NSToolbarItem *)theItem {
@@ -1357,7 +1357,7 @@ static float __classThreadTableRowHeight = 17.0;
 											   defaultButton:THBookmarkLocalize(@"OK")
 											 alternateButton:THBookmarkLocalize(@"Cancel")
 												 otherButton:nil
-								   informativeTextWithFormat:THBookmarkLocalize(@"Are you sure to move log files to Trash?")] retain];
+								   informativeTextWithFormat:@"%@", THBookmarkLocalize(@"Are you sure to move log files to Trash?")] retain];
 		
 		[alertPanel beginSheetModalForWindow:[_threadTable window]
 							   modalDelegate:self
@@ -1410,13 +1410,15 @@ static float __classThreadTableRowHeight = 17.0;
 		while (threadFace = [threadFaceEnumerator nextObject]) {
 			int state = [threadFace state];
 			if (state == T2ThreadFaceStateFallen || state == T2ThreadFaceStateFallenNoLog) {
-				NSAlert *alertPanel = [[NSAlert alertWithMessageText:THBookmarkLocalize(@"Move Log Files to Trash")
+                //NSAlert *alertPanel = [[NSAlert alloc] init];
+                //[alertPanel informativeText messageText:THBookmarkLocalize(@"Move Log Files to Trash")];
+				NSAlert *alertPanel2 = [[NSAlert alertWithMessageText:THBookmarkLocalize(@"Move Log Files to Trash")
 													   defaultButton:THBookmarkLocalize(@"OK")
 													 alternateButton:THBookmarkLocalize(@"Cancel")
 														 otherButton:nil
-										   informativeTextWithFormat:THBookmarkLocalize(@"Are you sure to move fallen threads log files to Trash?")] retain];
+										   informativeTextWithFormat:@"%@", THBookmarkLocalize(@"Are you sure to move fallen threads log files to Trash?")] retain];
 				
-				[alertPanel beginSheetModalForWindow:[_threadTable window]
+				[alertPanel2 beginSheetModalForWindow:[_threadTable window]
 									   modalDelegate:self
 									  didEndSelector:@selector(deleteFallenThreadLogAlertDidEnd:returnCode:contextInfo:)
 										 contextInfo:NULL];
@@ -1462,7 +1464,7 @@ static float __classThreadTableRowHeight = 17.0;
 -(IBAction)openNextThread:(id)sender {
 	if (![self canOpenNextThread]) return;
 	NSArray *arrangedThreadFaces = [_threadFacesController arrangedObjects];
-	unsigned selectionIndex = [_threadFacesController selectionIndex];
+	NSUInteger selectionIndex = [_threadFacesController selectionIndex];
 	if (selectionIndex != NSNotFound && [arrangedThreadFaces count]-1 > selectionIndex) {
 		selectionIndex++;
 		[_threadFacesController setSelectionIndex:selectionIndex];

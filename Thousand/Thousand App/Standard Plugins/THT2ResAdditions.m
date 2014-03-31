@@ -12,8 +12,8 @@
 @implementation T2Res (THT2ResAdditions)
 -(NSString *)forwardLinkedResNumberString {
 	if (_forwardResIndexes && [_forwardResIndexes count]>0) {
-		return [NSString stringWithFormat:@"<a href=\"internal://trace/1/resNumber/%d\">%d +%d</a>",
-			_resNumber, _resNumber, [_forwardResIndexes count]];
+		return [NSString stringWithFormat:@"<a href=\"internal://trace/1/resNumber/%d\">%d +%lu</a>",
+			_resNumber, _resNumber, (unsigned long)[_forwardResIndexes count]];
 	}
 	return [NSString stringWithFormat:@"%d", _resNumber];
 }
@@ -46,8 +46,8 @@
 
 -(NSString *)linkedBeString {
 	if (_beString && _thread) {
-		unsigned beDelimiterIndex = [_beString rangeOfString:@"-" options:NSLiteralSearch].location;
-		unsigned beStringLength = [_beString length];
+		NSUInteger beDelimiterIndex = [_beString rangeOfString:@"-" options:NSLiteralSearch].location;
+		NSUInteger beStringLength = [_beString length];
 		if (beDelimiterIndex != NSNotFound && beDelimiterIndex>0 && beDelimiterIndex+1<beStringLength) {
 			NSString *beID = [_beString substringToIndex:beDelimiterIndex];
 			NSString *beLevel = [_beString substringFromIndex:beDelimiterIndex+1];

@@ -98,7 +98,7 @@ static T2SourceList *__sharedSourceList = nil;
 			T2BookmarkList *bookmarkList = (T2BookmarkList *)[listFace list];
 			NSArray *bookmarkedThreadFaces = [bookmarkList objects];
 			if (bookmarkedThreadFaces) {
-				unsigned index = [bookmarkedThreadFaces indexOfObjectIdenticalTo:threadFace];
+				NSUInteger index = [bookmarkedThreadFaces indexOfObjectIdenticalTo:threadFace];
 				if (index != NSNotFound) {
 					return YES;
 				}
@@ -117,7 +117,7 @@ static T2SourceList *__sharedSourceList = nil;
 			T2BookmarkList *bookmarkList = (T2BookmarkList *)[listFace list];
 			NSArray *bookmarkedThreadFaces = [bookmarkList objects];
 			if (bookmarkedThreadFaces) {
-				unsigned index = [bookmarkedThreadFaces indexOfObjectIdenticalTo:threadFace];
+				NSUInteger index = [bookmarkedThreadFaces indexOfObjectIdenticalTo:threadFace];
 				if (index != NSNotFound) {
 					[results addObject:listFace];
 				}
@@ -147,7 +147,7 @@ static T2SourceList *__sharedSourceList = nil;
 	while (bookmarkListFace = [bookmarkListFaceEnumerator nextObject]) {
 		T2BookmarkList *bookmarkList = (T2BookmarkList *)[bookmarkListFace list];
 		NSMutableArray *newObjects = [[[bookmarkList objects] mutableCopy] autorelease];
-		unsigned index = [newObjects indexOfObjectIdenticalTo:oldThreadFace];
+		NSUInteger index = [newObjects indexOfObjectIdenticalTo:oldThreadFace];
 		if (index != NSNotFound) {
 			[newObjects replaceObjectAtIndex:index withObject:newThreadFace];
 			[bookmarkList setObjects:newObjects];

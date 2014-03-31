@@ -3,23 +3,8 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 46;
 	objects = {
-
-/* Begin PBXAggregateTarget section */
-		F4F693890FDCACDF00198D3B /* Copy to Tiger */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = F4F693990FDCACFE00198D3B /* Build configuration list for PBXAggregateTarget "Copy to Tiger" */;
-			buildPhases = (
-				F4F693880FDCACDF00198D3B /* CopyFiles */,
-			);
-			dependencies = (
-				F4F6938D0FDCACEF00198D3B /* PBXTargetDependency */,
-			);
-			name = "Copy to Tiger";
-			productName = "Copy to Tiger";
-		};
-/* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
 		444AA5F617B34AB900C568D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444AA5F517B34AB900C568D3 /* Security.framework */; };
@@ -29,13 +14,13 @@
 		47457A710865B9C800D22BF9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47457A700865B9C800D22BF9 /* WebKit.framework */; };
 		47457A720865B9C800D22BF9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47457A700865B9C800D22BF9 /* WebKit.framework */; };
 		47457ABE0865BBAA00D22BF9 /* App.icns in Resources */ = {isa = PBXBuildFile; fileRef = 47457ABD0865BBAA00D22BF9 /* App.icns */; };
-		476BC73A0A2A6D8C00DD0A65 /* standardStyles.css in スタイルCSSをコピー */ = {isa = PBXBuildFile; fileRef = 476BC72B0A2A6D2300DD0A65 /* standardStyles.css */; };
+		476BC73A0A2A6D8C00DD0A65 /* standardStyles.css in スタイルCSSをコピー */ = {isa = PBXBuildFile; fileRef = 476BC72B0A2A6D2300DD0A65 /* standardStyles.css */; };
 		478076EA08EFF275008F24EF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 478076E908EFF275008F24EF /* Localizable.strings */; };
-		479E2A4B0A7B9115002B9DCE /* danger.png in スタイルリソースをコピー */ = {isa = PBXBuildFile; fileRef = 479E2A3E0A7B90BC002B9DCE /* danger.png */; };
+		479E2A4B0A7B9115002B9DCE /* danger.png in スタイルリソースをコピー */ = {isa = PBXBuildFile; fileRef = 479E2A3E0A7B90BC002B9DCE /* danger.png */; };
 		479EE71B0A8EB60B00ECDF45 /* THURLOpenWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 479EE71A0A8EB60B00ECDF45 /* THURLOpenWindow.nib */; };
 		479EE7200A8EB61900ECDF45 /* THAddBookmarkWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 479EE71F0A8EB61900ECDF45 /* THAddBookmarkWindow.nib */; };
 		479EE7250A8EB62600ECDF45 /* THPostingWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 479EE7240A8EB62600ECDF45 /* THPostingWindow.nib */; };
-		47B664E108E1AC11001DE8BC /* Thousand2ch.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 47457A130865B30700D22BF9 /* Thousand2ch.framework */; };
+		47B664E108E1AC11001DE8BC /* Thousand2ch.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 47457A130865B30700D22BF9 /* Thousand2ch.framework */; };
 		47E448BE0B0987E2008A41B6 /* THPrefWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 47E448BD0B0987E2008A41B6 /* THPrefWindow.nib */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
 		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
@@ -48,7 +33,7 @@
 		F41385A30EC5FD6C00A5C4CE /* Thousand2ch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47457A130865B30700D22BF9 /* Thousand2ch.framework */; };
 		F41385DC0EC5FD8800A5C4CE /* THSpotlightSearchListImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = F41385750EC5F77900A5C4CE /* THSpotlightSearchListImporter.m */; };
 		F41385E60EC5FE1C00A5C4CE /* THSpotlightSearchListLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F41385E50EC5FE1C00A5C4CE /* THSpotlightSearchListLocalizable.strings */; };
-		F413860E0EC7272400A5C4CE /* THSpotlightSearchListImporter.bundle in プラグインをコピー */ = {isa = PBXBuildFile; fileRef = F41385980EC5FCAA00A5C4CE /* THSpotlightSearchListImporter.bundle */; };
+		F413860E0EC7272400A5C4CE /* THSpotlightSearchListImporter.bundle in プラグインをコピー */ = {isa = PBXBuildFile; fileRef = F41385980EC5FCAA00A5C4CE /* THSpotlightSearchListImporter.bundle */; };
 		F41749F20EBC0C0900C0E1C5 /* THSearchBoardByName.m in Sources */ = {isa = PBXBuildFile; fileRef = F41749F10EBC0C0900C0E1C5 /* THSearchBoardByName.m */; };
 		F41D5A8D0E07715F0093AB9F /* THCrashLogWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = F41D5A8C0E07715F0093AB9F /* THCrashLogWindow.nib */; };
 		F420F47C0F9F5C400036CD99 /* TH32_DeleteSpecial.png in Resources */ = {isa = PBXBuildFile; fileRef = F420F47B0F9F5C400036CD99 /* TH32_DeleteSpecial.png */; };
@@ -66,12 +51,12 @@
 		F43EA36A0F0B0B3C00AE5D2E /* TH32_FontAndColor.png in Resources */ = {isa = PBXBuildFile; fileRef = F43EA3690F0B0B3C00AE5D2E /* TH32_FontAndColor.png */; };
 		F43EA36C0F0B0B6F00AE5D2E /* TH32_Appearance.png in Resources */ = {isa = PBXBuildFile; fileRef = F43EA36B0F0B0B6F00AE5D2E /* TH32_Appearance.png */; };
 		F4455E290EE6386F008BB943 /* THCookiesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4455E280EE6386F008BB943 /* THCookiesWindowController.m */; };
-		F44750EC0E969A390089E88E /* ThousandMDImporter.mdimporter in Spotlightプラグインをコピー */ = {isa = PBXBuildFile; fileRef = F44750DA0E969A2B0089E88E /* ThousandMDImporter.mdimporter */; };
+		F44750EC0E969A390089E88E /* ThousandMDImporter.mdimporter in Spotlightプラグインをコピー */ = {isa = PBXBuildFile; fileRef = F44750DA0E969A2B0089E88E /* ThousandMDImporter.mdimporter */; };
 		F44856E80E49F2EE003372F9 /* Thousand2ch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47457A130865B30700D22BF9 /* Thousand2ch.framework */; };
 		F44857260E4A81D0003372F9 /* TH16_Find2ch.png in Resources */ = {isa = PBXBuildFile; fileRef = F44857240E4A81C3003372F9 /* TH16_Find2ch.png */; };
 		F44857270E4A81D7003372F9 /* THFind2chLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F44856C20E49F22A003372F9 /* THFind2chLocalizable.strings */; };
 		F44857290E4A81EA003372F9 /* THFind2ch.m in Sources */ = {isa = PBXBuildFile; fileRef = F44856B70E49F1AE003372F9 /* THFind2ch.m */; };
-		F448574A0E4A824D003372F9 /* THFind2ch.bundle in プラグインをコピー */ = {isa = PBXBuildFile; fileRef = F44856DC0E49F27F003372F9 /* THFind2ch.bundle */; };
+		F448574A0E4A824D003372F9 /* THFind2ch.bundle in プラグインをコピー */ = {isa = PBXBuildFile; fileRef = F44856DC0E49F27F003372F9 /* THFind2ch.bundle */; };
 		F455D5010ECB0319004DEC72 /* THOperationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F455D5000ECB0319004DEC72 /* THOperationWindowController.m */; };
 		F46EC9B00F8A622400E6A494 /* THKeepOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F46EC9AF0F8A622400E6A494 /* THKeepOperation.m */; };
 		F46ECA220F8B41E800E6A494 /* THLoadThreadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F46ECA210F8B41E800E6A494 /* THLoadThreadOperation.m */; };
@@ -80,8 +65,8 @@
 		F47001E6104FC09C00C693AB /* THChooseNextThreadWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = F47001E5104FC09C00C693AB /* THChooseNextThreadWindow.nib */; };
 		F47001E9104FC0BA00C693AB /* THRegisterNextThreadWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = F47001E8104FC0BA00C693AB /* THRegisterNextThreadWindow.nib */; };
 		F47F092A0E61BCCE00B867DE /* THT2ThreadListAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F09290E61BCCE00B867DE /* THT2ThreadListAdditions.m */; };
-		F4837C320DE1D17B008C72E9 /* standard.css in 標準CSSをコピー */ = {isa = PBXBuildFile; fileRef = 4748CBFB0A9B334300E0352B /* standard.css */; };
-		F4837C330DE1D17B008C72E9 /* standard_h4.png in 標準CSSをコピー */ = {isa = PBXBuildFile; fileRef = 47DFE84C0A9F1A5500F7B65D /* standard_h4.png */; };
+		F4837C320DE1D17B008C72E9 /* standard.css in 標準CSSをコピー */ = {isa = PBXBuildFile; fileRef = 4748CBFB0A9B334300E0352B /* standard.css */; };
+		F4837C330DE1D17B008C72E9 /* standard_h4.png in 標準CSSをコピー */ = {isa = PBXBuildFile; fileRef = 47DFE84C0A9F1A5500F7B65D /* standard_h4.png */; };
 		F4837C610DE1D265008C72E9 /* standard.html in Resources */ = {isa = PBXBuildFile; fileRef = 47FE7AAB0943061600034BEC /* standard.html */; };
 		F490B07D0DDD71F50048457A /* T2IdentifiedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = F490B0770DDD71F50048457A /* T2IdentifiedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F490B07E0DDD71F50048457A /* T2IdentifiedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F490B0780DDD71F50048457A /* T2IdentifiedObject.m */; };
@@ -312,8 +297,8 @@
 		F4AB27070DE07D4F00C1790D /* THSecondaryThreadProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = F490B20C0DDD90440048457A /* THSecondaryThreadProcessor.m */; };
 		F4AB27080DE07D5000C1790D /* THRankingExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = F490B20A0DDD90440048457A /* THRankingExporter.m */; };
 		F4AB270C0DE07D7E00C1790D /* THAdditionalPluginLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AB270B0DE07D7E00C1790D /* THAdditionalPluginLoader.m */; };
-		F4AB275A0DE0820300C1790D /* StandardPlugin.bundle in プラグインをコピー */ = {isa = PBXBuildFile; fileRef = F4AB25D40DE0117400C1790D /* StandardPlugin.bundle */; };
-		F4AB275B0DE0820300C1790D /* AdditionalPlugin.bundle in プラグインをコピー */ = {isa = PBXBuildFile; fileRef = F4AB26C00DE07B8F00C1790D /* AdditionalPlugin.bundle */; };
+		F4AB275A0DE0820300C1790D /* StandardPlugin.bundle in プラグインをコピー */ = {isa = PBXBuildFile; fileRef = F4AB25D40DE0117400C1790D /* StandardPlugin.bundle */; };
+		F4AB275B0DE0820300C1790D /* AdditionalPlugin.bundle in プラグインをコピー */ = {isa = PBXBuildFile; fileRef = F4AB26C00DE07B8F00C1790D /* AdditionalPlugin.bundle */; };
 		F4AB278D0DE0842E00C1790D /* THVideoThumbnailPreviewerDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = F494ADA70DD85F4B003C75FF /* THVideoThumbnailPreviewerDefaults.plist */; };
 		F4ABA5200EED00A500F09AB9 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */; };
 		F4ABA5210EED00A600F09AB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */; };
@@ -334,7 +319,6 @@
 		F4EA4D9913C841DE00BF3B65 /* T2NSURLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EA4D9713C841DE00BF3B65 /* T2NSURLAdditions.m */; };
 		F4F6256711699DE900389567 /* T2Posting.h in Headers */ = {isa = PBXBuildFile; fileRef = F4F6256511699DE900389567 /* T2Posting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4F6256811699DE900389567 /* T2Posting.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F6256611699DE900389567 /* T2Posting.m */; };
-		F4F6939A0FDCADCE00198D3B /* Thousand.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D15AC370486D014006FF6A4 /* Thousand.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -401,94 +385,77 @@
 			remoteGlobalIDString = 47457A120865B30700D22BF9;
 			remoteInfo = Thousand2ch;
 		};
-		F4F6938C0FDCACEF00198D3B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D15AC270486D014006FF6A4;
-			remoteInfo = Thousand;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		476BC72D0A2A6D3F00DD0A65 /* スタイルCSSをコピー */ = {
+		476BC72D0A2A6D3F00DD0A65 /* スタイルCSSをコピー */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = CSS;
 			dstSubfolderSpec = 7;
 			files = (
-				476BC73A0A2A6D8C00DD0A65 /* standardStyles.css in スタイルCSSをコピー */,
+				476BC73A0A2A6D8C00DD0A65 /* standardStyles.css in スタイルCSSをコピー */,
 			);
 			name = "スタイルCSSをコピー";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		479E2A400A7B90E4002B9DCE /* スタイルリソースをコピー */ = {
+		479E2A400A7B90E4002B9DCE /* スタイルリソースをコピー */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = CSS/standardStyles;
 			dstSubfolderSpec = 7;
 			files = (
-				479E2A4B0A7B9115002B9DCE /* danger.png in スタイルリソースをコピー */,
+				479E2A4B0A7B9115002B9DCE /* danger.png in スタイルリソースをコピー */,
 			);
 			name = "スタイルリソースをコピー";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47B664DF08E1ABFD001DE8BC /* フレームワークをコピー */ = {
+		47B664DF08E1ABFD001DE8BC /* フレームワークをコピー */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				47B664E108E1AC11001DE8BC /* Thousand2ch.framework in フレームワークをコピー */,
+				47B664E108E1AC11001DE8BC /* Thousand2ch.framework in フレームワークをコピー */,
 			);
 			name = "フレームワークをコピー";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F44750AC0E9697AD0089E88E /* Spotlightプラグインをコピー */ = {
+		F44750AC0E9697AD0089E88E /* Spotlightプラグインをコピー */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Contents/Library/Spotlight;
 			dstSubfolderSpec = 1;
 			files = (
-				F44750EC0E969A390089E88E /* ThousandMDImporter.mdimporter in Spotlightプラグインをコピー */,
+				F44750EC0E969A390089E88E /* ThousandMDImporter.mdimporter in Spotlightプラグインをコピー */,
 			);
 			name = "Spotlightプラグインをコピー";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4837C2F0DE1D16D008C72E9 /* 標準CSSをコピー */ = {
+		F4837C2F0DE1D16D008C72E9 /* 標準CSSをコピー */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = standard;
 			dstSubfolderSpec = 7;
 			files = (
-				F4837C320DE1D17B008C72E9 /* standard.css in 標準CSSをコピー */,
-				F4837C330DE1D17B008C72E9 /* standard_h4.png in 標準CSSをコピー */,
+				F4837C320DE1D17B008C72E9 /* standard.css in 標準CSSをコピー */,
+				F4837C330DE1D17B008C72E9 /* standard_h4.png in 標準CSSをコピー */,
 			);
 			name = "標準CSSをコピー";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4AB272B0DE0805200C1790D /* プラグインをコピー */ = {
+		F4AB272B0DE0805200C1790D /* プラグインをコピー */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F413860E0EC7272400A5C4CE /* THSpotlightSearchListImporter.bundle in プラグインをコピー */,
-				F448574A0E4A824D003372F9 /* THFind2ch.bundle in プラグインをコピー */,
-				F4AB275A0DE0820300C1790D /* StandardPlugin.bundle in プラグインをコピー */,
-				F4AB275B0DE0820300C1790D /* AdditionalPlugin.bundle in プラグインをコピー */,
+				F413860E0EC7272400A5C4CE /* THSpotlightSearchListImporter.bundle in プラグインをコピー */,
+				F448574A0E4A824D003372F9 /* THFind2ch.bundle in プラグインをコピー */,
+				F4AB275A0DE0820300C1790D /* StandardPlugin.bundle in プラグインをコピー */,
+				F4AB275B0DE0820300C1790D /* AdditionalPlugin.bundle in プラグインをコピー */,
 			);
 			name = "プラグインをコピー";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4F693880FDCACDF00198D3B /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /Volumes/MacBook32/Users/k_natori/Desktop/;
-			dstSubfolderSpec = 0;
-			files = (
-				F4F6939A0FDCADCE00198D3B /* Thousand.app in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -1774,11 +1741,11 @@
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
-				47B664DF08E1ABFD001DE8BC /* フレームワークをコピー */,
-				F4AB272B0DE0805200C1790D /* プラグインをコピー */,
-				476BC72D0A2A6D3F00DD0A65 /* スタイルCSSをコピー */,
-				479E2A400A7B90E4002B9DCE /* スタイルリソースをコピー */,
-				F44750AC0E9697AD0089E88E /* Spotlightプラグインをコピー */,
+				47B664DF08E1ABFD001DE8BC /* フレームワークをコピー */,
+				F4AB272B0DE0805200C1790D /* プラグインをコピー */,
+				476BC72D0A2A6D3F00DD0A65 /* スタイルCSSをコピー */,
+				479E2A400A7B90E4002B9DCE /* スタイルリソースをコピー */,
+				F44750AC0E9697AD0089E88E /* Spotlightプラグインをコピー */,
 			);
 			buildRules = (
 			);
@@ -1835,7 +1802,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4AB25D90DE0117500C1790D /* Build configuration list for PBXNativeTarget "StandardPlugin" */;
 			buildPhases = (
-				F4837C2F0DE1D16D008C72E9 /* 標準CSSをコピー */,
+				F4837C2F0DE1D16D008C72E9 /* 標準CSSをコピー */,
 				F4AB25D00DE0117400C1790D /* Resources */,
 				F4AB25D10DE0117400C1790D /* Sources */,
 				F4AB25D20DE0117400C1790D /* Frameworks */,
@@ -1875,9 +1842,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = NO;
+				LastUpgradeCheck = 0510;
 			};
 			buildConfigurationList = 4700A6B30928C1DB00E0B36B /* Build configuration list for PBXProject "Thousand" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -1896,7 +1864,6 @@
 				F4AB26BF0DE07B8F00C1790D /* AdditionalPlugin */,
 				F44856DB0E49F27F003372F9 /* THFind2ch */,
 				F41385970EC5FCAA00A5C4CE /* THSpotlightSearchListImporter */,
-				F4F693890FDCACDF00198D3B /* Copy to Tiger */,
 			);
 		};
 /* End PBXProject section */
@@ -2263,11 +2230,6 @@
 			target = 47457A120865B30700D22BF9 /* Thousand2ch */;
 			targetProxy = F4AB27220DE0801A00C1790D /* PBXContainerItemProxy */;
 		};
-		F4F6938D0FDCACEF00198D3B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8D15AC270486D014006FF6A4 /* Thousand */;
-			targetProxy = F4F6938C0FDCACEF00198D3B /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -2484,7 +2446,7 @@
 		4700A6AC0928C1DB00E0B36B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2510,7 +2472,7 @@
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = Thousand2ch;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -2522,7 +2484,7 @@
 		4700A6AD0928C1DB00E0B36B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2549,7 +2511,7 @@
 				);
 				PREBINDING = YES;
 				PRODUCT_NAME = Thousand2ch;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -2562,7 +2524,7 @@
 		4700A6B00928C1DB00E0B36B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2582,7 +2544,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Thousand;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2590,7 +2552,7 @@
 		4700A6B10928C1DB00E0B36B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2613,7 +2575,7 @@
 				OTHER_LDFLAGS = "-bind_at_load";
 				PREBINDING = YES;
 				PRODUCT_NAME = Thousand;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -2622,27 +2584,27 @@
 		4700A6B40928C1DB00E0B36B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_VERSION = "";
 				LD_GENERATE_MAP_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = "";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		4700A6B50928C1DB00E0B36B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_VERSION = "";
 				LD_GENERATE_MAP_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = "";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -2650,7 +2612,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -2669,7 +2631,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = THSpotlightSearchListImporter;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -2678,7 +2640,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2696,7 +2658,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = THSpotlightSearchListImporter;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -2706,7 +2668,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -2725,7 +2687,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = THFind2ch;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -2734,7 +2696,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2752,7 +2714,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = THFind2ch;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -2761,7 +2723,7 @@
 		F4AB25D60DE0117500C1790D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2781,7 +2743,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = StandardPlugin;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
 			};
@@ -2790,7 +2752,7 @@
 		F4AB25D70DE0117500C1790D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2808,7 +2770,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = StandardPlugin;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -2817,7 +2779,7 @@
 		F4AB26C20DE07B8F00C1790D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -2836,7 +2798,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = AdditionalPlugin;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
 			};
@@ -2845,7 +2807,7 @@
 		F4AB26C30DE07B8F00C1790D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2863,33 +2825,8 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = AdditionalPlugin;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		F4F6938A0FDCACE100198D3B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = "";
-				PRODUCT_NAME = "Copy to Tiger";
-				SDKROOT = "";
-			};
-			name = Debug;
-		};
-		F4F6938B0FDCACE100198D3B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_VERSION = "";
-				PRODUCT_NAME = "Copy to Tiger";
-				SDKROOT = "";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -2956,15 +2893,6 @@
 			buildConfigurations = (
 				F4AB26C20DE07B8F00C1790D /* Debug */,
 				F4AB26C30DE07B8F00C1790D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		F4F693990FDCACFE00198D3B /* Build configuration list for PBXAggregateTarget "Copy to Tiger" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F4F6938A0FDCACE100198D3B /* Debug */,
-				F4F6938B0FDCACE100198D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

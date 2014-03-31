@@ -80,7 +80,7 @@ static T2ResourceManager 	*__sharedManager 	= nil;
 		NSString *subPath = [resourceFolderPath stringByAppendingPathComponent:subFolderName];
 		BOOL isDirectory;
 		if ([fileManager fileExistsAtPath:subPath isDirectory:&isDirectory] && isDirectory) {
-			NSArray *subPathContents = [fileManager directoryContentsAtPath:subPath];
+			NSArray *subPathContents = [fileManager contentsOfDirectoryAtPath:subPath error:nil];
 			NSEnumerator *subPathContentsEnumerator = [subPathContents objectEnumerator];
 			NSString *subPathContent;
 			while (subPathContent = [subPathContentsEnumerator nextObject]) {
@@ -214,7 +214,7 @@ static T2ResourceManager 	*__sharedManager 	= nil;
 	NSEnumerator *iconSetSuperFolderPathEnumerator = [iconSetSuperFolderPaths objectEnumerator];
 	NSString *iconSetSuperFolderPath;
 	while (iconSetSuperFolderPath = [iconSetSuperFolderPathEnumerator nextObject]) {
-		NSArray *iconSetFolderPaths = [fileManager directoryContentsAtPath:iconSetSuperFolderPath];
+		NSArray *iconSetFolderPaths = [fileManager contentsOfDirectoryAtPath:iconSetSuperFolderPath error:nil];
 		NSEnumerator *iconSetFolderPathEnumerator = [iconSetFolderPaths objectEnumerator];
 		NSString *iconSetFolderPath;
 		while (iconSetFolderPath = [iconSetFolderPathEnumerator nextObject]) {
@@ -232,7 +232,7 @@ static T2ResourceManager 	*__sharedManager 	= nil;
 		if (aString) {
 			NSString *iconSetFolder = [iconSetFolderDic objectForKey:aString];
 			if (iconSetFolder) {
-				NSArray *iconFiles = [[fileManager directoryContentsAtPath:iconSetFolder]
+				NSArray *iconFiles = [[fileManager contentsOfDirectoryAtPath:iconSetFolder error:nil]
 					pathsMatchingExtensions:[NSImage imageUnfilteredFileTypes]];
 				NSEnumerator *iconFileEnumerator = [iconFiles objectEnumerator];
 				NSString *iconFile;

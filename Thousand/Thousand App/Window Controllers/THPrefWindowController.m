@@ -709,7 +709,7 @@ static id __sharedPrefWindowController;
 -(int)defaultExtractPathIndex {
 	NSArray *defaultExtractPaths = [[T2PluginManager sharedManager] defaultExtractPaths];
 	NSString *path = [THThreadController classDefaultResExtractPath];
-	unsigned index = [defaultExtractPaths indexOfObject:path];
+	NSUInteger index = [defaultExtractPaths indexOfObject:path];
 	if (index == NSNotFound) index = 0;
 	return index;
 }

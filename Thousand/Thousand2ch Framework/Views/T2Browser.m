@@ -68,8 +68,8 @@ NSString *T2BrowserRowPboardType = @"T2BrowserRowPboardType";
 	[browserCell setFont:font];
 	[self setCellPrototype:browserCell];
 	
-	unsigned i;
-	int lastColumn = [self lastColumn];
+	NSInteger i;
+	NSInteger lastColumn = [self lastColumn];
 	if (lastColumn<0 || lastColumn == NSNotFound) return;
 	for (i=0; i<=lastColumn; i++) {
 		NSMatrix *matrix = [self matrixInColumn:i];
@@ -90,8 +90,8 @@ NSString *T2BrowserRowPboardType = @"T2BrowserRowPboardType";
 -(void)setRowHeight:(float)height {
 	_rowHeight = height;
 	
-	unsigned i;
-	int lastColumn = [self lastColumn];
+	NSInteger i;
+	NSInteger lastColumn = [self lastColumn];
 	if (lastColumn<0 || lastColumn == NSNotFound) return;
 	for (i=0; i<=lastColumn; i++) {
 		NSMatrix *matrix = [self matrixInColumn:i];

@@ -38,12 +38,12 @@ static NSTimer *__timer = nil;
 	__stringSuffixLength = [__stringSuffix length];
 	__animatingThreadFaces = [[NSMutableArray mutableArrayWithoutRetainingObjects] retain];
 	
-	[self setKeys:[NSArray arrayWithObjects:@"resCount", @"createdDate", @"modifiedDate", nil]
-triggerChangeNotificationsForDependentKey:@"velocity"];
-	[self setKeys:[NSArray arrayWithObjects:@"resCount", @"resCountNew", nil]
-triggerChangeNotificationsForDependentKey:@"resCountGap"];
-	[self setKeys:[NSArray arrayWithObject:@"state"]
-triggerChangeNotificationsForDependentKey:@"stateImage"];
+//	[self setKeys:[NSArray arrayWithObjects:@"resCount", @"createdDate", @"modifiedDate", nil]
+//triggerChangeNotificationsForDependentKey:@"velocity"];
+//	[self setKeys:[NSArray arrayWithObjects:@"resCount", @"resCountNew", nil]
+//triggerChangeNotificationsForDependentKey:@"resCountGap"];
+//	[self setKeys:[NSArray arrayWithObject:@"state"]
+//triggerChangeNotificationsForDependentKey:@"stateImage"];
 	//[self setKeys:[NSArray arrayWithObject:@"title"] triggerChangeNotificationsForDependentKey:@"replacedTitle"];
 }
 +(NSMutableDictionary *)dictionaryForIndentify {
@@ -53,6 +53,27 @@ triggerChangeNotificationsForDependentKey:@"stateImage"];
 	return __instancesDictionary;
 }
 
++ (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
+    
+    NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
+    
+    if ([key isEqualToString:@"velocity"]) {
+        NSArray *affectingKeys = @[@"resCount", @"createdDate", @"modifiedDate"];
+        keyPaths = [keyPaths setByAddingObjectsFromArray:affectingKeys];
+    }
+    else if ([key isEqualToString:@"resCountGap"]) {
+        NSArray *affectingKeys = @[@"resCount", @"resCountNew"];
+        keyPaths = [keyPaths setByAddingObjectsFromArray:affectingKeys];
+    }
+    else if ([key isEqualToString:@"stateImage"]) {
+        NSArray *affectingKeys = @[@"state"];
+        keyPaths = [keyPaths setByAddingObjectsFromArray:affectingKeys];
+    }
+    else {
+        
+    }
+    return keyPaths;
+}
 
 #pragma mark -
 #pragma mark Class Properties

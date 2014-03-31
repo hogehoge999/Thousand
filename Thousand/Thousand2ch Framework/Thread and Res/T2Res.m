@@ -134,7 +134,7 @@
 	[_backwardResIndexes addIndex:index];
 }
 -(int)backwardResCount { return [_backwardResIndexes count]; }
--(NSString *)backwardResCountString { return [NSString stringWithFormat:@"%d",[_backwardResIndexes count]]; }
+-(NSString *)backwardResCountString { return [NSString stringWithFormat:@"%lu",(unsigned long)[_backwardResIndexes count]]; }
 
 -(void)setForwardResIndexes:(NSIndexSet *)indexSet {
 	[_forwardResIndexes release];
@@ -152,7 +152,7 @@
 	[_forwardResIndexes addIndex:index];
 }
 -(int)forwardResCount { return [_forwardResIndexes count]; }
--(NSString *)forwardResCountString { return [NSString stringWithFormat:@"%d",[_forwardResIndexes count]]; }
+-(NSString *)forwardResCountString { return [NSString stringWithFormat:@"%lu",(unsigned long)[_forwardResIndexes count]]; }
 
 #pragma mark -
 #pragma mark html element classes
@@ -189,7 +189,7 @@
 	if (_identifier && _thread) {
 		NSDictionary *idDic = [_thread idDictionary];
 		NSIndexSet *indexes = [idDic objectForKey:_identifier];
-		if (indexes) return [NSString stringWithFormat:@"%d", [indexes count]];
+		if (indexes) return [NSString stringWithFormat:@"%lu", (unsigned long)[indexes count]];
 	}
 	return @"0";
 }
@@ -203,7 +203,7 @@
 	if (_trip && _thread) {
 		NSDictionary *tripDic = [_thread tripDictionary];
 		NSIndexSet *indexes = [tripDic objectForKey:_trip];
-		if (indexes) return [NSString stringWithFormat:@"%d", [indexes count]];
+		if (indexes) return [NSString stringWithFormat:@"%lu", (unsigned long)[indexes count]];
 	}
 	return @"0";
 }
