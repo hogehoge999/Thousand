@@ -165,6 +165,12 @@ static NSString *__pluginPrefFolderName 	= @"Plugin Prefs";
 	
 	return self;
 }
+- (IBAction)about:(id)sender {
+    NSBundle *appBundle = [NSBundle mainBundle];
+    NSString *appName = [[appBundle executablePath] lastPathComponent];
+    NSDictionary *options = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%@(%lubit)", appName, sizeof(NSInteger) * 8] , @"ApplicationName", nil];
+    [[NSApplication sharedApplication] orderFrontStandardAboutPanelWithOptions:options];
+}
 
 -(void)awakeFromNib {
 	

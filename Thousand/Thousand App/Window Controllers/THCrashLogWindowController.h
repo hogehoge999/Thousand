@@ -15,9 +15,11 @@
 	NSString *_crashLogFilePath;
 	
 	IBOutlet NSTextView *_textView;
+    NSTextField *_textBit;
 }
 +(id)sharedCrashLogWindowController ;
 -(id)initCrashLogWindowController ;
+@property (assign) IBOutlet NSTextField *textBit;
 
 -(IBAction)revealCrashLogFileInFinder:(id)sender ;
 -(IBAction)createMailForReporting:(id)sender ;

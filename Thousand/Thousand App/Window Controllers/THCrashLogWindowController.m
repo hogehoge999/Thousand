@@ -11,6 +11,7 @@
 static THCrashLogWindowController *__sharedCrashLogWindowController;
 
 @implementation THCrashLogWindowController
+@synthesize textBit = _textBit;
 +(id)sharedCrashLogWindowController {
 	if (!__sharedCrashLogWindowController)
 		__sharedCrashLogWindowController = [[self alloc] initCrashLogWindowController];
@@ -31,7 +32,7 @@ static THCrashLogWindowController *__sharedCrashLogWindowController;
 
 -(void)windowDidLoad {
 	if (_result) return;
-	
+
 	NSString *crashLogFolder = [[[NSHomeDirectory() stringByAppendingPathComponent:@"Library"]
 								 stringByAppendingPathComponent:@"Logs"]
 								stringByAppendingPathComponent:@"CrashReporter"];
@@ -54,10 +55,10 @@ static THCrashLogWindowController *__sharedCrashLogWindowController;
 			useLeopardSuffix = YES;
 		}
 	}
-	NSString *thousandVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+	NSString *thousandVersion = [NSString stringWithFormat:@"%@(%lu)", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"], sizeof(NSInteger) * 8];
 	
 	
-	NSArray *crashLogs = [fileManager directoryContentsAtPath:crashLogFolder];
+	NSArray *crashLogs = [fileManager contentsOfDirectoryAtPath:crashLogFolder error:nil];
 	NSEnumerator *crashLogEnumerator = [crashLogs objectEnumerator];
 	NSString *crashLog;
 	
