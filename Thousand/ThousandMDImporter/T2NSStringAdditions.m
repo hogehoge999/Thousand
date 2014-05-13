@@ -165,8 +165,8 @@ static NSCharacterSet *__whitespaceAndNewlineCharacterSet = nil;
 #pragma mark -
 #pragma mark Range Utility
 -(NSRange)rangeOfLastString:(NSString *)aString options:(unsigned)mask {
-	unsigned length = [self length];
-	unsigned nextLoaction;
+	NSUInteger length = [self length];
+	NSUInteger nextLoaction;
 	NSRange foundRange = [self rangeOfString:aString options:mask];
 	NSRange resultRange = foundRange;
 	while (foundRange.location != NSNotFound) {
@@ -226,20 +226,20 @@ else return [resolvedPath autorelease];
 
 -(NSString *)stringByDeletingfirstPathComponent {
 	NSArray *pathComponents = [self pathComponents];
-	unsigned maxCount = [pathComponents count];
+	NSUInteger maxCount = [pathComponents count];
 	if (maxCount <= 1) return [NSString string];
 	pathComponents = [pathComponents subarrayWithRange:(NSRange){1, maxCount-1}];
 	return [NSString pathWithComponents:pathComponents];
 }
 -(NSString *)firstPathComponent {
 	NSArray *pathComponents = [self pathComponents];
-	unsigned maxCount = [pathComponents count];
+	NSUInteger maxCount = [pathComponents count];
 	if (maxCount == 0) return self;
 	else return [pathComponents objectAtIndex:0];
 }
--(NSString *)pathComponentAtIndex:(int)index {
+-(NSString *)pathComponentAtIndex:(NSInteger)index {
 	NSArray *pathComponents = [self pathComponents];
-	unsigned maxCount = [pathComponents count];
+	NSUInteger maxCount = [pathComponents count];
 	if (maxCount == 0) return self;
 	if (index >= 0) {
 		if (index >= maxCount) index = maxCount - 1;

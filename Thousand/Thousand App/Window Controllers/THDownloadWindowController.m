@@ -122,7 +122,7 @@ static NSString *__classDownloadDestinationFolderPath = nil;
 	[self cancelSelectedDonwload:sender];
 }
 -(IBAction)cancelSelectedDonwload:(id)sender {
-	unsigned selectionIndex = [_downloadersController selectionIndex];
+	NSUInteger selectionIndex = [_downloadersController selectionIndex];
 	if (selectionIndex == NSNotFound) return;
 	
 	THWebDownloader *selectedDownloader = [[_downloadersController arrangedObjects] objectAtIndex:selectionIndex];

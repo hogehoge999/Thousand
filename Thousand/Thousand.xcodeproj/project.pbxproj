@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442EEE09192126660044235C /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442EEDEA192125B50044235C /* CoreServices.framework */; };
+		442EEE0A192126660044235C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442EEDEC192125B50044235C /* CoreFoundation.framework */; };
+		442EEE0B192126660044235C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442EEDEE192125B50044235C /* CoreData.framework */; };
+		442EEE0C192126660044235C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442EEDF0192125B50044235C /* Foundation.framework */; };
+		442EEE14192126660044235C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 442EEE13192126660044235C /* main.c */; };
+		442EEE24192126DA0044235C /* LAServerNGWords.plist in Resources */ = {isa = PBXBuildFile; fileRef = 442EEE1F192126DA0044235C /* LAServerNGWords.plist */; };
+		442EEE25192126DA0044235C /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = 442EEE20192126DA0044235C /* schema.strings */; };
+		442EEE26192126DA0044235C /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = 442EEE21192126DA0044235C /* schema.xml */; };
+		442EEE27192126DA0044235C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 442EEE22192126DA0044235C /* Info.plist */; };
+		442EEE28192126DA0044235C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 442EEE23192126DA0044235C /* InfoPlist.strings */; };
+		442EEE2F1921274D0044235C /* T2NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 442EEE2A1921274D0044235C /* T2NSDataAdditions.m */; };
+		442EEE301921274D0044235C /* T2NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 442EEE2C1921274D0044235C /* T2NSStringAdditions.m */; };
+		442EEE311921274D0044235C /* TEC.m in Sources */ = {isa = PBXBuildFile; fileRef = 442EEE2E1921274D0044235C /* TEC.m */; };
+		442EEE331921276B0044235C /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 442EEE321921276B0044235C /* GetMetadataForFile.m */; };
+		442EEEAA1921DCD90044235C /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 442EEEA91921DCD80044235C /* libiconv.dylib */; };
+		442EEEAC1921DCE10044235C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 442EEEAB1921DCE10044235C /* libz.dylib */; };
+		442EEEAE1921DE040044235C /* ThousandMDImporter.mdimporter in Spotlightプラグインをコピー */ = {isa = PBXBuildFile; fileRef = 442EEE08192126650044235C /* ThousandMDImporter.mdimporter */; };
 		444AA5F617B34AB900C568D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444AA5F517B34AB900C568D3 /* Security.framework */; };
 		444AA5FE17B34BA900C568D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444AA5F517B34AB900C568D3 /* Security.framework */; };
 		47457A210865B3D700D22BF9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
@@ -51,7 +68,6 @@
 		F43EA36A0F0B0B3C00AE5D2E /* TH32_FontAndColor.png in Resources */ = {isa = PBXBuildFile; fileRef = F43EA3690F0B0B3C00AE5D2E /* TH32_FontAndColor.png */; };
 		F43EA36C0F0B0B6F00AE5D2E /* TH32_Appearance.png in Resources */ = {isa = PBXBuildFile; fileRef = F43EA36B0F0B0B6F00AE5D2E /* TH32_Appearance.png */; };
 		F4455E290EE6386F008BB943 /* THCookiesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4455E280EE6386F008BB943 /* THCookiesWindowController.m */; };
-		F44750EC0E969A390089E88E /* ThousandMDImporter.mdimporter in Spotlightプラグインをコピー */ = {isa = PBXBuildFile; fileRef = F44750DA0E969A2B0089E88E /* ThousandMDImporter.mdimporter */; };
 		F44856E80E49F2EE003372F9 /* Thousand2ch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47457A130865B30700D22BF9 /* Thousand2ch.framework */; };
 		F44857260E4A81D0003372F9 /* TH16_Find2ch.png in Resources */ = {isa = PBXBuildFile; fileRef = F44857240E4A81C3003372F9 /* TH16_Find2ch.png */; };
 		F44857270E4A81D7003372F9 /* THFind2chLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F44856C20E49F22A003372F9 /* THFind2chLocalizable.strings */; };
@@ -423,11 +439,11 @@
 		};
 		F44750AC0E9697AD0089E88E /* Spotlightプラグインをコピー */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = Contents/Library/Spotlight;
 			dstSubfolderSpec = 1;
 			files = (
-				F44750EC0E969A390089E88E /* ThousandMDImporter.mdimporter in Spotlightプラグインをコピー */,
+				442EEEAE1921DE040044235C /* ThousandMDImporter.mdimporter in Spotlightプラグインをコピー */,
 			);
 			name = "Spotlightプラグインをコピー";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +486,28 @@
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32DBCF750370BD2300C91783 /* Thousand_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thousand_Prefix.pch; sourceTree = "<group>"; };
+		442EEDEA192125B50044235C /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		442EEDEC192125B50044235C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		442EEDEE192125B50044235C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		442EEDF0192125B50044235C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		442EEE08192126650044235C /* ThousandMDImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThousandMDImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
+		442EEE0F192126660044235C /* ThousandMDImporter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThousandMDImporter-Info.plist"; sourceTree = "<group>"; };
+		442EEE13192126660044235C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		442EEE1A192126660044235C /* Importer Read Me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Importer Read Me.txt"; sourceTree = "<group>"; };
+		442EEE1F192126DA0044235C /* LAServerNGWords.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LAServerNGWords.plist; sourceTree = "<group>"; };
+		442EEE20192126DA0044235C /* schema.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = schema.strings; sourceTree = "<group>"; };
+		442EEE21192126DA0044235C /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
+		442EEE22192126DA0044235C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		442EEE23192126DA0044235C /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		442EEE291921274D0044235C /* T2NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2NSDataAdditions.h; sourceTree = "<group>"; };
+		442EEE2A1921274D0044235C /* T2NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2NSDataAdditions.m; sourceTree = "<group>"; };
+		442EEE2B1921274D0044235C /* T2NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2NSStringAdditions.h; sourceTree = "<group>"; };
+		442EEE2C1921274D0044235C /* T2NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2NSStringAdditions.m; sourceTree = "<group>"; };
+		442EEE2D1921274D0044235C /* TEC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEC.h; sourceTree = "<group>"; };
+		442EEE2E1921274D0044235C /* TEC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEC.m; sourceTree = "<group>"; };
+		442EEE321921276B0044235C /* GetMetadataForFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
+		442EEEA91921DCD80044235C /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		442EEEAB1921DCE10044235C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		444AA5F517B34AB900C568D3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		47457A130865B30700D22BF9 /* Thousand2ch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Thousand2ch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47457A700865B9C800D22BF9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
@@ -526,7 +564,6 @@
 		F4455E270EE6386F008BB943 /* THCookiesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THCookiesWindowController.h; path = "Thousand App/Window Controllers/THCookiesWindowController.h"; sourceTree = "<group>"; };
 		F4455E280EE6386F008BB943 /* THCookiesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THCookiesWindowController.m; path = "Thousand App/Window Controllers/THCookiesWindowController.m"; sourceTree = "<group>"; };
 		F4455E310EE63BAD008BB943 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/THCookiesWindow.nib; sourceTree = "<group>"; };
-		F447503B0E9647670089E88E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F44750DA0E969A2B0089E88E /* ThousandMDImporter.mdimporter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ThousandMDImporter.mdimporter; path = ../../../../../../../../Documents/Project/2ch/Thousand/ThousandMDImporter/build/Release/ThousandMDImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44856B60E49F1AE003372F9 /* THFind2ch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THFind2ch.h; path = "Thousand App/Standard Plugins/THFind2ch.h"; sourceTree = "<group>"; };
 		F44856B70E49F1AE003372F9 /* THFind2ch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THFind2ch.m; path = "Thousand App/Standard Plugins/THFind2ch.m"; sourceTree = "<group>"; };
@@ -874,6 +911,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		442EEE05192126650044235C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				442EEEAC1921DCE10044235C /* libz.dylib in Frameworks */,
+				442EEEAA1921DCD90044235C /* libiconv.dylib in Frameworks */,
+				442EEE0A192126660044235C /* CoreFoundation.framework in Frameworks */,
+				442EEE0B192126660044235C /* CoreData.framework in Frameworks */,
+				442EEE09192126660044235C /* CoreServices.framework in Frameworks */,
+				442EEE0C192126660044235C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		47457A110865B30700D22BF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -960,6 +1010,7 @@
 				F4AB26C00DE07B8F00C1790D /* AdditionalPlugin.bundle */,
 				F44856DC0E49F27F003372F9 /* THFind2ch.bundle */,
 				F41385980EC5FCAA00A5C4CE /* THSpotlightSearchListImporter.bundle */,
+				442EEE08192126650044235C /* ThousandMDImporter.mdimporter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -967,12 +1018,12 @@
 		2A37F4AAFDCFA73011CA2CEA /* Thousand */ = {
 			isa = PBXGroup;
 			children = (
-				F44750390E9647670089E88E /* ThousandMDImporter.mdimporter */,
 				F44856BB0E49F1B3003372F9 /* THFind2ch */,
 				F41385780EC5F90800A5C4CE /* THSpotlightSearchList */,
 				F401C29A0D8ECA33001FABBB /* PSMTabBarControl */,
 				2A37F4ABFDCFA73011CA2CEA /* Thousand App */,
 				474579F00865ADD400D22BF9 /* Thousand2ch framework */,
+				442EEE0D192126660044235C /* ThousandMDImporter */,
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
 				F4AB25D50DE0117400C1790D /* StandardPlugin-Info.plist */,
@@ -1062,11 +1113,47 @@
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				442EEEAB1921DCE10044235C /* libz.dylib */,
+				442EEEA91921DCD80044235C /* libiconv.dylib */,
 				444AA5F517B34AB900C568D3 /* Security.framework */,
 				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
+				442EEDEA192125B50044235C /* CoreServices.framework */,
+				442EEDEC192125B50044235C /* CoreFoundation.framework */,
+				442EEDEE192125B50044235C /* CoreData.framework */,
+				442EEDF0192125B50044235C /* Foundation.framework */,
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		442EEE0D192126660044235C /* ThousandMDImporter */ = {
+			isa = PBXGroup;
+			children = (
+				442EEE321921276B0044235C /* GetMetadataForFile.m */,
+				442EEE291921274D0044235C /* T2NSDataAdditions.h */,
+				442EEE2A1921274D0044235C /* T2NSDataAdditions.m */,
+				442EEE2B1921274D0044235C /* T2NSStringAdditions.h */,
+				442EEE2C1921274D0044235C /* T2NSStringAdditions.m */,
+				442EEE2D1921274D0044235C /* TEC.h */,
+				442EEE2E1921274D0044235C /* TEC.m */,
+				442EEE1A192126660044235C /* Importer Read Me.txt */,
+				442EEE0E192126660044235C /* Supporting Files */,
+			);
+			path = ThousandMDImporter;
+			sourceTree = "<group>";
+		};
+		442EEE0E192126660044235C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				442EEE1F192126DA0044235C /* LAServerNGWords.plist */,
+				442EEE20192126DA0044235C /* schema.strings */,
+				442EEE21192126DA0044235C /* schema.xml */,
+				442EEE22192126DA0044235C /* Info.plist */,
+				442EEE23192126DA0044235C /* InfoPlist.strings */,
+				442EEE0F192126660044235C /* ThousandMDImporter-Info.plist */,
+				442EEE13192126660044235C /* main.c */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		470F264E08EAF48B00AB1CFE /* Toolbar icons */ = {
@@ -1509,39 +1596,6 @@
 			name = THSpotlightSearchList;
 			sourceTree = "<group>";
 		};
-		F44750390E9647670089E88E /* ThousandMDImporter.mdimporter */ = {
-			isa = PBXGroup;
-			children = (
-				F447503A0E9647670089E88E /* Contents */,
-			);
-			name = ThousandMDImporter.mdimporter;
-			path = ../ThousandMDImporter/build/Release/ThousandMDImporter.mdimporter;
-			sourceTree = SOURCE_ROOT;
-		};
-		F447503A0E9647670089E88E /* Contents */ = {
-			isa = PBXGroup;
-			children = (
-				F447503B0E9647670089E88E /* Info.plist */,
-				F447503C0E9647670089E88E /* MacOS */,
-				F447503E0E9647670089E88E /* Resources */,
-			);
-			path = Contents;
-			sourceTree = "<group>";
-		};
-		F447503C0E9647670089E88E /* MacOS */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MacOS;
-			sourceTree = "<group>";
-		};
-		F447503E0E9647670089E88E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		F44856BB0E49F1B3003372F9 /* THFind2ch */ = {
 			isa = PBXGroup;
 			children = (
@@ -1716,6 +1770,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		442EEE07192126650044235C /* ThousandMDImporter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 442EEE1C192126660044235C /* Build configuration list for PBXNativeTarget "ThousandMDImporter" */;
+			buildPhases = (
+				442EEE04192126650044235C /* Sources */,
+				442EEE05192126650044235C /* Frameworks */,
+				442EEE06192126650044235C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThousandMDImporter;
+			productName = ThousandMDImporter;
+			productReference = 442EEE08192126650044235C /* ThousandMDImporter.mdimporter */;
+			productType = "com.apple.product-type.bundle";
+		};
 		47457A120865B30700D22BF9 /* Thousand2ch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4700A6AB0928C1DB00E0B36B /* Build configuration list for PBXNativeTarget "Thousand2ch" */;
@@ -1853,6 +1924,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Thousand */;
 			projectDirPath = "";
@@ -1864,11 +1936,24 @@
 				F4AB26BF0DE07B8F00C1790D /* AdditionalPlugin */,
 				F44856DB0E49F27F003372F9 /* THFind2ch */,
 				F41385970EC5FCAA00A5C4CE /* THSpotlightSearchListImporter */,
+				442EEE07192126650044235C /* ThousandMDImporter */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		442EEE06192126650044235C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				442EEE28192126DA0044235C /* InfoPlist.strings in Resources */,
+				442EEE25192126DA0044235C /* schema.strings in Resources */,
+				442EEE26192126DA0044235C /* schema.xml in Resources */,
+				442EEE27192126DA0044235C /* Info.plist in Resources */,
+				442EEE24192126DA0044235C /* LAServerNGWords.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		47457A0F0865B30700D22BF9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2021,6 +2106,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		442EEE04192126650044235C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				442EEE311921274D0044235C /* TEC.m in Sources */,
+				442EEE14192126660044235C /* main.c in Sources */,
+				442EEE331921276B0044235C /* GetMetadataForFile.m in Sources */,
+				442EEE2F1921274D0044235C /* T2NSDataAdditions.m in Sources */,
+				442EEE301921274D0044235C /* T2NSStringAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		47457A100865B30700D22BF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2443,6 +2540,91 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		442EEE1D192126660044235C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThousandMDImporter/ThousandMDImporter-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "ThousandMDImporter/ThousandMDImporter-Info.plist";
+				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
+				LIBRARY_STYLE = BUNDLE;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Debug;
+		};
+		442EEE1E192126660044235C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThousandMDImporter/ThousandMDImporter-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "ThousandMDImporter/ThousandMDImporter-Info.plist";
+				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
+				LIBRARY_STYLE = BUNDLE;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Release;
+		};
 		4700A6AC0928C1DB00E0B36B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2834,6 +3016,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		442EEE1C192126660044235C /* Build configuration list for PBXNativeTarget "ThousandMDImporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				442EEE1D192126660044235C /* Debug */,
+				442EEE1E192126660044235C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4700A6AB0928C1DB00E0B36B /* Build configuration list for PBXNativeTarget "Thousand2ch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
