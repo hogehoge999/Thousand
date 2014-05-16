@@ -902,7 +902,7 @@ static unsigned __maxPopUpResCount = 1000;
 	maxResCount = __maxDisplayResCount;
 	if (maxResCount > [_resArray count]) maxResCount = [_resArray count];
 	
-	while (i != -1/*NSNotFound*/ && j<maxResCount) {
+	while (i != NSNotFound && j<maxResCount) {
 		
 		T2Res *res = [resArray objectAtIndex:i];
 		NSString *processedResHTML = [sharedManager processedHTML:[partialViewPlug resHTMLWithRes:res]

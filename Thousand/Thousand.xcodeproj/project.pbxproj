@@ -509,6 +509,7 @@
 		442EEEA91921DCD80044235C /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		442EEEAB1921DCE10044235C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		444AA5F517B34AB900C568D3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		446E6D6E19227024002032D9 /* Thousand2ch copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Thousand2ch copy-Info.plist"; path = "/Users/masa/Projects/2ch/offlaw2/Thousand/Thousand2ch copy-Info.plist"; sourceTree = "<absolute>"; };
 		47457A130865B30700D22BF9 /* Thousand2ch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Thousand2ch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47457A700865B9C800D22BF9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		47457ABD0865BBAA00D22BF9 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = App.icns; sourceTree = "<group>"; };
@@ -1030,6 +1031,7 @@
 				F4AB26C10DE07B8F00C1790D /* AdditionalPlugin-Info.plist */,
 				F44856DD0E49F27F003372F9 /* THFind2ch-Info.plist */,
 				F41385990EC5FCAA00A5C4CE /* THSpotlightSearchListImporter-Info.plist */,
+				446E6D6E19227024002032D9 /* Thousand2ch copy-Info.plist */,
 			);
 			name = Thousand;
 			sourceTree = "<group>";
@@ -2628,6 +2630,7 @@
 		4700A6AC0928C1DB00E0B36B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2642,6 +2645,7 @@
 				INFOPLIST_FILE = "Thousand2ch-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -2666,6 +2670,7 @@
 		4700A6AD0928C1DB00E0B36B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2724,6 +2729,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Thousand;
 				SDKROOT = macosx;
@@ -2772,7 +2778,7 @@
 				GCC_VERSION = "";
 				LD_GENERATE_MAP_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				SDKROOT = macosx;
 			};
@@ -3023,6 +3029,7 @@
 				442EEE1E192126660044235C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		4700A6AB0928C1DB00E0B36B /* Build configuration list for PBXNativeTarget "Thousand2ch" */ = {
 			isa = XCConfigurationList;
