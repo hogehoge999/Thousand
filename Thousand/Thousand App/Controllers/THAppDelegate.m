@@ -656,4 +656,12 @@ static NSString *__pluginPrefFolderName 	= @"Plugin Prefs";
 
 	}
 }
+
+//
+// 最後のウィンドウを閉じた際にアプリケーションを終了する
+//
+-(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
+}
 @end

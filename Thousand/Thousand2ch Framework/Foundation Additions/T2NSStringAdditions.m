@@ -516,9 +516,9 @@ static NSCharacterSet *__whitespaceAndNewlineCharacterSet = nil;
 
 #pragma mark -
 #pragma mark Distance Utility
--(unsigned)distanceFromString:(NSString *)anotherString {
-	unsigned length1 = [self length];
-	unsigned length2 = [anotherString length];
+-(NSUInteger)distanceFromString:(NSString *)anotherString {
+	NSUInteger length1 = [self length];
+	NSUInteger length2 = [anotherString length];
 	if (length1 == 0 && length2 > 0) return length2;
 	if (length2 == 0 && length1 > 0) return length1;
 	if (length1 > 1024 || length2 > 1024) return NSNotFound;
@@ -529,9 +529,9 @@ static NSCharacterSet *__whitespaceAndNewlineCharacterSet = nil;
 	[anotherString getCharacters:chars2];
 	
 	
-	unsigned *table2 = malloc((length1+1)*(length2+1)*sizeof(unsigned));
-	unsigned **table = malloc((length1+1)*sizeof(unsigned));
-	unsigned i1,i2,cost,minimum,insert,deletion,replace,result;
+	NSUInteger *table2 = malloc((length1+1)*(length2+1)*sizeof(NSUInteger));
+	NSUInteger **table = malloc((length1+1)*sizeof(NSUInteger));
+	NSUInteger i1,i2,cost,minimum,insert,deletion,replace,result;
 	
 	for (i1=0; i1<=length1; i1++) {
 		table[i1] = table2 + (length2+1)*i1;

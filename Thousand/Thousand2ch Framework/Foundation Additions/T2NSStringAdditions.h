@@ -50,7 +50,7 @@
 
 #pragma mark -
 #pragma mark Distance Utility
--(unsigned)distanceFromString:(NSString *)anotherString ;
+-(NSUInteger)distanceFromString:(NSString *)anotherString ;
 
 #pragma mark -
 #pragma mark file path utility
