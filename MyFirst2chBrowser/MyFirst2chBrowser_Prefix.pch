@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'MyFirst2chBrowser' target in the 'MyFirst2chBrowser' project
-//
-
-#ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-#endif
