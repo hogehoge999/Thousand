@@ -8,88 +8,121 @@
 
 #import <Cocoa/Cocoa.h>
 #import "PSMTabBarControl.h"
+#import "PSMProgressIndicator.h"
 
-@class PSMTabBarControl;
-@class PSMProgressIndicator;
+typedef enum PSMCloseButtonImageType : NSUInteger
+{
+    PSMCloseButtonImageTypeStandard = 0,
+    PSMCloseButtonImageTypeRollover,
+    PSMCloseButtonImageTypePressed,
+    PSMCloseButtonImageTypeDirty,
+    PSMCloseButtonImageTypeDirtyRollover,
+    PSMCloseButtonImageTypeDirtyPressed
+} PSMCloseButtonImageType;
+
+typedef enum PSMTabBarCellTrackingAreaType : NSUInteger
+{
+    PSMTabBarCellTrackingAreaCellFrameType   = 0,
+    PSMTabBarCellTrackingAreaCloseButtonType = 1
+} PSMTabBarCellTrackingAreaType;
 
 @interface PSMTabBarCell : NSActionCell {
-    // sizing
-    NSRect              _frame;
-    NSSize              _stringSize;
-    int                 _currentStep;
-    BOOL                _isPlaceholder;
-    
-    // state
-    int                 _tabState;
-    NSTrackingRectTag   _closeButtonTrackingTag;    // left side tracking, if dragging
-    NSTrackingRectTag   _cellTrackingTag;           // right side tracking, if dragging
-    BOOL                _closeButtonOver;
-    BOOL                _closeButtonPressed;
-    PSMProgressIndicator *_indicator;
-    BOOL                _isInOverflowMenu;
-    BOOL                _hasCloseButton;
-    BOOL                _isCloseButtonSuppressed;
-    BOOL                _hasIcon;
-    int                 _count;
+	// sizing
+	NSRect					_frame;
+	NSSize					_attributedStringSize;
+	NSInteger				_currentStep;
+	BOOL					_isPlaceholder;
+
+	// state
+	PSMTabStateMask		    _tabState;
+	BOOL					_closeButtonOver;
+	BOOL					_closeButtonPressed;
+	PSMProgressIndicator	*_indicator;
+	BOOL					_isInOverflowMenu;
+	BOOL					_hasCloseButton;
+	BOOL					_isCloseButtonSuppressed;
+	BOOL					_hasIcon;
+	BOOL					_hasLargeImage;
+	NSInteger				_count;
+	NSColor                 *_countColor;
+	BOOL					_isEdited;
 }
 
-// creation/destruction
-- (id)initWithControlView:(PSMTabBarControl *)controlView;
-- (id)initPlaceholderWithFrame:(NSRect)frame expanded:(BOOL)value inControlView:(PSMTabBarControl *)controlView;
+@property (assign) PSMTabStateMask tabState;
+@property (assign) BOOL hasCloseButton;
+@property (assign) BOOL hasIcon;
+@property (assign) BOOL hasLargeImage;
+@property (assign) NSInteger count;
+@property (retain) NSColor *countColor;
+@property (assign) BOOL isPlaceholder;
+@property (assign) BOOL isEdited;
+@property (assign) BOOL closeButtonPressed;
+
+#pragma mark Creation/Destruction
+- (id)init;
+- (id)initPlaceholderWithFrame:(NSRect) frame expanded:(BOOL) value inTabBarControl:(PSMTabBarControl *)tabBarControl;
 - (void)dealloc;
 
-// accessors
-- (id)controlView;
-- (void)setControlView:(id)view;
-- (NSTrackingRectTag)closeButtonTrackingTag;
-- (void)setCloseButtonTrackingTag:(NSTrackingRectTag)tag;
-- (NSTrackingRectTag)cellTrackingTag;
-- (void)setCellTrackingTag:(NSTrackingRectTag)tag;
-- (float)width;
+#pragma mark Accessors
+- (PSMTabBarControl *)controlView;
+- (void)setControlView:(PSMTabBarControl *)newControl;
+- (CGFloat)width;
 - (NSRect)frame;
 - (void)setFrame:(NSRect)rect;
-- (void)setStringValue:(NSString *)aString;
-- (NSSize)stringSize;
+- (NSSize)attributedStringSize;
 - (NSAttributedString *)attributedStringValue;
-- (int)tabState;
-- (void)setTabState:(int)state;
+- (NSAttributedString *)attributedObjectCountStringValue;
 - (NSProgressIndicator *)indicator;
 - (BOOL)isInOverflowMenu;
 - (void)setIsInOverflowMenu:(BOOL)value;
-- (BOOL)closeButtonPressed;
-- (void)setCloseButtonPressed:(BOOL)value;
 - (BOOL)closeButtonOver;
 - (void)setCloseButtonOver:(BOOL)value;
-- (BOOL)hasCloseButton;
-- (void)setHasCloseButton:(BOOL)set;
 - (void)setCloseButtonSuppressed:(BOOL)suppress;
 - (BOOL)isCloseButtonSuppressed;
-- (BOOL)hasIcon;
-- (void)setHasIcon:(BOOL)value;
-- (int)count;
-- (void)setCount:(int)value;
-- (BOOL)isPlaceholder;
-- (void)setIsPlaceholder:(BOOL)value;
-- (int)currentStep;
-- (void)setCurrentStep:(int)value;
+- (NSInteger)currentStep;
+- (void)setCurrentStep:(NSInteger)value;
 
-// component attributes
-- (NSRect)indicatorRectForFrame:(NSRect)cellFrame;
-- (NSRect)closeButtonRectForFrame:(NSRect)cellFrame;
-- (float)minimumWidthOfCell;
-- (float)desiredWidthOfCell;
+#pragma mark Providing Images
+- (NSImage *)closeButtonImageOfType:(PSMCloseButtonImageType)type;
 
-// drawing
-- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView;
+#pragma mark Determining Cell Size
+- (NSRect)drawingRectForBounds:(NSRect)theRect;
+- (NSRect)titleRectForBounds:(NSRect)theRect ;
+- (NSRect)iconRectForBounds:(NSRect)theRect;
+- (NSRect)largeImageRectForBounds:(NSRect)theRect;
+- (NSRect)indicatorRectForBounds:(NSRect)theRect;
+- (NSSize)objectCounterSize;
+- (NSRect)objectCounterRectForBounds:(NSRect)theRect;
+- (NSRect)closeButtonRectForBounds:(NSRect)theRect;
 
-// tracking the mouse
+- (CGFloat)minimumWidthOfCell;
+- (CGFloat)desiredWidthOfCell;
+
+#pragma mark Image Scaling
+- (NSSize)scaleImageWithSize:(NSSize)imageSize toFitInSize:(NSSize)canvasSize scalingType:(NSImageScaling)scalingType;
+
+#pragma mark Drawing
+- (BOOL)shouldDrawCloseButton;
+- (BOOL)shouldDrawObjectCounter;
+- (void)drawWithFrame:(NSRect) cellFrame inTabBarControl:(PSMTabBarControl *)tabBarControl;
+- (void)drawInteriorWithFrame:(NSRect)cellFrame inTabBarControl:(PSMTabBarControl *)tabBarControl;
+- (void)drawLargeImageWithFrame:(NSRect)frame inTabBarControl:(PSMTabBarControl *)tabBarControl;
+- (void)drawIconWithFrame:(NSRect)frame inTabBarControl:(PSMTabBarControl *)tabBarControl;
+- (void)drawTitleWithFrame:(NSRect)frame inTabBarControl:(PSMTabBarControl *)tabBarControl;
+- (void)drawObjectCounterWithFrame:(NSRect)frame inTabBarControl:(PSMTabBarControl *)tabBarControl;
+- (void)drawIndicatorWithFrame:(NSRect)frame inTabBarControl:(PSMTabBarControl *)tabBarControl;
+- (void)drawCloseButtonWithFrame:(NSRect)frame inTabBarControl:(PSMTabBarControl *)tabBarControl;
+
+#pragma mark Tracking Area Support
+- (void)addTrackingAreasForView:(NSView *)view inRect:(NSRect)cellFrame withUserInfo:(NSDictionary *)userInfo mouseLocation:(NSPoint)currentPoint;
 - (void)mouseEntered:(NSEvent *)theEvent;
 - (void)mouseExited:(NSEvent *)theEvent;
 
-// drag support
-- (NSImage*)dragImageForRect:(NSRect)cellFrame;
+#pragma mark Drag Support
+- (NSRect)draggingRect;
+- (NSImage *)dragImage;
 
-// archiving
+#pragma mark Archiving
 - (void)encodeWithCoder:(NSCoder *)aCoder;
 - (id)initWithCoder:(NSCoder *)aDecoder;
 
@@ -100,3 +133,11 @@
 - (id<PSMTabStyle>)style;
 
 @end
+
+@interface NSObject (IdentifierAccesors)
+
+- (NSImage *)largeImage;
+
+@end
+
+

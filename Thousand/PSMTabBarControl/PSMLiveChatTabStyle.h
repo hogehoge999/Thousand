@@ -1,5 +1,5 @@
 //
-//  PSMUnifiedTabStyle.h
+//  PSMLiveChatTabStyle.h
 //  --------------------
 //
 //  Created by Keith Blount on 30/04/2006.
@@ -9,17 +9,18 @@
 #import <Cocoa/Cocoa.h>
 #import "PSMTabStyle.h"
 
-@interface PSMUnifiedTabStyle : NSObject <PSMTabStyle> {
-
-	NSImage				*unifiedCloseButton;
-	NSImage				*unifiedCloseButtonDown;
-	NSImage				*unifiedCloseButtonOver;
-	NSImage				*unifiedCloseDirtyButton;
-	NSImage				*unifiedCloseDirtyButtonDown;
-	NSImage				*unifiedCloseDirtyButtonOver;
+@interface PSMLiveChatTabStyle : NSObject <PSMTabStyle> {
+	NSImage				*liveChatCloseButton;
+	NSImage				*liveChatCloseButtonDown;
+	NSImage				*liveChatCloseButtonOver;
+	NSImage				*liveChatCloseDirtyButton;
+	NSImage				*liveChatCloseDirtyButtonDown;
+	NSImage				*liveChatCloseDirtyButtonOver;
 	NSImage				*_addTabButtonImage;
 	NSImage				*_addTabButtonPressedImage;
 	NSImage				*_addTabButtonRolloverImage;
+
+	NSDictionary		*_objectCountStringAttributes;
 
 	CGFloat				_leftMargin;
 }

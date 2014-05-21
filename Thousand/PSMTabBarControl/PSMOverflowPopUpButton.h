@@ -10,10 +10,17 @@
 
 
 @interface PSMOverflowPopUpButton : NSPopUpButton {
-    NSImage         *_PSMTabBarOverflowPopUpImage;
-    NSImage         *_PSMTabBarOverflowDownPopUpImage;
-    BOOL            _down;
+	NSImage									*_PSMTabBarOverflowPopUpImage;
+	NSImage									*_PSMTabBarOverflowDownPopUpImage;
+	BOOL									_down;
+	BOOL									_animatingAlternateImage;
+	NSTimer									*_animationTimer;
+	CGFloat									_animationValue;
 }
+
+//alternate image display
+- (BOOL)animatingAlternateImage;
+- (void)setAnimatingAlternateImage:(BOOL)flag;
 
 // archiving
 - (void)encodeWithCoder:(NSCoder *)aCoder;

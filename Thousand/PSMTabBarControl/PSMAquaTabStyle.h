@@ -10,23 +10,26 @@
 #import "PSMTabStyle.h"
 
 @interface PSMAquaTabStyle : NSObject <PSMTabStyle> {
-    NSImage *aquaTabBg;
-    NSImage *aquaTabBgDown;
-    NSImage *aquaTabBgDownGraphite;
-    NSImage *aquaTabBgDownNonKey;
-    NSImage *aquaDividerDown;
-    NSImage *aquaDivider;
-    NSImage *aquaCloseButton;
-    NSImage *aquaCloseButtonDown;
-    NSImage *aquaCloseButtonOver;
-    NSImage *_addTabButtonImage;
-    NSImage *_addTabButtonPressedImage;
-    NSImage *_addTabButtonRolloverImage;
+	NSImage									*aquaTabBg;
+	NSImage									*aquaTabBgDown;
+	NSImage									*aquaTabBgDownGraphite;
+	NSImage									*aquaTabBgDownNonKey;
+	NSImage									*aquaDividerDown;
+	NSImage									*aquaDivider;
+	NSImage									*aquaCloseButton;
+	NSImage									*aquaCloseButtonDown;
+	NSImage									*aquaCloseButtonOver;
+	NSImage									*aquaCloseDirtyButton;
+	NSImage									*aquaCloseDirtyButtonDown;
+	NSImage									*aquaCloseDirtyButtonOver;
+	NSImage									*_addTabButtonImage;
+	NSImage									*_addTabButtonPressedImage;
+	NSImage									*_addTabButtonRolloverImage;
 }
 
 - (void)loadImages;
-- (void)drawInteriorWithTabCell:(PSMTabBarCell *)cell inView:(NSView*)controlView;
 
 - (void)encodeWithCoder:(NSCoder *)aCoder;
 - (id)initWithCoder:(NSCoder *)aDecoder;
+
 @end

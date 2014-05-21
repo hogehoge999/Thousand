@@ -8,22 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PSMRolloverButton : NSButton
-{
-    NSImage             *_rolloverImage;
-    NSImage             *_usualImage;
-    NSTrackingRectTag   _myTrackingRectTag;
+@interface PSMRolloverButton : NSButton {
+	NSImage	*_rolloverImage;
+	NSImage	*_usualImage;
 }
 
-// the regular image
-- (void)setUsualImage:(NSImage *)newImage;
-- (NSImage *)usualImage;
+@property (retain) NSImage *usualImage;
+@property (retain) NSImage *rolloverImage;
 
-// the rollover image
-- (void)setRolloverImage:(NSImage *)newImage;
-- (NSImage *)rolloverImage;
-
-// tracking rect for mouse events
-- (void)addTrackingRect;
-- (void)removeTrackingRect;
 @end
