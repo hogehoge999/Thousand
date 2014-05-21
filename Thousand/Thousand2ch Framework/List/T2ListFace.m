@@ -35,7 +35,7 @@ static NSTimer *__timer = nil;
 
 -(NSArray *)dictionaryConvertingKeysForUse:(T2DictionaryConvertingUse)use {
 	return [NSArray arrayWithObjects:@"internalPath",
-		@"title3",nil];
+		@"title",nil];
 }
 
 #pragma mark -
