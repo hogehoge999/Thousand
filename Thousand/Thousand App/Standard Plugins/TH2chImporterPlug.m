@@ -491,7 +491,7 @@ void stampList(T2List *list) {
 		NSString *srcString = [NSString stringUsingIconvWithData:localDatData encoding:NSShiftJISStringEncoding];
         //NSString *srcString = [[NSString alloc] initWithData:localDatData encoding:NSShiftJISStringEncoding];
 		if (srcString) {
-            NSLog(@"size = %ld", (unsigned long)[srcString length]);
+            //NSLog(@"size = %ld", (unsigned long)[srcString length]);
 			[self buildThread:thread withSrcString:srcString appending:NO];
 			NSArray *resArray = [thread resArray];
 			[thread setNewResIndex:[resArray count]];

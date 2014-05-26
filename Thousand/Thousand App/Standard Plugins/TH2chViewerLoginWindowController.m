@@ -377,7 +377,7 @@ static NSString *__BeServiceName = @"be.2ch.net";
 			[request setHTTPMethod:@"POST"];
 			[request setHTTPBody:bodyData];
 			
-			[request setValue:[NSString stringWithFormat:@"%d",[bodyData length]] forHTTPHeaderField:@"Content-length"];
+			[request setValue:[NSString stringWithFormat:@"%ld", (long)[bodyData length]] forHTTPHeaderField:@"Content-length"];
 			
 			[request setValue:cgiPath forHTTPHeaderField:@"Referer"];
 			
