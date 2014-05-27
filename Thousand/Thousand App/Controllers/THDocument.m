@@ -166,7 +166,7 @@ static NSString *__oreyonPath = nil;
 	[_docWindow setToolbar:toolbar];
 	
 	//tab
-	[_tabBarControl setAllowsDragBetweenWindows:NO];
+	//[_tabBarControl setAllowsDragBetweenWindows:NO];
 	[_tabBarControl setCellMaxWidth:180];
 	[_tabBarControl setCellMinWidth:80];
 	[_tabBarControl setCellOptimumWidth:180];
