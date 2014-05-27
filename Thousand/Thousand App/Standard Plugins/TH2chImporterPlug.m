@@ -553,7 +553,22 @@ void stampList(T2List *list) {
 			
 			return request;
 		}
-	}  
+	} else if (([threadFace state] >= T2ThreadFaceStateFallen /*|| [pathComponents count]>3*/)) {
+		// Current Servers
+		path = [[path pathComponents] objectAtIndex:1];
+        // server名だけ取り出す
+        NSArray * url = [path componentsSeparatedByString:@"."];
+        NSString *server = [url objectAtIndex:0];
+        NSString *site = [NSString stringWithFormat:@"%@.%@", [url objectAtIndex:1], [url objectAtIndex:2]];
+			
+        NSString *URLString = [NSString stringWithFormat:@"http://%@/test/offlaw2.so?shiro=kuma&sid=ERROR&bbs=%@&key=%@", path, boardKey, threadKey];
+        
+        NSLog(@"%@", URLString);
+		NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]];
+		[request setValue:_viewerSUA forHTTPHeaderField:@"User-Agent"];
+		[request setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
+		return request;
+	}
 	NSString *URLString = [NSString stringWithFormat:@"%@dat/%@.dat", path, threadKey];
 	
 	NSString *remoteLastModifiedDate = [thread valueForKey:@"remoteLastModifiedDate"];
@@ -669,6 +684,9 @@ void stampList(T2List *list) {
 					   afterDelay:0.01];
 			return T2LoadingFailed;
 		}
+        else {  // offlaw2 が有効な間はここでリトライを繰り返す
+            return T2RetryLoading;
+        }
 		
 		[self buildThread:thread withErrorHTMLString:srcString];
 		return T2LoadingFailed;
