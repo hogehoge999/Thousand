@@ -563,7 +563,7 @@ void stampList(T2List *list) {
 			
         NSString *URLString = [NSString stringWithFormat:@"http://%@/test/offlaw2.so?shiro=kuma&sid=ERROR&bbs=%@&key=%@", path, boardKey, threadKey];
         
-        NSLog(@"%@", URLString);
+        //NSLog(@"%@", URLString);
 		NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]];
 		[request setValue:_viewerSUA forHTTPHeaderField:@"User-Agent"];
 		[request setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
