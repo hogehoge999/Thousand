@@ -167,6 +167,7 @@ static NSString *__oreyonPath = nil;
 	
 	//tab
 	//[_tabBarControl setAllowsDragBetweenWindows:NO];
+    //[_tabBarControl se]
 	[_tabBarControl setCellMaxWidth:180];
 	[_tabBarControl setCellMinWidth:80];
 	[_tabBarControl setCellOptimumWidth:180];
@@ -1305,6 +1306,29 @@ static NSString *__oreyonPath = nil;
 		[tabViewItem autorelease];
 	}
 }
+
+- (BOOL)tabView:(NSTabView*)aTabView shouldDragTabViewItem:(NSTabViewItem *)tabViewItem fromTabBar:(PSMTabBarControl *)tabBarControl {
+    //NSLog(@"shouldDragTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
+    return YES;
+}
+
+- (BOOL)tabView:(NSTabView*)aTabView shouldDropTabViewItem:(NSTabViewItem *)tabViewItem inTabBar:(PSMTabBarControl *)tabBarControl {
+	//NSLog(@"shouldDropTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
+    return YES;
+	//return NO;
+}
+
+
+- (void)tabView:(NSTabView*)aTabView didDropTabViewItem:(NSTabViewItem *)tabViewItem inTabBar:(PSMTabBarControl *)tabBarControl {
+	//NSLog(@"didDropTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
+}
+
+- (BOOL)tabView:(NSTabView *)aTabView shouldAllowTabViewItem:(NSTabViewItem *)tabViewItem toLeaveTabBar:(PSMTabBarControl *)tabBarControl;
+{
+	//NSLog(@"shouldAllowTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
+	return NO;
+}
+
 
 #pragma mark -
 #pragma mark Document Actions

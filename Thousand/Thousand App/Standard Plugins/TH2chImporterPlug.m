@@ -553,7 +553,7 @@ void stampList(T2List *list) {
 			
 			return request;
 		}
-	} else if (([threadFace state] >= T2ThreadFaceStateFallen /*|| [pathComponents count]>3*/)) {
+	} else if (([threadFace state] >= T2ThreadFaceStateFallen || [pathComponents count]>3)) {
 		// Current Servers
 		path = [[path pathComponents] objectAtIndex:1];
         // server名だけ取り出す
