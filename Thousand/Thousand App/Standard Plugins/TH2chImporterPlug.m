@@ -733,7 +733,7 @@ void stampList(T2List *list) {
 		saveData = contentData;
 	} else {
 	//local dat available and status 206
-		if (code == 206) {
+		if (code == 206 /*|| code == 302*/) {
 			NSMutableData *localDatData = [NSMutableData dataWithContentsOfGZipFile:savePath];
 			if (localDatData) {
 				if (![localDatData isKindOfClass:[NSMutableData class]]) localDatData = [[localDatData mutableCopy] autorelease];
@@ -910,30 +910,27 @@ void stampList(T2List *list) {
         T2Res *tempRes;
 
 		if ([resString length]>1) {
-			NSArray *partStringArray = [resString componentsSeparatedByString:@"<>"];
-			NSInteger partStringCount = [partStringArray count];
-            if (partStringCount < 5)
+			NSMutableArray *partStringArray = [[NSMutableArray alloc] init];
+            const char *utf8 = [resString UTF8String];
+            const char *pStart = utf8;
+            while (*pStart)
             {
-                NSMutableArray *array = [NSMutableArray arrayWithCapacity:5];
-                NSLog(@"(%ld)%@", (long)partStringCount, resString);
-                for (NSString *part in partStringArray)
+                char *pEnd = strstr(pStart, "<>");
+                if (pEnd)
                 {
-                    NSRange range = [part rangeOfString:@"<>" options:NSLiteralSearch];
-                    if (range.location == NSNotFound)
-                    {
-                        [array addObject:part];
-                    }
-                    else
-                    {
-                        // 1partに複数<>が混ざってる可能性もあるが、、、
-                        [array addObject:[part substringToIndex:range.location]];
-                        // 結局他とくっつく気がするけど、問題出るまで保留
-                        [array addObject:[part substringToIndex:NSMaxRange(range)]];
-                    }
+                    *pEnd = 0;
+                    NSString *s = [[NSString alloc] initWithUTF8String:pStart];
+                    [partStringArray addObject:s];
+                    pStart = pEnd + 2;
                 }
-                partStringArray = array;
-                partStringCount = [partStringArray count];
+                else
+                {
+                    NSString *s = [[NSString alloc] initWithUTF8String:pStart];
+                    [partStringArray addObject:s];
+                    break;
+                }
             }
+			NSInteger partStringCount = [partStringArray count];
 			
 			if (partStringCount > 3) {
 				if (partStringCount > 4 && i==0) {
@@ -1697,7 +1694,7 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	
 	NSArray *oldTthreadList = [threadList objects];
 	NSEnumerator *threadFaceEnumerator = [oldTthreadList objectEnumerator];
-	T2ThreadFace *threadFace;
+    __block T2ThreadFace *threadFace;
 	
 	// mark known threads
 	if (oldTthreadList) {
@@ -1708,7 +1705,6 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	}
 	
 	// read subject.txt
-	NSAutoreleasePool *myPool;
 	NSString *srcString = [webData decodedString];
 	NSString *boardInternalPath = [__rootPath stringByAppendingPathComponent:boardKey];
 	NSString *serverURLString = [[_boardDictionary objectForKey:boardKey] stringByDeletingLastPathComponent];
@@ -1721,31 +1717,25 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 	}
 	
 	NSMutableArray *newThreadList = [NSMutableArray array];
-	NSScanner *boardScanner = [NSScanner scannerWithString:srcString];
-	NSString *tempThreadName = nil;
-	NSString *threadName = nil;
-	NSString *tempThreadFileName = nil;
-	NSString *threadKey;
-	NSUInteger resCountDelimiterLocation;
-	NSString *tempResCountString = nil;
-	int tempThreadResCount = 0;
-	int tempThreadOrder = 1;
 	
-	while (![boardScanner isAtEnd]) {
-		myPool = [[NSAutoreleasePool alloc] init];
-		
-		if ([boardScanner scanUpToString:@"<>" intoString:&tempThreadFileName]
-			&& [boardScanner scanString:@"<>" intoString:NULL]
-			&& [boardScanner scanUpToString:@"\n" intoString:&tempThreadName])
-		{
-			resCountDelimiterLocation = [tempThreadName rangeOfLastString:@"(" options:NSLiteralSearch].location;
+    [srcString enumerateLinesUsingBlock:^(NSString *subjectString, BOOL *stop) {
+        int tempThreadOrder = 1;
+		NSAutoreleasePool *myPool = [[NSAutoreleasePool alloc] init];
+
+        NSRange found = [subjectString rangeOfString:@"<"];
+        if (found.location != NSNotFound)
+        {
+            NSString *tempThreadFileName = [subjectString substringToIndex:found.location];
+            NSString *tempThreadName  = [subjectString substringFromIndex:found.location + found.length + 1];
+
+			NSUInteger resCountDelimiterLocation = [tempThreadName rangeOfLastString:@"(" options:NSLiteralSearch].location;
 			if (resCountDelimiterLocation != NSNotFound) {
-				threadName = [tempThreadName substringToIndex:resCountDelimiterLocation];
+				NSString *threadName = [tempThreadName substringToIndex:resCountDelimiterLocation];
 				if ([threadName hasSuffix:@" "] && [threadName length] > 1) threadName = [threadName substringToIndex:[threadName length]-1];
 				
-				tempResCountString = [tempThreadName substringFromIndex:resCountDelimiterLocation+1];
-				tempThreadResCount = [tempResCountString intValue];
-				threadKey = [tempThreadFileName stringByDeletingPathExtension];
+				NSString *tempResCountString = [tempThreadName substringFromIndex:resCountDelimiterLocation+1];
+				int tempThreadResCount = [tempResCountString intValue];
+				NSString *threadKey = [tempThreadFileName stringByDeletingPathExtension];
 				
 				threadFace = [T2ThreadFace threadFaceWithInternalPath:[boardInternalPath stringByAppendingPathComponent:tempThreadFileName]
 																title:[threadName stringByReplacingCharacterReferences]
@@ -1764,11 +1754,11 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 				NSLog(@"subject.txt broken: \"%@\"", tempThreadName);
 			}
 			
-			[boardScanner scanString:@"\n" intoString:NULL];
+			//[boardScanner scanString:@"\n" intoString:NULL];
 			tempThreadOrder++ ;
 		}
 		[myPool release];
-	}
+    }];
 	if ([newThreadList count] < 3) {
 		[self registerMovedServerForInternalPath:[threadList internalPath]];
 		//return NO;
