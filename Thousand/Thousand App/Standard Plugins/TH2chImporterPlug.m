@@ -1716,10 +1716,10 @@ T2Res* resWith_ResNum_Name_Mail_DateAndOther_content_thread(int resNumber, NSStr
 		return;
 	}
 	
+    __block int tempThreadOrder = 1;
 	NSMutableArray *newThreadList = [NSMutableArray array];
 	
     [srcString enumerateLinesUsingBlock:^(NSString *subjectString, BOOL *stop) {
-        int tempThreadOrder = 1;
 		NSAutoreleasePool *myPool = [[NSAutoreleasePool alloc] init];
 
         NSRange found = [subjectString rangeOfString:@"<"];
