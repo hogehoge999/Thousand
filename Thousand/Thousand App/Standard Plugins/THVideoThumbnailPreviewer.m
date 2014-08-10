@@ -64,6 +64,7 @@ static NSString *__uniqueName = @"jp_natori_Thousand_VideoThumbnailPreviewer";
 			@"jp.youtube.com",
 			@"youtube.com",
 			@"www.nicovideo.jp",
+            @"youtu.be",
 			nil];
 }
 
@@ -88,6 +89,8 @@ static NSString *__uniqueName = @"jp_natori_Thousand_VideoThumbnailPreviewer";
 	if ([host hasSuffix:@"youtube.com"]) {
 		if ([[pathComponents objectAtIndex:2] rangeOfString:@"watch?v="].location != NSNotFound)
 			return YES;
+	} else if ([host isEqualToString:@"youtu.be"]) {
+        return YES;
 	} else if ([host isEqualToString:@"www.nicovideo.jp"]) {
 		if ([pathComponents count] < 4) return NO;
 		if ([[pathComponents objectAtIndex:2] isEqualToString:@"watch"])
@@ -135,6 +138,19 @@ static NSString *__uniqueName = @"jp_natori_Thousand_VideoThumbnailPreviewer";
 			*minSize = NSMakeSize(150, 100);
 			return [NSString stringWithFormat:_youTubePopUpFormat,
 				urlString, videoID, urlString];
+		} else {
+			*minSize = NSMakeSize(425, 355);
+			return [NSString stringWithFormat:_youTubeInlineFormat,
+					videoID, videoID, videoID, videoID];
+		}
+	} else if ([host isEqualToString:@"youtu.be"]) {
+		NSString *params = [pathComponents objectAtIndex:2];
+		NSString *videoID = params;
+		
+		if (type == T2PreviewInPopUp) {
+			*minSize = NSMakeSize(150, 100);
+			return [NSString stringWithFormat:_youTubePopUpFormat,
+                    urlString, videoID, urlString];
 		} else {
 			*minSize = NSMakeSize(425, 355);
 			return [NSString stringWithFormat:_youTubeInlineFormat,

@@ -86,6 +86,7 @@ static NSString *__oreyonPath = nil;
 	[_threadTableViewPlaceHolder release];
 	[_h1SplitView release];
 	
+    [_threadJumpButtons release];
 	//[_bookmarkController release];
 	
 	[super dealloc];
@@ -185,6 +186,9 @@ static NSString *__oreyonPath = nil;
 -(void)saveOnApplicationTerminate {
 	//
 	[self close];
+}
+
+- (IBAction)pushSegment:(NSSegmentedControl *)sender {
 }
 #pragma mark -
 #pragma mark NSDocument Methods
@@ -881,6 +885,7 @@ static NSString *__oreyonPath = nil;
 			[_urlField setStringValue:@""];
 		}
 		
+        //[_threadJumpButtons showsFirstResponder];
 		[_docWindow setTitle:[tabViewItem label]];
 		[_docWindow makeFirstResponder:[threadController threadView]];
 	}
@@ -1308,25 +1313,26 @@ static NSString *__oreyonPath = nil;
 }
 
 - (BOOL)tabView:(NSTabView*)aTabView shouldDragTabViewItem:(NSTabViewItem *)tabViewItem fromTabBar:(PSMTabBarControl *)tabBarControl {
-    //NSLog(@"shouldDragTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
+    NSLog(@"shouldDragTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
     return YES;
 }
 
 - (BOOL)tabView:(NSTabView*)aTabView shouldDropTabViewItem:(NSTabViewItem *)tabViewItem inTabBar:(PSMTabBarControl *)tabBarControl {
-	//NSLog(@"shouldDropTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
+	NSLog(@"shouldDropTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
+    if (tabBarControl == NULL)
+        return NO;
     return YES;
-	//return NO;
 }
 
 
 - (void)tabView:(NSTabView*)aTabView didDropTabViewItem:(NSTabViewItem *)tabViewItem inTabBar:(PSMTabBarControl *)tabBarControl {
-	//NSLog(@"didDropTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
+	NSLog(@"didDropTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
 }
 
 - (BOOL)tabView:(NSTabView *)aTabView shouldAllowTabViewItem:(NSTabViewItem *)tabViewItem toLeaveTabBar:(PSMTabBarControl *)tabBarControl;
 {
-	//NSLog(@"shouldAllowTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
-	return NO;
+	NSLog(@"shouldAllowTabViewItem: %@ inTabBar: %@", [tabViewItem label], tabBarControl);
+	return YES;
 }
 
 
@@ -1416,4 +1422,87 @@ static NSString *__oreyonPath = nil;
 	THTestOperation *operation = [[[THTestOperation alloc] init] autorelease];
 	[operation start];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* didSelectTabViewItem
+ * Called when the tab is changed.
+ */
+-(void)tabView:(NSTabView *)inTabView didSelectTabViewItem1:(NSTabViewItem *)inTabViewItem
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"MA_Notify_TabChanged" object:[inTabViewItem identifier]];
+}
+
+- (void)tabViewDidChangeNumberOfTabViewItems1:(NSTabView *)tabView
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"MA_Notify_TabCountChanged" object:nil];
+}
+
+/* disableTabCloseForTabViewItem
+ * Returns whether the tab close should be disabled for the specified item. We disable the close button
+ * for the primary item.
+ */
+-(BOOL)tabView:(NSTabView *)aTabView disableTabCloseForTabViewItem1:(NSTabViewItem *)tabViewItem
+{
+    //return ([tabViewItem identifier] == primaryTabItemView);
+    NSLog(@"disableTabCloseForTabViewItem: %@ id: %@", [tabViewItem label], [tabViewItem identifier]);
+    return NO;
+    //return TRUE;
+}
+
+/* tabView:shouldDragTabViewItem:fromTabBar:
+ * Should a tab view item be allowed to be dragged?
+ */
+- (BOOL)tabView:(NSTabView *)aTabView shouldDragTabViewItem1:(NSTabViewItem *)tabViewItem fromTabBar:(PSMTabBarControl *)tabBarControl
+{
+	return YES;
+}
+
+/* tabView:shouldDropTabViewItem:inTabBar:
+ * Should a tab view item drop be accepted?
+ */
+- (BOOL)tabView:(NSTabView *)aTabView shouldDropTabViewItem1:(NSTabViewItem *)tabViewItem inTabBar:(PSMTabBarControl *)tabBarControl
+{
+	return YES;
+}
+
+/* tabView:didDropTabViewItem:inTabBar:
+ * A drag & drop operation of a tab view item was completed.
+ */
+- (void)tabView:(NSTabView*)aTabView didDropTabViewItem1:(NSTabViewItem *)tabViewItem inTabBar:(PSMTabBarControl *)tabBarControl
+{
+}
+
+/* tabView:shouldAllowTabViewItem:toLeaveTabBar:
+ * Should a tab view item be allowed to leave the tab bar?
+ */
+- (BOOL)tabView:(NSTabView *)aTabView shouldAllowTabViewItem1:(NSTabViewItem *)tabViewItem toLeaveTabBar:(PSMTabBarControl *)tabBarControl;
+{
+	return NO;
+}
+
+
 @end

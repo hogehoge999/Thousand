@@ -86,7 +86,10 @@ static NSString *THDocURLFieldItemIdentifier		= @"THDocURLFieldItemIdentifier";
 	// for Progress
 	IBOutlet THProgressIndicator	*_progressIndicator;
 	IBOutlet NSTextField			*_progressInfoField;
-	
+
+	//IBOutlet NSSegmentedCell        *_threadJumpButtons;
+    IBOutlet NSSegmentedControl *_threadJumpButtons;
+
 	// for Toolbar
 	THLabelButton *_labelButton;
 	THImagePopUpButton *_actionButton;
@@ -97,6 +100,7 @@ static NSString *THDocURLFieldItemIdentifier		= @"THDocURLFieldItemIdentifier";
 #pragma mark Accessors
 
 -(void)saveOnApplicationTerminate ;
+- (IBAction)pushSegment:(NSSegmentedControl *)sender;
 
 +(void)setClassMaxThreadTabCount:(int)anInt ;
 +(int)classMaxThreadTabCount ;

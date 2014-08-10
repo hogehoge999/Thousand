@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1050" defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="THDocument">
@@ -18,6 +18,7 @@
                 <outlet property="_searchField" destination="100" id="114"/>
                 <outlet property="_tabBarControl" destination="379" id="394"/>
                 <outlet property="_tabView" destination="23" id="120"/>
+                <outlet property="_threadJumpButtons" destination="1xI-yk-eJC" id="89A-VU-157"/>
                 <outlet property="_threadTableViewPlaceHolder" destination="151" id="278"/>
                 <outlet property="_threadTableViewScrollView" destination="203" id="279"/>
                 <outlet property="_urlField" destination="557" id="559"/>
@@ -71,7 +72,7 @@
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </tableHeaderCell>
-                                                                        <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="1AD257DB-8C57-48A2-A188-F40BD3428211" id="216"/>
+                                                                        <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="B737214D-100C-4687-B91E-9B3A8D2696D2" id="216"/>
                                                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                         <connections>
                                                                             <binding destination="46" name="value" keyPath="arrangedObjects.image" id="246"/>
@@ -165,7 +166,7 @@
                                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 </tableHeaderCell>
-                                                                                <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="1AD257DB-8C57-48A2-A188-F40BD3428211" id="215"/>
+                                                                                <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="B737214D-100C-4687-B91E-9B3A8D2696D2" id="215"/>
                                                                                 <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="state"/>
                                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                                 <connections>
@@ -382,8 +383,8 @@
                         </connections>
                     </progressIndicator>
                     <textField verticalHuggingPriority="750" id="154">
-                        <rect key="frame" x="117" y="3" width="660" height="14"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <rect key="frame" x="117" y="3" width="526" height="14"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Small System Font Text" id="751">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -401,6 +402,21 @@
                             <outlet property="tabView" destination="23" id="380"/>
                         </connections>
                     </customView>
+                    <segmentedControl verticalHuggingPriority="750" id="1xI-yk-eJC">
+                        <rect key="frame" x="657" y="2" width="100" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <segmentedCell key="cell" controlSize="mini" alignment="left" style="texturedSquare" trackingMode="momentary" id="qpT-vg-yo1">
+                            <font key="font" metaFont="miniSystem"/>
+                            <segments>
+                                <segment label="&lt;&lt;" width="32"/>
+                                <segment label="New" width="32" tag="1"/>
+                                <segment label=">>" width="32"/>
+                            </segments>
+                        </segmentedCell>
+                        <connections>
+                            <action selector="pushSegment:" target="-2" id="umD-HH-qBA"/>
+                        </connections>
+                    </segmentedControl>
                 </subviews>
             </view>
             <connections>
@@ -624,7 +640,7 @@
         </menu>
     </objects>
     <resources>
-        <image name="1AD257DB-8C57-48A2-A188-F40BD3428211" width="17" height="17">
+        <image name="B737214D-100C-4687-B91E-9B3A8D2696D2" width="17" height="17">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
