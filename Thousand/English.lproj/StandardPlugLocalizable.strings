@@ -57,7 +57,8 @@
 "Old Logs" = "Old Logs";
 " (Old)" = " (Old)";
 
-"Thread Title Replace" = "Thread Title Replace"
+"Thread Title Replace" = "Thread Title Replace";
+"ThreadTitleReplace" = "[転載禁止]　(c)2ch.netを削除";
 
 /*THLocalFileImporter*/
 "jp_natori_THLocalFileImporter" = "Local Log Folder";

@@ -54,7 +54,9 @@ T2ResPostingUsingWebView_v100, T2ThreadPostingUsingWebView_v100>
 	NSDate		*_lastP2LoginDate;
 	NSString	*_P2StatusString;
 	T2WebConnector *_p2Connector;
-	
+
+    BOOL		_threadTitleReplace;
+    
 	NSDictionary	*_masterListNG;
 	NSDictionary	*_boardDictionary;
 	//NSDictionary *_boardNameDictionary;
@@ -165,6 +167,9 @@ T2ResPostingUsingWebView_v100, T2ThreadPostingUsingWebView_v100>
 */
 -(void)setAdditionalBoardString:(NSString *)aString ;
 -(NSString *)additionalBoardString ;
+
+-(void)setThreadTitleReplace:(BOOL)aBool ;
+-(BOOL)threadTitleReplace;
 
 //-(void)setOldServersDictionary:(NSDictionary *)oldServersDictionary ;
 //-(NSDictionary *)oldServersDictionary ;

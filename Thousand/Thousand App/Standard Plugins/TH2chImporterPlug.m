@@ -89,6 +89,8 @@ void stampList(T2List *list) {
 			@"P2SaveInKeychain",
 			@"autoLoginP2",
 			@"lastP2LoginDate",
+            
+            @"ThreadTitleReplace",
 			
 			nil];
 }
@@ -320,6 +322,8 @@ void stampList(T2List *list) {
 -(NSDate *)lastP2LoginDate { return _lastP2LoginDate; }
 -(void)setP2StatusString:(NSString *)aString { setObjectWithRetain(_P2StatusString, aString); }
 -(NSString *)P2StatusString { return _P2StatusString; }
+-(void)setThreadTitleReplace:(BOOL)aBool { _threadTitleReplace = aBool; }
+-(BOOL)ThreadTitleReplace { return _threadTitleReplace; }
 
 #pragma mark -
 
@@ -452,6 +456,9 @@ void stampList(T2List *list) {
 			 */
             [T2PreferenceItem separateLineItem],
             [T2PreferenceItem topTitleItemWithTitle:plugLocalizedString(@"Thread Title Replace") info:nil],
+            [T2PreferenceItem boolItemWithKey:@"threadTitleReplace"
+                                        title:plugLocalizedString(@"ThreadTitleReplace")
+                                         info:nil],
 			nil];
 }
 
@@ -936,7 +943,7 @@ void stampList(T2List *list) {
 			
 			if (partStringCount > 3) {
 				if (partStringCount > 4 && i==0) {
-                    if (true)
+                    if (_threadTitleReplace)
                     {
                         NSString * content = [partStringArray objectAtIndex:4];
                         NSError * error;

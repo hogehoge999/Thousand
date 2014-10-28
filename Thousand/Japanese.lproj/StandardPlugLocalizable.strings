@@ -61,7 +61,8 @@
 "Old Logs" = "過去ログ倉庫";
 " (Old)" = "（過去ログ倉庫）";
 
-"Thread Title Replace" = "スレタイ加工"
+"Thread Title Replace" = "スレタイ加工";
+"ThreadTitleReplace" = "[転載禁止]　(c)2ch.netを削除";
 
 
 /*THLocalFileImporter*/
