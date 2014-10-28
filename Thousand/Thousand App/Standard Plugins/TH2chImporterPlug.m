@@ -450,6 +450,8 @@ void stampList(T2List *list) {
 											 title:plugLocalizedString(@"Log-Out Viewer")
 											  info:nil],
 			 */
+            [T2PreferenceItem separateLineItem],
+            [T2PreferenceItem topTitleItemWithTitle:plugLocalizedString(@"Thread Title Replace") info:nil],
 			nil];
 }
 
@@ -934,7 +936,26 @@ void stampList(T2List *list) {
 			
 			if (partStringCount > 3) {
 				if (partStringCount > 4 && i==0) {
-					threadTitle = [[partStringArray objectAtIndex:4] retain];
+                    if (true)
+                    {
+                        NSString * content = [partStringArray objectAtIndex:4];
+                        NSError * error;
+                        NSString* pattern = @"^(\\[転載禁止\\])(.*?)(&copy;2ch\\.net)";
+                        NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
+                        NSArray *matches = [regex matchesInString:content options:0 range:NSMakeRange(0, content.length)];
+                        if ([matches count] > 0)
+                        {
+                            threadTitle = [[content substringWithRange:[[matches objectAtIndex:0] rangeAtIndex:2]] retain];
+                        }
+                        else
+                        {
+                            threadTitle = [content retain];
+                        }
+                    }
+                    else
+                    {
+                        threadTitle = [[partStringArray objectAtIndex:4] retain];
+                    }
 				}
 				tempRes = resWith_ResNum_Name_Mail_DateAndOther_content_thread(i+1,
 																			   [partStringArray objectAtIndex:0],

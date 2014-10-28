@@ -61,6 +61,9 @@
 "Old Logs" = "過去ログ倉庫";
 " (Old)" = "（過去ログ倉庫）";
 
+"Thread Title Replace" = "スレタイ加工"
+
+
 /*THLocalFileImporter*/
 "jp_natori_THLocalFileImporter" = "他のログフォルダ";
 "jp_natori_THLocalFileImporter_info" = "datファイルを含むフォルダを板として読み込みます。";
