@@ -29,7 +29,7 @@ didReceiveWebData:(T2WebData *)webData
 
 @end
 
-@interface T2WebConnector : NSObject {
+@interface T2WebConnector : NSObject<NSURLSessionDelegate>  {
 	NSString *_urlString;
 	NSString *_redirectedUrlString;
 	NSString *_status;
@@ -41,7 +41,8 @@ didReceiveWebData:(T2WebData *)webData
 	id _delegate;
 	id _context;
 	
-	NSURLConnection *_myConnection;
+    //NSURLConnection *_myConnection;
+    NSURLSessionDataTask *_myConnection;
 	NSMutableData *_receivedData;
 	NSHTTPURLResponse *_receivedResponse;
 	
@@ -59,6 +60,13 @@ didReceiveWebData:(T2WebData *)webData
 			   delegate:(id)anObject
 			  inContext:(id)contextObject
  shouldUseSharedCookies:(BOOL)shouldUseSharedCookies;
+
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+didReceiveResponse:(NSURLResponse *)response
+ completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler;
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data;
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error;
+
 
 //-(BOOL)addDelegate:(id)anObject inContext:(id)contextObject ;
 //-(void)removeDelegate:(id)anObject ;

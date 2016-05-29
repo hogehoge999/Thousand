@@ -45,6 +45,7 @@ static id __sharedPrefWindowController;
 			//@"abbreviatedLogFolderPath",
 			@"abbreviatedDownloadDestinationFolderPath",
 			@"safari2Debug", @"enableThreadListCache", @"enablePrefetchThread",
+            @"useProxy", @"proxyHost",
 			nil];
 }
 
@@ -970,6 +971,12 @@ static id __sharedPrefWindowController;
 -(void)setEnablePrefetchThread:(BOOL)aBool { [[THAppDelegate sharedInstance] setEnablePrefetchThread:aBool]; }
 -(BOOL)enablePrefetchThread { return [[THAppDelegate sharedInstance] enablePrefetchThread]; }
 
+-(BOOL)useProxy { return _useProxy; }
+-(void)setUseProxy:(BOOL)aBool { _useProxy = aBool; }
+-(void)setProxyHost:(NSString *)host {}
+-(NSString *)proxyHost { return @"test"; }
+
+
 #pragma mark -
 #pragma mark KVC
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
@@ -994,6 +1001,9 @@ static id __sharedPrefWindowController;
 	[self saveFont];
 	NSDictionary *appDelegatePrefDic = [self encodedDictionary];
 	[[NSUserDefaults standardUserDefaults] setObject:appDelegatePrefDic forKey:__appDelegatePrefKey];
+}
+
+- (IBAction)checkUseProxy:(id)sender {
 }
 
 #pragma mark -

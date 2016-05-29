@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment version="1030" defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+        <deployment version="1030" identifier="macosx"/>
+        <development version="6300" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="THPrefWindowController">
@@ -23,25 +24,25 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="appPreferences" animationBehavior="default" id="5" userLabel="Pref Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="99" y="228" width="510" height="427"/>
+            <rect key="contentRect" x="99" y="228" width="510" height="513"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="6">
-                <rect key="frame" x="0.0" y="0.0" width="510" height="427"/>
+                <rect key="frame" x="0.0" y="0.0" width="510" height="513"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <tabView type="noTabsNoBorder" id="7">
-                        <rect key="frame" x="0.0" y="0.0" width="510" height="427"/>
+                        <rect key="frame" x="0.0" y="0.0" width="510" height="513"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="Advanced" identifier="THPrefAdvancedItem" id="35">
                                 <view key="view" id="36">
-                                    <rect key="frame" x="0.0" y="0.0" width="510" height="427"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="510" height="513"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box title="Download" id="2295">
@@ -143,7 +144,7 @@
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <box title="Thread Log Files" borderType="line" id="2322">
-                                            <rect key="frame" x="17" y="312" width="476" height="95"/>
+                                            <rect key="frame" x="17" y="398" width="476" height="95"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="79"/>
@@ -225,7 +226,7 @@
                                                             <binding destination="1175" name="value" keyPath="selection.webCacheUsageString" id="2336"/>
                                                         </connections>
                                                     </textField>
-                                                    <progressIndicator verticalHuggingPriority="750" maxValue="1" bezeled="NO" style="bar" id="2334">
+                                                    <progressIndicator wantsLayer="YES" verticalHuggingPriority="750" maxValue="1" bezeled="NO" style="bar" id="2334">
                                                         <rect key="frame" x="28" y="12" width="161" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     </progressIndicator>
@@ -257,16 +258,62 @@
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
+                                        <box title="Proxy" borderType="line" id="hxk-fC-dA4">
+                                            <rect key="frame" x="17" y="312" width="476" height="82"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <view key="contentView">
+                                                <rect key="frame" x="1" y="1" width="474" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button id="wSn-dG-QZu">
+                                                        <rect key="frame" x="10" y="40" width="95" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="check" title="Use Proxy" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="UXG-ox-15T">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="SNA-jd-aiV">
+                                                        <rect key="frame" x="16" y="14" width="67" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Host:Port" id="9s4-d8-O4e">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <button id="O1J-sk-1M8">
+                                                        <rect key="frame" x="113" y="40" width="172" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="check" title="Use System Default" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="29y-Jf-gC9">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <textField verticalHuggingPriority="750" id="U8M-On-T0c">
+                                                        <rect key="frame" x="84" y="12" width="383" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="7I6-xk-TRZ">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </subviews>
+                                            </view>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </box>
                                     </subviews>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Bookmark" identifier="THPrefBookmarkViewItem" id="8">
                                 <view key="view" id="9">
-                                    <rect key="frame" x="0.0" y="0.0" width="510" height="427"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="510" height="513"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box title="BBS Source Settings" borderType="line" id="2650">
-                                            <rect key="frame" x="17" y="16" width="476" height="391"/>
+                                            <rect key="frame" x="17" y="102" width="476" height="391"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="375"/>
@@ -315,11 +362,11 @@
                             </tabViewItem>
                             <tabViewItem label="WebView Setting" identifier="THPrefWebViewItem" id="61">
                                 <view key="view" id="62">
-                                    <rect key="frame" x="0.0" y="0.0" width="510" height="427"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="510" height="513"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box title="Thread Views" id="162">
-                                            <rect key="frame" x="17" y="252" width="476" height="155"/>
+                                            <rect key="frame" x="17" y="338" width="476" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="2" y="2" width="472" height="138"/>
@@ -439,7 +486,7 @@
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <box title="Posting" id="164">
-                                            <rect key="frame" x="17" y="83" width="476" height="65"/>
+                                            <rect key="frame" x="17" y="169" width="476" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="2" y="2" width="472" height="48"/>
@@ -462,7 +509,7 @@
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <box title="Filtering" id="205">
-                                            <rect key="frame" x="17" y="152" width="476" height="96"/>
+                                            <rect key="frame" x="17" y="238" width="476" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="2" y="2" width="472" height="79"/>
@@ -542,11 +589,11 @@
                             </tabViewItem>
                             <tabViewItem label="Preview" identifier="THPrefPreviewItem" id="176">
                                 <view key="view" id="177">
-                                    <rect key="frame" x="0.0" y="0.0" width="510" height="427"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="510" height="513"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box title="Preview Settings" borderType="line" id="841">
-                                            <rect key="frame" x="17" y="16" width="476" height="401"/>
+                                            <rect key="frame" x="17" y="102" width="476" height="401"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="385"/>
@@ -763,11 +810,11 @@
                             </tabViewItem>
                             <tabViewItem label="Plugin" identifier="THPrefPluginItem" id="83">
                                 <view key="view" id="84">
-                                    <rect key="frame" x="0.0" y="0.0" width="510" height="427"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="510" height="513"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box title="All Loaded Plugins." borderType="line" id="1040">
-                                            <rect key="frame" x="17" y="16" width="476" height="394"/>
+                                            <rect key="frame" x="17" y="102" width="476" height="394"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="378"/>
@@ -816,11 +863,11 @@
                             </tabViewItem>
                             <tabViewItem label="Debug" identifier="THPrefDebugItem" id="263">
                                 <view key="view" id="264">
-                                    <rect key="frame" x="0.0" y="0.0" width="510" height="427"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="510" height="513"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button id="265">
-                                            <rect key="frame" x="18" y="391" width="254" height="18"/>
+                                            <rect key="frame" x="18" y="477" width="254" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Safari 2 Debugging Mode on Safari 3" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="3385">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -831,7 +878,7 @@
                                             </connections>
                                         </button>
                                         <textField verticalHuggingPriority="750" id="315">
-                                            <rect key="frame" x="36" y="371" width="450" height="14"/>
+                                            <rect key="frame" x="36" y="457" width="450" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Use popup code for Safari2. Changes will apply at next thread loading." id="3386">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -840,7 +887,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <button id="3131">
-                                            <rect key="frame" x="18" y="325" width="254" height="18"/>
+                                            <rect key="frame" x="18" y="411" width="254" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Enable List Cache" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="3387">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -851,7 +898,7 @@
                                             </connections>
                                         </button>
                                         <button id="3133">
-                                            <rect key="frame" x="18" y="305" width="254" height="18"/>
+                                            <rect key="frame" x="18" y="391" width="254" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Enable Thread Prefetch" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="3388">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -866,11 +913,11 @@
                             </tabViewItem>
                             <tabViewItem label="Appearance" identifier="THPrefAppearanceItem" id="368">
                                 <view key="view" id="369">
-                                    <rect key="frame" x="0.0" y="0.0" width="510" height="427"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="510" height="513"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box title="Window and Style" borderType="line" id="451">
-                                            <rect key="frame" x="17" y="300" width="476" height="107"/>
+                                            <rect key="frame" x="17" y="386" width="476" height="107"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="91"/>
@@ -914,7 +961,7 @@
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <box title="Tab" id="939">
-                                            <rect key="frame" x="17" y="123" width="476" height="74"/>
+                                            <rect key="frame" x="17" y="209" width="476" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="2" y="2" width="472" height="57"/>
@@ -958,7 +1005,7 @@
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <box title="Icon Set" borderType="line" id="2925">
-                                            <rect key="frame" x="17" y="201" width="476" height="95"/>
+                                            <rect key="frame" x="17" y="287" width="476" height="95"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="79"/>
@@ -1008,7 +1055,7 @@
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <box title="Thread List Columns" borderType="line" id="3481">
-                                            <rect key="frame" x="17" y="45" width="476" height="74"/>
+                                            <rect key="frame" x="17" y="131" width="476" height="74"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="58"/>
@@ -1123,11 +1170,11 @@
                             </tabViewItem>
                             <tabViewItem label="Fonts and Colors" identifier="THPrefFontAndColorItem" id="2836">
                                 <view key="view" id="2837">
-                                    <rect key="frame" x="0.0" y="0.0" width="510" height="427"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="510" height="513"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box title="List View" borderType="line" id="2846">
-                                            <rect key="frame" x="17" y="149" width="476" height="123"/>
+                                            <rect key="frame" x="17" y="235" width="476" height="123"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="107"/>
@@ -1237,7 +1284,7 @@
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <box title="Thread And Posting Message" borderType="line" id="2849">
-                                            <rect key="frame" x="17" y="276" width="476" height="142"/>
+                                            <rect key="frame" x="17" y="362" width="476" height="142"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="126"/>
@@ -1316,7 +1363,7 @@
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <box title="Thread Labels" borderType="line" id="2877">
-                                            <rect key="frame" x="17" y="16" width="476" height="122"/>
+                                            <rect key="frame" x="17" y="102" width="476" height="122"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="106"/>
@@ -1492,11 +1539,11 @@
                             </tabViewItem>
                             <tabViewItem label="2ch" identifier="THPref2chItem" id="3423">
                                 <view key="view" id="3424">
-                                    <rect key="frame" x="0.0" y="0.0" width="510" height="427"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="510" height="513"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box autoresizesSubviews="NO" title="Board List" borderType="line" id="3425">
-                                            <rect key="frame" x="17" y="346" width="476" height="61"/>
+                                            <rect key="frame" x="17" y="432" width="476" height="61"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="45"/>
@@ -1544,7 +1591,7 @@
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <box autoresizesSubviews="NO" title="2ch Viewer" borderType="line" id="3432">
-                                            <rect key="frame" x="17" y="265" width="476" height="77"/>
+                                            <rect key="frame" x="17" y="351" width="476" height="77"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="61"/>
@@ -1612,7 +1659,7 @@
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <box autoresizesSubviews="NO" title="p2.2ch.net" borderType="line" id="3441">
-                                            <rect key="frame" x="17" y="155" width="476" height="106"/>
+                                            <rect key="frame" x="17" y="241" width="476" height="106"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="90"/>
@@ -1705,7 +1752,7 @@
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
                                         <box autoresizesSubviews="NO" title="Be@2ch" borderType="line" id="3450">
-                                            <rect key="frame" x="17" y="16" width="476" height="135"/>
+                                            <rect key="frame" x="17" y="102" width="476" height="135"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <view key="contentView">
                                                 <rect key="frame" x="1" y="1" width="474" height="119"/>
@@ -1802,6 +1849,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="204"/>
             </connections>
+            <point key="canvasLocation" x="270" y="350.5"/>
         </window>
         <arrayController preservesSelection="NO" selectsInsertedObjects="NO" clearsFilterPredicateOnInsertion="NO" id="94" userLabel="PartialHTMLExporters">
             <declaredKeys>

@@ -72,14 +72,35 @@ static NSMutableDictionary *__connectors = nil;
 		urlRequest = [urlRequest requestByAddingCookies];
 	}
 	
-	if ([NSURLConnection canHandleRequest:urlRequest]) {
-		_delegate = anObject;
-		_context = [contextObject retain];
-			
-		_myConnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
-		_receivedData = [[NSMutableData alloc] init];
-		return self;
-	}
+	//if ([NSURLConnection canHandleRequest:urlRequest]) {
+	//	_delegate = anObject;
+	//	_context = [contextObject retain];
+	//
+	//	_myConnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+	//	_receivedData = [[NSMutableData alloc] init];
+	//	return self;
+	//}
+    // Session版
+    {
+        _delegate = anObject;
+        _context = [contextObject retain];
+        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        sessionConfiguration.connectionProxyDictionary = @{(NSString *)kCFStreamPropertyHTTPProxyHost: @"localhost",
+                                             (NSString *)kCFStreamPropertyHTTPProxyPort: @9080,
+                                             (NSString *)kCFNetworkProxiesHTTPEnable: @YES};
+
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration
+                                                          delegate:self
+                                                     delegateQueue:[NSOperationQueue mainQueue]];
+        NSURLSessionDataTask *task = [session dataTaskWithRequest:urlRequest];
+        _myConnection = task;//[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+        _receivedData = [[NSMutableData alloc] init];
+        [task resume];
+        return self;
+    }
+    
+    
+    
 	[self release];
 	return nil;
 }
@@ -138,8 +159,8 @@ static NSMutableDictionary *__connectors = nil;
 	_delegate = nil;
 	if (_myConnection) {
 		[_myConnection cancel];
-		[_myConnection release];
-		_myConnection = nil;
+		//[_myConnection release];
+		//_myConnection = nil;
 	}
 }
 
@@ -247,4 +268,106 @@ static NSMutableDictionary *__connectors = nil;
 	
 	[self returnEmptyData];
 }
+
+
+/**
+ * HTTPリクエストのデリゲートメソッド(データ受け取り初期処理)
+ */
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+didReceiveResponse:(NSURLResponse *)response
+ completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler {
+    // 保持していたレスポンスのデータを初期化
+    //[self setResponseData:[[NSMutableData alloc] init]];
+    
+    // didReceivedData と didCompleteWithError が呼ばれるように、通常継続の定数をハンドラーに渡す
+    //completionHandler(NSURLSessionResponseAllow);
+    //if (connection != _myConnection) return;
+    if (dataTask != _myConnection) return;
+
+    int statusCode;
+    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+        _receivedResponse = (NSHTTPURLResponse *)[response retain];
+        
+        if (!_shouldUseSharedCookies) {
+            [[T2HTTPCookieStorage sharedHTTPCookieStorage] setCookiesInURLResponse:(NSHTTPURLResponse *)response];
+        }
+        
+        statusCode = [(NSHTTPURLResponse *)response statusCode];
+
+        if (statusCode >= 300) {
+            [self setStatus:[NSHTTPURLResponse localizedStringForStatusCode:statusCode]];
+            [_myConnection cancel];
+            //[_myConnection release];
+            //_myConnection = nil;
+            
+            [self returnEmptyData];
+            return;
+        }
+    }
+    NSDictionary *headerInfo = ((NSHTTPURLResponse *)response).allHeaderFields;
+    _charset = [response textEncodingName];
+    _length = [response  expectedContentLength];
+    //const int MAX_INIT_SIZE = 100 * 1024 * 1024;
+    //if (_length < 0 || _length > MAX_INIT_SIZE) {
+    //    _length = MAX_INIT_SIZE;
+    //}
+
+    completionHandler(NSURLSessionResponseAllow);
+}
+
+/**
+ * HTTPリクエストのデリゲートメソッド(受信の度に実行)
+ */
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
+    // 1つのパケットに収まらないデータ量の場合は複数回呼ばれるので、データを追加していく
+    //[_responseData appendData:data];
+    //if (connection != _myConnection) return;
+    if (dataTask != _myConnection) return;
+    
+    [_receivedData appendData:data];
+    if (_length == -1)
+    {
+        _length = data.length;
+    }
+    if (_length <= 0) return;
+    float newProgress = ((float)[_receivedData length] / _length);
+    if (0.05 < (newProgress-_progress)) {
+        [self returnProgress:newProgress];
+        _progress = newProgress;
+    }
+}
+
+/**
+ * HTTPリクエストのデリゲートメソッド(完了処理)
+ */
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
+    //if (error) {
+    //    // HTTPリクエスト失敗処理
+    //    [self failureHttpRequest:error];
+    //} else {
+    //    // HTTPリクエスト成功処理
+    //    [self successHttpRequest];
+    //}
+    //if (connection != _myConnection) return;
+    if (task != _myConnection) return;
+    if (error == nil)
+    {
+        [_myConnection cancel];
+        //[_myConnection release];
+        //_myConnection = nil;
+        _length = [_receivedData length];
+        [self returnProgress:1.0];
+        [self returnData];
+    }
+    else
+    {
+        [self setStatus:[error localizedDescription]];
+        [_myConnection cancel];
+        //[_myConnection release];
+        //_myConnection = nil;
+    
+        [self returnEmptyData];
+    }
+}
+
 @end

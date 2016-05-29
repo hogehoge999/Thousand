@@ -65,6 +65,7 @@ static NSString *THPrefDebugItemIdentifier 			= @"THPrefDebugItem";
 	// WebPref
 	WebPreferences *_webPreferences;
 	WebPreferences *_postingWebPreferences;
+    BOOL _useProxy;
 	
 	// Advanced
 	NSString *_webCacheUsageString;
@@ -266,15 +267,23 @@ static NSString *THPrefDebugItemIdentifier 			= @"THPrefDebugItem";
 -(BOOL)showsDebugMenu ;
 -(void)setSafari2Debug:(BOOL)aBool ;
 -(BOOL)safari2Debug ;
+
 -(void)setEnableThreadListCache:(BOOL)aBool;
 -(BOOL)enableThreadListCache ;
 -(void)setEnablePrefetchThread:(BOOL)aBool;
 -(BOOL)enablePrefetchThread ;
 
+-(BOOL)useProxy;
+-(void)setUseProxy:(BOOL)aBool;
+-(void)setProxyHost:(NSString *)host;
+-(NSString *)proxyHost;
+
+
 #pragma mark -
 #pragma mark Methods
 -(void)saveAllPrefs ;
 
+- (IBAction)checkUseProxy:(id)sender;
 #pragma mark -
 #pragma mark  Actions
 -(IBAction)switchPrefTab:(id)sender ;
