@@ -112,6 +112,10 @@ static NSString *__pluginPrefFolderName 	= @"Plugin Prefs";
 		}
 		[setupManager setLogFolderPath:logFolderPath];
 	}
+
+    NSString *proxyHost = [prefDic objectForKey:@"proxyHost"];
+    if (proxyHost) {
+    }
 	
 	// Extensions
 	[setupManager setThreadListExtension:@"ththreadlist"];

@@ -108,8 +108,8 @@ static NSMutableDictionary *__connectors = nil;
 	_delegate = nil;
 	if (_myConnection) {
 		[_myConnection cancel];
-		//[_myConnection release];
-		//_myConnection = nil;
+		[_myConnection release];
+		_myConnection = nil;
 	}
 	[_urlString release];
 	[_redirectedUrlString release];

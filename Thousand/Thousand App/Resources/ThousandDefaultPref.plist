@@ -100,5 +100,9 @@
 	<string>HiraKakuPro-W3</string>
 	<key>webStandardFont_Size</key>
 	<real>12</real>
+	<key>useProxy</key>
+	<false/>
+	<key>proxyHost</key>
+	<string></string>
 </dict>
 </plist>

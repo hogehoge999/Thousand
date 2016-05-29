@@ -15,6 +15,7 @@
 	NSString *_logFolderPath;
 	NSString *_pluginFolderName;
 	NSString *_pluginPrefFolderName;
+    NSString *_proxyHost;
 	
 	NSString *_threadListExtension;
 	NSString *_threadExtension;
@@ -53,6 +54,9 @@
 -(NSString *)pluginFolderName ;
 -(void)setPluginPrefFolderName:(NSString *)aString ;
 -(NSString *)pluginPrefFolderName ;
+
+-(NSString *)proxyHost ;
+-(void)setProxyHost:(NSString *)host ;
 
 -(void)setThreadListExtension:(NSString *)aString ;
 -(NSString *)threadListExtension ;

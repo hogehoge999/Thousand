@@ -69,6 +69,10 @@ static NSString *THPrefDebugItemIdentifier 			= @"THPrefDebugItem";
 	// Advanced
 	NSString *_webCacheUsageString;
 	double _webCacheUsage;
+    
+    BOOL _useProxy;
+    NSString * _proxyHost;
+    
 	IBOutlet NSProgressIndicator *_webCacheIndicator;
 	
 	// Outlet for Pref Window
@@ -247,6 +251,12 @@ static NSString *THPrefDebugItemIdentifier 			= @"THPrefDebugItem";
 -(NSString *)abbreviatedLogFolderPath ;
 -(void)setLogFolderPath:(NSString *)path ;
 -(NSString *)logFolderPath ;
+
+-(void)setUseProxy:(BOOL)aBool ;
+-(BOOL)useProxy ;
+-(void)setProxyHost:(NSString *)host ;
+-(NSString *)proxyHost ;
+
 
 -(void)setDownloadInThreadFolder:(BOOL)aBool ;
 -(BOOL)downloadInThreadFolder ;

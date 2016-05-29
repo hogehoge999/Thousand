@@ -45,6 +45,7 @@ static id __sharedPrefWindowController;
 			//@"abbreviatedLogFolderPath",
 			@"abbreviatedDownloadDestinationFolderPath",
 			@"safari2Debug", @"enableThreadListCache", @"enablePrefetchThread",
+            @"useProxy", @"proxyHost",
 			nil];
 }
 
@@ -932,6 +933,17 @@ static id __sharedPrefWindowController;
 	[[T2SourceList sharedSourceList] loadFromFile];
 }
 -(NSString *)logFolderPath { return [NSString appLogFolderPath]; }
+
+-(void)setUseProxy:(BOOL)aBool {
+    ;
+}
+-(BOOL)useProxy { return true; }
+-(void)setProxyHost:(NSString *)host {
+    ;
+}
+-(NSString *)proxyHost {
+    ;
+}
 
 -(void)setDownloadInThreadFolder:(BOOL)aBool { [THDownloadWindowController setClassDownloadInThreadFolder:aBool]; }
 -(BOOL)downloadInThreadFolder { return [THDownloadWindowController classDownloadInThreadFolder]; }

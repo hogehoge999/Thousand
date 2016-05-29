@@ -51,6 +51,7 @@ static T2SetupManager *__sharedManager;
 	[_logFolderName release];
 	[_pluginFolderName release];
 	[_pluginPrefFolderName release];
+    [_proxyHost release];
 	
 	[_defaultPluginClasses release];
 	[_forbiddenPluginBundleIdentifiers release];
@@ -80,6 +81,11 @@ static T2SetupManager *__sharedManager;
 -(NSString *)pluginFolderName { return _pluginFolderName; }
 -(void)setPluginPrefFolderName:(NSString *)aString { setObjectWithCopy(_pluginPrefFolderName, aString); }
 -(NSString *)pluginPrefFolderName { return _pluginPrefFolderName; }
+
+-(NSString *)proxyHost { return _proxyHost; }
+-(void)setProxyHost:(NSString *)host {
+    setObjectWithCopy(_proxyHost, host);
+}
 
 -(void)setThreadListExtension:(NSString *)aString { setObjectWithCopy(_threadListExtension, aString); }
 -(NSString *)threadListExtension { return _threadListExtension; }
