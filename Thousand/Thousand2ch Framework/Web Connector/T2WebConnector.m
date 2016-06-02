@@ -6,6 +6,7 @@
 //  Copyright 2005 __MyCompanyName__. All rights reserved.
 //
 
+#import "THAppDelegate.h"
 #import "T2WebConnector.h"
 #import "T2WebData.h"
 #import "T2NSArrayAdditions.h"
@@ -82,15 +83,33 @@ static NSMutableDictionary *__connectors = nil;
 	//}
     if (true)
     {
+        T2SetupManager *setupManager = [T2SetupManager sharedManager];
         _delegate = anObject;
         _context = [contextObject retain];
         
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
 
-        sessionConfiguration.connectionProxyDictionary = @{(NSString *)kCFStreamPropertyHTTPProxyHost: @"localhost",
-                                                           (NSString *)kCFStreamPropertyHTTPProxyPort: @9080,
+        if ([setupManager useProxy ])
+        {
+            NSString *host = @"";
+            NSNumber *port = [NSNumber numberWithInt:80];
+            NSString *proxyHost = [setupManager proxyHost];
+            //NSString *proxyHost = @"localhost:9080";
+            NSArray *params = [proxyHost componentsSeparatedByString:@":"];
+            if ([params count] > 0)
+            {
+                host = [params objectAtIndex:0];
+                if ([params count] > 1)
+                {
+                    NSString * ports = [params objectAtIndex:1];
+                    port = [NSNumber numberWithInt:[ports intValue]];
+                }
+            }
+            sessionConfiguration.connectionProxyDictionary = @{(NSString *)kCFStreamPropertyHTTPProxyHost: host,
+                                                           (NSString *)kCFStreamPropertyHTTPProxyPort: port,
                                                            (NSString *)kCFNetworkProxiesHTTPEnable: @YES};
-        
+
+        }
         NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration
                                                               delegate:self
                                                          delegateQueue:[NSOperationQueue mainQueue]];

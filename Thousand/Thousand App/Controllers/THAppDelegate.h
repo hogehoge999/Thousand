@@ -19,6 +19,7 @@
 	
 	BOOL			_enableThreadListCache;
 	BOOL			_enablePrefetchThread;
+    
 	THLoadListOperation		*_loadListOperation;
 	THLoadThreadOperation	*_loadThreadOperation ;
 	NSMutableArray	*_threadListCache ;

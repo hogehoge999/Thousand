@@ -204,4 +204,10 @@ static T2SetupManager *__sharedManager;
 		[[T2LabeledCellManager sharedManager] setLabelPopUpMaskImage:[NSImage imageNamed:_labelPopUpMaskImageName]];
 	
 }
+-(void)setUseProxy:(BOOL)aBool { _useProxy = aBool; }
+-(BOOL)useProxy { return _useProxy; }
+-(void)setProxyHost:(NSString *)strProxyHost { _proxyHost = strProxyHost; }
+-(NSString *)proxyHost { return _proxyHost; }
+
+
 @end

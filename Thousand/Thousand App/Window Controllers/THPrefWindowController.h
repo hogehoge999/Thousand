@@ -271,6 +271,11 @@ static NSString *THPrefDebugItemIdentifier 			= @"THPrefDebugItem";
 -(void)setEnablePrefetchThread:(BOOL)aBool;
 -(BOOL)enablePrefetchThread ;
 
+-(void)setUseProxy:(BOOL)aBool;
+-(BOOL)useProxy;
+-(void)setProxyHost:(NSString *)strProxyHost;
+-(NSString *)proxyHost;
+
 #pragma mark -
 #pragma mark Methods
 -(void)saveAllPrefs ;

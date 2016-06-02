@@ -45,6 +45,7 @@ static id __sharedPrefWindowController;
 			//@"abbreviatedLogFolderPath",
 			@"abbreviatedDownloadDestinationFolderPath",
 			@"safari2Debug", @"enableThreadListCache", @"enablePrefetchThread",
+            @"useProxy",@"proxyHost",
 			nil];
 }
 
@@ -969,6 +970,11 @@ static id __sharedPrefWindowController;
 -(BOOL)enableThreadListCache { [[THAppDelegate sharedInstance] enableThreadListCache]; }
 -(void)setEnablePrefetchThread:(BOOL)aBool { [[THAppDelegate sharedInstance] setEnablePrefetchThread:aBool]; }
 -(BOOL)enablePrefetchThread { return [[THAppDelegate sharedInstance] enablePrefetchThread]; }
+
+-(void)setUseProxy:(BOOL)aBool { [[T2SetupManager sharedManager] setUseProxy:aBool]; }
+-(BOOL)useProxy { return [[T2SetupManager sharedManager] useProxy]; }
+-(void)setProxyHost:(NSString *)strProxyHost { [[T2SetupManager sharedManager] setProxyHost:strProxyHost]; }
+-(NSString *)proxyHost { return [[T2SetupManager sharedManager] proxyHost]; }
 
 #pragma mark -
 #pragma mark KVC

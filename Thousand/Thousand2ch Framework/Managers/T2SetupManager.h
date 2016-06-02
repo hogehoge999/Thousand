@@ -36,6 +36,10 @@
 	
 	NSString *_labelPopUpBaseImageName;
 	NSString *_labelPopUpMaskImageName;
+    
+    BOOL            _useProxy;
+    NSString        *_proxyHost;
+
 }
 #pragma mark -
 #pragma mark Factory and Init
@@ -88,6 +92,11 @@
 -(NSString *)labelPopUpBaseImageName ;
 -(void)setLabelPopUpMaskImageName:(NSString *)aString ;
 -(NSString *)labelPopUpMaskImageName ;
+
+-(void)setUseProxy:(BOOL)aBool;
+-(BOOL)useProxy;
+-(void)setProxyHost:(NSString *)strProxyHost;
+-(NSString *)proxyHost;
 
 #pragma mark -
 #pragma mark Setup
