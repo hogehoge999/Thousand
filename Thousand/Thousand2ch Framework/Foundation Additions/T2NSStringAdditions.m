@@ -167,7 +167,7 @@ static NSCharacterSet *__whitespaceAndNewlineCharacterSet = nil;
 	if (!src) return nil;
 	NSMutableString *tempString = [[[NSMutableString alloc] initWithString:src] autorelease];
 	//<br> to return
-	[tempString replaceOccurrencesOfString:@"<br>" withString:@"\n" options:NSCaseInsensitiveSearch range:NSMakeRange(0,[tempString length])];
+	[tempString replaceOccurrencesOfString:@"<br[^>]*>" withString:@"\n" options:NSRegularExpressionSearch range:NSMakeRange(0,[tempString length])];
 	
 	//cut other tags
 	tempLoc = [tempString rangeOfString:@"<" options:NSLiteralSearch].location;
