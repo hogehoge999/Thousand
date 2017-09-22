@@ -554,34 +554,43 @@ static NSString *__resLinkFormat = @"<a href=\"internal://resNumber/%@\">%@</a>"
 			}
 			case 13: //previewable
 			{
+                NSError* error = nil;
+                NSRegularExpression* regex = nil;                //(h?ttps?://)([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?
+                //regex = [NSRegularExpression regularExpressionWithPattern:@"(h)?ttp(s)?://"
+                regex = [NSRegularExpression regularExpressionWithPattern:@"(h?ttps?://)([\\w-]+\\.)+[\\w-]+(/[\\w-\\+./?%&=]*)?"
+                                                                  options:NSRegularExpressionCaseInsensitive
+                                                                    error:&error];
+                // 比較
+                //NSTextCheckingResult *match = [regex firstMatchInString:string
+                //                                                options:0
+                //                                                  range:NSMakeRange(0, string.length)];
+
+                
 				T2PluginManager *pluginManager = [T2PluginManager sharedManager];
-				NSString *prefix = @"ttp://";
+				//NSString *prefix = @"ttp://";
 				NSMutableIndexSet *mutableIndexSet = [NSMutableIndexSet indexSet];
 				NSEnumerator *enumerator = [[thread resArray] objectEnumerator];
 				T2Res *res;
 				NSInteger i=0;
 				while (res = [enumerator nextObject]) {
 					NSString *content = [res content];
-					NSString *urlString = nil;
-					NSScanner *contentScanner = [NSScanner scannerWithString:content];
-					while (![contentScanner isAtEnd]) {
-						if ([contentScanner scanString:prefix intoString:NULL]) {
-							[contentScanner scanCharactersFromSet:_urlCharacterSet intoString:&urlString];
-						} else {
-							[contentScanner scanUpToString:prefix intoString:NULL];
-							[contentScanner scanString:prefix intoString:NULL];
-							[contentScanner scanCharactersFromSet:_urlCharacterSet intoString:&urlString];
-						}
-						if (urlString) {
-							urlString = [@"http://" stringByAppendingString:urlString];
-							if ([pluginManager isPreviewableURLString:urlString type:T2PreviewInline]) {
-								[mutableIndexSet addIndex:i];
-								break;
-							}
-						}
-					}
-					i++;
-				}
+                    [regex enumerateMatchesInString:content
+                                            options:0
+                                              range:NSMakeRange(0, [content length])
+                                         usingBlock:^(NSTextCheckingResult *match, NSMatchingFlags flags, BOOL *stop)
+                     {
+                         NSRange matchRange = [match range];
+                         NSRange firstHalfRange = [match rangeAtIndex:1];
+                         NSString* protocol = [content substringWithRange:firstHalfRange];
+                         NSString* urlString = [content substringWithRange:matchRange];
+
+                         if ([pluginManager isPreviewableURLString:urlString type:T2PreviewInline]) {
+                             [mutableIndexSet addIndex:i];
+                             *stop = YES;
+                         }
+                     }];
+                    i++;
+                }
 				return [[mutableIndexSet copy] autorelease];
 			}
 			default:
